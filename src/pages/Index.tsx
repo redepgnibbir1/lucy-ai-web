@@ -8,11 +8,10 @@ import CustomerLogos from '@/components/CustomerLogos';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-lucy-light-gray">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
       <Products />
-      <CustomerLogos />
       <GuestCommunicationsSection />
       <CopilotSection />
     </div>
