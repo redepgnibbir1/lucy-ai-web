@@ -1,22 +1,23 @@
 
 import React from 'react';
+import { Building, Hotel, MapPin } from 'lucide-react';
 
 const CustomerLogos = () => {
   const customers = [
     {
       name: "Vår Gård Satsjöbaden",
-      logo: "/logos/var-gard-satsjobaden.png",
-      alt: "Vår Gård Satsjöbaden logo"
+      logo: <Building size={64} className="text-lucy-dark-gray opacity-70 hover:opacity-100 transition-opacity" />,
+      placeholder: "https://images.unsplash.com/photo-1487958449943-2429e8be8625"
     },
     {
       name: "Hotell Villa Dahlia",
-      logo: "/logos/hotell-villa-dahlia.png",
-      alt: "Hotell Villa Dahlia logo"
+      logo: <Hotel size={64} className="text-lucy-dark-gray opacity-70 hover:opacity-100 transition-opacity" />,
+      placeholder: "https://images.unsplash.com/photo-1486718448742-163732cd1544"
     },
     {
       name: "Marholmen",
-      logo: "/logos/marholmen.png",
-      alt: "Marholmen logo"
+      logo: <MapPin size={64} className="text-lucy-dark-gray opacity-70 hover:opacity-100 transition-opacity" />,
+      placeholder: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb"
     }
   ];
 
@@ -31,11 +32,7 @@ const CustomerLogos = () => {
               className="flex flex-col items-center justify-center space-y-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
               title={customer.name}
             >
-              <img 
-                src={customer.logo} 
-                alt={customer.alt} 
-                className="max-h-24 max-w-48 object-contain opacity-70 hover:opacity-100 transition-opacity"
-              />
+              {customer.logo}
               <span className="font-lab-grotesque text-lucy-dark-gray">{customer.name}</span>
             </div>
           ))}
