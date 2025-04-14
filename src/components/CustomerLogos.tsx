@@ -6,21 +6,32 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 
-// Import logos
-import logo1 from "../assets/customer-logo-1.png";
-import logo2 from "../assets/customer-logo-2.png";
-import logo3 from "../assets/customer-logo-3.png";
-import logo4 from "../assets/customer-logo-4.png";
-import logo5 from "../assets/customer-logo-5.png";
-import logo6 from "../assets/customer-logo-6.png";
-
+// Define placeholder image URLs instead of importing non-existent files
 const logos = [
-  { src: logo1, alt: "Customer Logo 1" },
-  { src: logo2, alt: "Customer Logo 2" },
-  { src: logo3, alt: "Customer Logo 3" },
-  { src: logo4, alt: "Customer Logo 4" },
-  { src: logo5, alt: "Customer Logo 5" },
-  { src: logo6, alt: "Customer Logo 6" },
+  { 
+    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 1" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 2" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 3" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 4" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 5" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=200&h=100", 
+    alt: "Customer Logo 6" 
+  },
 ];
 
 const CustomerLogos = () => {
