@@ -5,33 +5,30 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
-// Define placeholder image URLs instead of importing non-existent files
+// Define customer logo URLs with proper hotel names
 const logos = [
   { 
-    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 1" 
+    src: "/lovable-uploads/35d86a2c-4e9a-4053-afbf-ffbb04ad24d8.png", 
+    alt: "Convendum" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 2" 
+    src: "/lovable-uploads/8cbaba59-9c0d-4cb3-a328-867b274405db.png", 
+    alt: "Villa Dahlia" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 3" 
+    src: "/lovable-uploads/260e1d44-6dbe-4878-b03e-e9ea90bf85e1.png", 
+    alt: "Hotel Diplomat Stockholm" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 4" 
+    src: "/lovable-uploads/fd14d7ff-0213-4b18-857c-a752e470ef81.png", 
+    alt: "Marholmen" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 5" 
-  },
-  { 
-    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=200&h=100", 
-    alt: "Customer Logo 6" 
-  },
+    src: "/lovable-uploads/e0e4f956-6c39-4a86-a90e-fa0eea98b223.png", 
+    alt: "Vår Gård Hotel" 
+  }
 ];
 
 const CustomerLogos = () => {
@@ -60,6 +57,16 @@ const CustomerLogos = () => {
                         src={logo.src}
                         alt={logo.alt}
                         className="max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const parent = target.parentElement;
+                          if (parent) {
+                            const skeleton = document.createElement('div');
+                            skeleton.className = 'w-full h-12 rounded-md bg-gray-200 animate-pulse';
+                            parent.appendChild(skeleton);
+                          }
+                        }}
                       />
                     </Card>
                   </div>
@@ -80,6 +87,16 @@ const CustomerLogos = () => {
                 src={logo.src}
                 alt={logo.alt}
                 className="max-h-14 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const skeleton = document.createElement('div');
+                    skeleton.className = 'w-full h-14 rounded-md bg-gray-200 animate-pulse';
+                    parent.appendChild(skeleton);
+                  }
+                }}
               />
             </Card>
           ))}
