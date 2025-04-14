@@ -28,6 +28,14 @@ const logos = [
   { 
     src: "/lovable-uploads/e0e4f956-6c39-4a86-a90e-fa0eea98b223.png", 
     alt: "Vår Gård Hotel" 
+  },
+  { 
+    src: "/lovable-uploads/77b801fb-cbf5-4a88-b4c6-58a006ee5ce4.png", 
+    alt: "Grand Hotel" 
+  },
+  { 
+    src: "/lovable-uploads/8569993f-c6d9-4080-bdd3-51485132b0de.png", 
+    alt: "Elite Hotels of Sweden" 
   }
 ];
 
@@ -77,7 +85,7 @@ const CustomerLogos = () => {
         </div>
         
         {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {logos.map((logo, index) => (
             <Card
               key={index}
