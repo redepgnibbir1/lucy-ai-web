@@ -6,37 +6,36 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useState } from "react";
 
 // Define customer logo URLs with proper hotel names
 const logos = [
   { 
-    src: "/lovable-uploads/35d86a2c-4e9a-4053-afbf-ffbb04ad24d8.png", 
+    src: "/lovable-uploads/dd89fa85-37ce-44d0-b98a-e97291ad5dca.png", 
     alt: "Convendum" 
   },
   { 
-    src: "/lovable-uploads/8cbaba59-9c0d-4cb3-a328-867b274405db.png", 
+    src: "/lovable-uploads/579b972c-d18d-4c9b-b746-d83156364992.png", 
     alt: "Villa Dahlia" 
   },
   { 
-    src: "/lovable-uploads/260e1d44-6dbe-4878-b03e-e9ea90bf85e1.png", 
+    src: "/lovable-uploads/6d274ded-05e0-4608-99c6-5691eab77943.png", 
+    alt: "Elite Hotels of Sweden" 
+  },
+  { 
+    src: "/lovable-uploads/2d2aa760-9e24-49e2-8d80-713e80c1e0ff.png", 
     alt: "Hotel Diplomat Stockholm" 
   },
   { 
-    src: "/lovable-uploads/fd14d7ff-0213-4b18-857c-a752e470ef81.png", 
-    alt: "Marholmen" 
-  },
-  { 
-    src: "/lovable-uploads/e0e4f956-6c39-4a86-a90e-fa0eea98b223.png", 
+    src: "/lovable-uploads/e61dd769-5f53-41fd-a879-e81ba4e21e2c.png", 
     alt: "Vår Gård Hotel" 
   },
   { 
-    src: "/lovable-uploads/77b801fb-cbf5-4a88-b4c6-58a006ee5ce4.png", 
-    alt: "Grand Hotel" 
+    src: "/lovable-uploads/c72583e4-9056-46d6-921a-fa64e31fa9fe.png", 
+    alt: "Villa Dagmar" 
   },
   { 
-    src: "/lovable-uploads/8569993f-c6d9-4080-bdd3-51485132b0de.png", 
-    alt: "Elite Hotels of Sweden" 
+    src: "/lovable-uploads/0ca0bb41-e029-40af-a7bd-4b765e8c45af.png", 
+    alt: "Marholmen" 
   }
 ];
 

@@ -14,27 +14,9 @@ const Hero = () => {
             Lucy brings together a powerful team of AI agents to streamline operations and boost efficiency for your hotel — all within one seamless, user-friendly platform.
           </p>
           
-          <div className="mt-16 mb-10">
-            <p className="text-sm uppercase tracking-wider mb-8 text-gray-500">Trusted by quality hotels</p>
-            
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              <div className="w-20 h-12 flex items-center justify-center opacity-70">
-                <span className="text-lg font-medium">CONVENDIUM</span>
-              </div>
-              <div className="w-20 h-12 flex items-center justify-center opacity-70">
-                <span className="text-lg font-medium">Vår Gård</span>
-              </div>
-              <div className="w-20 h-12 flex items-center justify-center opacity-70">
-                <span className="text-lg font-medium">VILLA DAHLIA</span>
-              </div>
-              <div className="w-20 h-12 flex items-center justify-center opacity-70">
-                <span className="text-lg font-medium">VILLA DAGMAR</span>
-              </div>
-              <div className="w-20 h-12 flex items-center justify-center opacity-70">
-                <span className="text-lg font-medium">DIPLOMAT</span>
-              </div>
-            </div>
-          </div>
+          <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto">
+            Book a demo
+          </Button>
         </div>
       </div>
     </section>
