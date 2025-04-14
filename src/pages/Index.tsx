@@ -2,7 +2,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Products from '@/components/Products';
-import GuestCommunicationsSection from '@/components/GuestCommunicationsSection';
 import CopilotSection from '@/components/CopilotSection';
 import CustomerLogos from '@/components/CustomerLogos';
 
@@ -13,7 +12,6 @@ const Index = () => {
       <Hero />
       <Products />
       <CustomerLogos />
-      <GuestCommunicationsSection />
       <CopilotSection />
     </div>
   );
