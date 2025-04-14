@@ -7,6 +7,12 @@ import LucyLogo from './LucyLogo';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleDemoClick = () => {
+    console.log('Demo button clicked from navbar');
+    // In a real implementation, this would navigate to a booking page or open a form
+    window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
+  };
+
   return (
     <nav className="py-6">
       <div className="container flex items-center justify-between">
@@ -17,7 +23,10 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <NavLinks />
-          <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium">
+          <Button 
+            className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium"
+            onClick={handleDemoClick}
+          >
             Boka en demo
           </Button>
         </div>
@@ -41,7 +50,10 @@ const Navbar = () => {
         <div className="md:hidden container mt-4 pb-4">
           <div className="flex flex-col space-y-4">
             <NavLinks mobile />
-            <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 w-full font-medium">
+            <Button 
+              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 w-full font-medium"
+              onClick={handleDemoClick}
+            >
               Boka en demo
             </Button>
           </div>

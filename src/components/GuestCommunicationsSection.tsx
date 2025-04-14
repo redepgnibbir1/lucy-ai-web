@@ -3,6 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
 const GuestCommunicationsSection = () => {
+  const handleExploreClick = () => {
+    console.log('Explore Lucy Guest Communications clicked');
+    // In a real implementation, this might navigate to a product page
+    window.open('mailto:contact@lucy.ai?subject=Guest Communications Inquiry', '_blank');
+  };
+
   return (
     <section className="py-16 md:py-24 bg-lucy-blue-green" id="guest-communications">
       <div className="container">
@@ -75,7 +81,10 @@ const GuestCommunicationsSection = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8">
+            <Button 
+              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
+              onClick={handleExploreClick}
+            >
               Utforska Lucy Guest Communications
             </Button>
           </div>

@@ -3,6 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
 const CopilotSection = () => {
+  const handleLearnMoreClick = () => {
+    console.log('Learn more about Lucy Copilot clicked');
+    // In a real implementation, this might navigate to a product page
+    window.open('mailto:contact@lucy.ai?subject=Lucy Copilot Inquiry', '_blank');
+  };
+
   return (
     <section className="py-16 md:py-24" id="copilot">
       <div className="container">
@@ -66,7 +72,10 @@ const CopilotSection = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8">
+            <Button 
+              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
+              onClick={handleLearnMoreClick}
+            >
               Läs mer om Lucy Copilot
             </Button>
           </div>

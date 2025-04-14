@@ -2,6 +2,12 @@
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
+  const handleDemoClick = () => {
+    console.log('Demo button clicked');
+    // In a real implementation, this would navigate to a booking page or open a form
+    window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
+  };
+
   return (
     <section className="py-16 md:py-32">
       <div className="container">
@@ -14,7 +20,10 @@ const Hero = () => {
             Lucy samlar ett kraftfullt team av AI-agenter som effektiviserar arbetet och minskar den administrativa bördan för ditt hotell — allt i en sömlös och användarvänlig plattform.
           </p>
           
-          <Button className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto">
+          <Button 
+            className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto"
+            onClick={handleDemoClick}
+          >
             Boka en demo
           </Button>
         </div>
