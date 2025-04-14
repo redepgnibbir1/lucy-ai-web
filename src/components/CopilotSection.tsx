@@ -35,7 +35,7 @@ const CopilotSection = () => {
               {/* Content/Screenshot */}
               <div className="h-full w-full rounded-[2rem] overflow-hidden bg-white">
                 <img 
-                  src="/public/lovable-uploads/2f76131d-b075-4d0f-bac6-c17281009a9b.png" 
+                  src="/lovable-uploads/2f76131d-b075-4d0f-bac6-c17281009a9b.png" 
                   alt="Lucy Copilot app screenshot" 
                   className="w-full h-full object-cover"
                 />

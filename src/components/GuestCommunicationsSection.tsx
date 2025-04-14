@@ -30,7 +30,7 @@ const GuestCommunicationsSection = () => {
                 {/* Screen content */}
                 <div className="h-full w-full bg-white rounded overflow-hidden">
                   <img 
-                    src="/public/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
+                    src="/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
                     alt="Lucy Guest Communications interface" 
                     className="w-full h-full object-cover"
                   />
