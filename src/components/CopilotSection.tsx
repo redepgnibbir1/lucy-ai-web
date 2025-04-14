@@ -1,5 +1,6 @@
 
 import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
 
 const CopilotSection = () => {
   return (
@@ -22,8 +23,24 @@ const CopilotSection = () => {
               <FeatureItem text="Gör vardagen enklare – onboarding, instruktioner och rutiner alltid nära till hands." />
             </ul>
           </div>
-          <div className="bg-lucy-blue-green rounded-lg p-6 h-72 flex items-center justify-center">
-            <p className="text-center font-medium text-lg">Produktskärmbild</p>
+          <div className="flex items-center justify-center">
+            {/* iPhone mockup with the app screenshot */}
+            <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+              {/* iPhone notch */}
+              <div className="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+              {/* iPhone buttons */}
+              <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+              <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+              <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+              {/* Content/Screenshot */}
+              <div className="h-full w-full rounded-[2rem] overflow-hidden bg-white">
+                <img 
+                  src="/public/lovable-uploads/2f76131d-b075-4d0f-bac6-c17281009a9b.png" 
+                  alt="Lucy Copilot app screenshot" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
         
@@ -62,6 +79,7 @@ const CopilotSection = () => {
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
+      <Check className="h-5 w-5 text-lucy-neon-yellow mt-0.5 flex-shrink-0" />
       <span>{text}</span>
     </li>
   );
