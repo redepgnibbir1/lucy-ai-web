@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // Define customer logo URLs with proper hotel names
 const logos = [
@@ -44,12 +44,6 @@ const logos = [
 const duplicatedLogos = [...logos, ...logos];
 
 const CustomerLogos = () => {
-  const [autoplay, setAutoplay] = useState(true);
-
-  // Pause animation on hover
-  const handleMouseEnter = () => setAutoplay(false);
-  const handleMouseLeave = () => setAutoplay(true);
-
   return (
     <section className="py-16 bg-white overflow-hidden">
       <div className="container">
@@ -65,7 +59,7 @@ const CustomerLogos = () => {
               loop: true,
             }}
             className="w-full"
-            autoplay={autoplay}
+            autoplay={true}
             interval={2000}
           >
             <CarouselContent>
@@ -101,10 +95,8 @@ const CustomerLogos = () => {
         {/* Desktop horizontal scrolling animation */}
         <div 
           className="hidden md:block relative overflow-hidden"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
         >
-          <div className={`flex gap-8 ${autoplay ? 'animate-marquee' : ''}`}>
+          <div className="flex gap-8 animate-marquee">
             {duplicatedLogos.map((logo, index) => (
               <Card
                 key={index}
