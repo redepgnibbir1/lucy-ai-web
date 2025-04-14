@@ -16,11 +16,9 @@ const Hero = () => {
           
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-10">
             <div className="flex items-center gap-2">
-              <span className="text-lucy-neon-yellow text-xl">🧠</span>
               <span>Utvecklat tillsammans med hotellchefer.</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-lucy-neon-yellow text-xl">🚀</span>
               <span>Bevisad effekt på lönsamhet, arbetsro och gästnöjdhet.</span>
             </div>
           </div>

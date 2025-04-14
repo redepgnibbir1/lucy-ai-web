@@ -6,7 +6,6 @@ const CopilotSection = () => {
     <section className="py-16 md:py-24" id="copilot">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-2xl">🧑‍🤝‍🧑</span>
           <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">LUCY COPILOT</h2>
           <p className="text-xl md:text-2xl font-medium mb-4">Få hotellet att fungera som ett team.</p>
           <p className="max-w-3xl mx-auto text-lg">
@@ -32,22 +31,18 @@ const CopilotSection = () => {
           <h3 className="text-2xl font-medium mb-8 text-center">Exempel på funktioner:</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FunctionCard 
-              emoji="📝" 
               title="Skiftrapporter" 
               description="Medarbetare rapporterar sina skift → Lucy sammanställer automatiskt och skickar en överblick varje morgon."
             />
             <FunctionCard 
-              emoji="🌍" 
               title="Automatisk översättning" 
               description="Alla meddelanden och rapporter översätts till medarbetarens modersmål."
             />
             <FunctionCard 
-              emoji="🎓" 
               title="Onboarding & utbildning" 
               description="Skapa och skicka onboardingmaterial direkt via Lucy. Anpassa per roll och avdelning."
             />
             <FunctionCard 
-              emoji="🔧" 
               title="Work orders" 
               description="Enkla felanmälningar och uppföljning. Med realtidsnotiser i mobilen eller på klockan."
             />
@@ -67,22 +62,19 @@ const CopilotSection = () => {
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
-      <span className="text-lucy-neon-yellow font-bold text-xl">✅</span>
       <span>{text}</span>
     </li>
   );
 };
 
 interface FunctionCardProps {
-  emoji: string;
   title: string;
   description: string;
 }
 
-const FunctionCard = ({ emoji, title, description }: FunctionCardProps) => {
+const FunctionCard = ({ title, description }: FunctionCardProps) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="text-2xl mb-3">{emoji}</div>
       <h4 className="text-lg font-medium mb-2">{title}</h4>
       <p className="text-sm text-gray-700">{description}</p>
     </div>

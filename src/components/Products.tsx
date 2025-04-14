@@ -6,7 +6,6 @@ const Products = () => {
     <section className="py-16 md:py-24 bg-lucy-beige">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="text-2xl">✨</span>
           <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">DETTA ÄR LUCY</h2>
           <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Tre kraftfulla produkter.</p>
           
@@ -20,7 +19,6 @@ const Products = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           <ProductCard 
-            emoji="🧑‍🤝‍🧑" 
             title="LUCY COPILOT" 
             description="Få hotellet att fungera som ett team."
             subtext="Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe."
@@ -28,7 +26,6 @@ const Products = () => {
           />
           
           <ProductCard 
-            emoji="💬" 
             title="LUCY GUEST COMMUNICATIONS" 
             description="När gästen får ett personligt meddelande – och bokar mer."
             subtext="AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen."
@@ -36,7 +33,6 @@ const Products = () => {
           />
           
           <ProductCard 
-            emoji="📊" 
             title="REPUTATION & COMPETITION DASHBOARD" 
             description="Vad säger gästerna – egentligen?"
             subtext="Få full koll på hur dina gäster upplever varje avdelning – och hur du ligger till jämfört med dina konkurrenter."
@@ -49,17 +45,15 @@ const Products = () => {
 };
 
 interface ProductCardProps {
-  emoji: string;
   title: string;
   description: string;
   subtext: string;
   ctaText: string;
 }
 
-const ProductCard = ({ emoji, title, description, subtext, ctaText }: ProductCardProps) => {
+const ProductCard = ({ title, description, subtext, ctaText }: ProductCardProps) => {
   return (
     <div className="bg-white p-8 rounded-lg flex flex-col h-full">
-      <div className="text-3xl mb-4">{emoji}</div>
       <h3 className="text-lg font-medium text-gray-500 mb-4">{title}</h3>
       <h4 className="text-xl font-medium mb-4">{description}</h4>
       <p className="text-gray-700 mb-6 flex-grow">{subtext}</p>
