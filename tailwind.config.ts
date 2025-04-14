@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				lucy: {
+					'light-gray': '#F9F9F8',
+					'dark-gray': '#1A1A1A',
+					'neon-yellow': '#C9FD59',
+					'beige': '#F1ECE5',
+					'blue-green': '#D1EAE3',
 				}
+			},
+			fontFamily: {
+				'lab-grotesque': ['Lab Grotesque', 'Inter', 'sans-serif'],
+				'martina': ['Martina Plantijn', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
