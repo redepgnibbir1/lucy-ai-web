@@ -74,6 +74,19 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
     { label: 'Om oss', href: '#about' },
   ];
 
+  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       {navItems.map((item) => (
@@ -81,6 +94,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <a
             key={item.label}
             href={item.href}
+            onClick={(e) => handleHashLinkClick(e, item.href)}
             className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
               mobile ? 'block py-2' : ''
             }`}
