@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Check } from "lucide-react";
@@ -10,9 +9,9 @@ const AboutUs = () => {
       <div className="container py-12 md:py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
           <div>
-            <h1 className="text-3xl md:text-5xl font-medium mb-6">Om Lucy AI</h1>
+            <h1 className="text-3xl md:text-5xl font-medium mb-6">Om Lucy</h1>
             <p className="text-lg text-gray-600 mb-6">
-              Lucy AI grundades med en vision om att revolutionera hotellbranschen genom 
+              Lucy grundades med en vision om att revolutionera hotellbranschen genom 
               avancerad artificiell intelligens och automatisering.
             </p>
             <p className="text-lg text-gray-600">
@@ -43,13 +42,13 @@ const AboutUs = () => {
           </div>
         </div>
         
-        <div className="mb-24">
+        <div>
           <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Vårt team</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <TeamMember 
               name="Anna Lindberg" 
               title="VD & Grundare"
-              bio="Med över 15 års erfarenhet inom hotellbranschen och teknologi grundade Anna Lucy AI för att lösa de utmaningar hon själv upplevt."
+              bio="Med över 15 års erfarenhet inom hotellbranschen och teknologi grundade Anna Lucy för att lösa de utmaningar hon själv upplevt."
             />
             <TeamMember 
               name="Erik Johansson" 
@@ -60,42 +59,6 @@ const AboutUs = () => {
               name="Maria Andersson" 
               title="Kundrelationschef"
               bio="Maria har en gedigen bakgrund inom hotellbranschen och ser till att våra lösningar verkligen möter kundernas behov."
-            />
-          </div>
-        </div>
-        
-        <div className="bg-gray-50 rounded-xl p-8 md:p-12">
-          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Vår historia</h2>
-          <div className="space-y-8">
-            <HistoryItem 
-              year="2019" 
-              title="Idén föds"
-              description="Efter år av frustration över ineffektiva hotellsystem får Anna idén till Lucy AI."
-            />
-            <HistoryItem 
-              year="2020" 
-              title="Första prototypen"
-              description="Med ett litet team av utvecklare skapas den första versionen av Lucy Copilot."
-            />
-            <HistoryItem 
-              year="2021" 
-              title="Första kunden"
-              description="Ett boutiquehotell i Stockholm blir vår första betalande kund och hjälper oss förfina produkten."
-            />
-            <HistoryItem 
-              year="2022" 
-              title="Expansion"
-              description="Lucy AI expanderar till Norge och Danmark med flera nya hotellkedjor som kunder."
-            />
-            <HistoryItem 
-              year="2023" 
-              title="Produktutökning"
-              description="Vi lanserar Reputation Dashboard och Guest Communications för att komplettera vårt erbjudande."
-            />
-            <HistoryItem 
-              year="2024" 
-              title="Europeisk expansion"
-              description="Lucy AI börjar sin expansion i Europa med fokus på Tyskland, Frankrike och Spanien."
             />
           </div>
         </div>
