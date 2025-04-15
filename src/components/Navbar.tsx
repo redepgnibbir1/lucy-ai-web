@@ -71,6 +71,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
     { label: 'Produkter', href: '#products' },
     { label: 'Fördelar', href: '/fördelar' },
     { label: 'Priser', href: '/pricing' },
+    { label: 'Kom igång', href: '/kom-igang' },
     { label: 'Om oss', href: '/about' },
   ];
 
