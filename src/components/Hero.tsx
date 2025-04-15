@@ -8,10 +8,38 @@ const Hero = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   
   useEffect(() => {
-    // Check if the font is loaded
-    document.fonts.ready.then(() => {
-      setFontsLoaded(true);
-    });
+    // Improved font loading detection
+    const checkFontsLoaded = () => {
+      // Initial quick check - use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
+        // First attempt with document.fonts API (modern browsers)
+        if ("fonts" in document) {
+          document.fonts.ready.then(() => {
+            setFontsLoaded(true);
+          }).catch(err => {
+            console.warn("Font loading error:", err);
+            // Fallback - set loaded after a delay
+            setTimeout(() => setFontsLoaded(true), 500);
+          });
+        } else {
+          // Fallback for older browsers
+          setTimeout(() => setFontsLoaded(true), 500);
+        }
+      });
+    };
+    
+    // Check if the fonts are already loaded
+    checkFontsLoaded();
+    
+    // Also set a timeout to ensure content displays even if font loading fails
+    const fallbackTimer = setTimeout(() => {
+      if (!fontsLoaded) {
+        console.log("Using fallback font loading timeout");
+        setFontsLoaded(true);
+      }
+    }, 1200);
+    
+    return () => clearTimeout(fallbackTimer);
   }, []);
   
   const handleDemoClick = () => {
