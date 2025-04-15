@@ -47,7 +47,7 @@ const CustomerLogos = () => {
     <section className="py-16 bg-white overflow-hidden">
       <div className="container">
         <h2 className="text-center font-martina text-3xl md:text-4xl mb-12">
-          Trusted by leading hotels
+          Våra kunder
         </h2>
         
         {/* Mobile carousel with auto-scroll */}
