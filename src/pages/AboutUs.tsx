@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Check, Linkedin } from "lucide-react";
@@ -68,7 +69,7 @@ const AboutUs = () => {
             <Button 
               variant="outline" 
               className="flex items-center gap-2"
-              onClick={() => window.open('https://www.linkedin.com/company/lucyhotels', '_blank')}
+              onClick={() => window.open('https://www.linkedin.com/company/lucy-analytics/', '_blank')}
             >
               <Linkedin className="h-5 w-5" />
               Läs mer på LinkedIn
@@ -107,3 +108,4 @@ const TeamMember = ({ name, title, bio, imageSrc }: TeamMemberProps) => {
 };
 
 export default AboutUs;
+
