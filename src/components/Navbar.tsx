@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LucyLogo from './LucyLogo';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,9 @@ const Navbar = () => {
     <nav className="py-6">
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
-          <LucyLogo />
+          <Link to="/">
+            <LucyLogo />
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -66,7 +69,7 @@ const Navbar = () => {
 const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   const navItems = [
     { label: 'Produkter', href: '#products' },
-    { label: 'Fördelar', href: '#benefits' },
+    { label: 'Fördelar', href: '/fördelar' },
     { label: 'Priser', href: '#pricing' },
     { label: 'Om oss', href: '#about' },
   ];
@@ -74,15 +77,27 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   return (
     <>
       {navItems.map((item) => (
-        <a
-          key={item.label}
-          href={item.href}
-          className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
-            mobile ? 'block py-2' : ''
-          }`}
-        >
-          {item.label}
-        </a>
+        item.href.startsWith('#') ? (
+          <a
+            key={item.label}
+            href={item.href}
+            className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
+              mobile ? 'block py-2' : ''
+            }`}
+          >
+            {item.label}
+          </a>
+        ) : (
+          <Link
+            key={item.label}
+            to={item.href}
+            className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
+              mobile ? 'block py-2' : ''
+            }`}
+          >
+            {item.label}
+          </Link>
+        )
       ))}
     </>
   );
