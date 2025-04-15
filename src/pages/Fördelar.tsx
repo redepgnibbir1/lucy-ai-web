@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -32,7 +31,7 @@ const Fördelar = () => {
               <FeatureItem text="Ökad merförsäljning genom personanpassad kommunikation" />
               <FeatureItem text="Högre gästnöjdhet leder till fler återkommande gäster" />
               <FeatureItem text="Lägre personalomsättning genom bättre arbetsmiljö" />
-              <FeatureItem text="ROI inom 2 månad för de flesta hotell" />
+              <FeatureItem text="ROI inom 2 månader för de flesta hotell" />
             </ul>
           </div>
         </div>
