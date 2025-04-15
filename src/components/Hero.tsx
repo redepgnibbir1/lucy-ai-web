@@ -3,35 +3,16 @@ import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
   
   useEffect(() => {
-    // Simplified font loading detection that works better on mobile
-    if (document.fonts && document.fonts.ready) {
-      // Modern browsers with FontFace API
-      document.fonts.ready
-        .then(() => {
-          console.log('Fonts loaded via document.fonts.ready');
-          setFontsLoaded(true);
-        })
-        .catch(() => {
-          // Fallback if fonts fail to load
-          setTimeout(() => setFontsLoaded(true), 600);
-        });
-    } else {
-      // Older browsers without FontFace API
-      setTimeout(() => setFontsLoaded(true), 800);
-    }
+    // Simple approach: just show content after a short delay
+    // This avoids the complexity of font loading detection which can be unreliable
+    const timer = setTimeout(() => {
+      setContentVisible(true);
+    }, 300);
     
-    // Safety fallback timer - ensures content shows even if font detection fails
-    const fallbackTimer = setTimeout(() => {
-      if (!fontsLoaded) {
-        console.log('Using ultimate fallback for font loading');
-        setFontsLoaded(true);
-      }
-    }, 1000);
-    
-    return () => clearTimeout(fallbackTimer);
+    return () => clearTimeout(timer);
   }, []);
   
   const handleDemoClick = () => {
@@ -44,18 +25,14 @@ const Hero = () => {
       <div className="container px-4 sm:px-6 lg:px-8">
         <div 
           className={`max-w-7xl mx-auto text-center transition-opacity duration-300 ${
-            fontsLoaded ? 'opacity-100' : 'opacity-0'
+            contentVisible ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ fontFamily: "'Lab Grotesque', 'Inter', sans-serif" }}
         >
-          <h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6" 
-            style={{ fontFamily: "'Martina Plantijn', serif" }}
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
             AI som syns i både bokningar och bottom line.
           </h1>
           
-          <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto">
+          <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto font-lab-grotesque">
             Kraftigt ökad merförsäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.
           </p>
           
