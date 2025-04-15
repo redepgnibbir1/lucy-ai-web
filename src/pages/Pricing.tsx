@@ -1,4 +1,5 @@
 
+import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +12,7 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen">
+      <Navbar />
       <div className="container py-12 md:py-24">
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-medium mb-6">Prisplaner för alla behov</h1>
