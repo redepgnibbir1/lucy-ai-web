@@ -67,7 +67,7 @@
   }
 }
 
-/* Improved font declarations with better iOS support */
+/* Universal font declarations for better cross-platform consistency */
 @font-face {
   font-family: 'Lab Grotesque';
   src: url('/fonts/LabGrotesque-Regular.woff2') format('woff2');
@@ -140,6 +140,17 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-martina;
+  }
+  
+  /* Ensure consistent font usage across all screen sizes */
+  @media screen and (max-width: 768px) {
+    body {
+      @apply font-lab-grotesque;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-martina;
+    }
   }
 }
 
