@@ -5,7 +5,6 @@ import Products from '@/components/Products';
 import GuestCommunicationsSection from '@/components/GuestCommunicationsSection';
 import CopilotSection from '@/components/CopilotSection';
 import CustomerLogos from '@/components/CustomerLogos';
-import ReputationDashboardSection from '@/components/ReputationDashboardSection';
 
 const Index = () => {
   return (
@@ -16,7 +15,6 @@ const Index = () => {
       <Products />
       <GuestCommunicationsSection />
       <CopilotSection />
-      <ReputationDashboardSection />
     </div>
   );
 };

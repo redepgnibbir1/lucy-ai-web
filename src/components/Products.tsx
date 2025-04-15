@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 
 const Products = () => {
@@ -6,17 +7,17 @@ const Products = () => {
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">DETTA ÄR LUCY</h2>
-          <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Tre kraftfulla produkter.</p>
+          <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Två kraftfulla produkter.</p>
           
           <p className="max-w-3xl mx-auto text-lg">
-            Lucy består av tre AI-drivna verktyg som gör hotellen bättre på det som spelar mest roll – samarbete i teamet, smart kommunikation med gäster och datadrivna beslut baserade på vad gästerna faktiskt tycker.
+            Lucy består av två AI-drivna verktyg som gör hotellen bättre på det som spelar mest roll – samarbete i teamet och smart kommunikation med gäster.
           </p>
           <p className="max-w-3xl mx-auto text-lg mt-4">
             Produkter som fungerar var för sig. Men tillsammans blir de ett oslagbart system.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <ProductCard 
             title="LUCY COPILOT" 
             description="Få hotellet att fungera som ett team."
@@ -31,14 +32,6 @@ const Products = () => {
             subtext="AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen."
             ctaText="Utforska Lucy Guest Communications"
             href="#guest-communications"
-          />
-          
-          <ProductCard 
-            title="REPUTATION & COMPETITION DASHBOARD" 
-            description="Vad säger gästerna – egentligen?"
-            subtext="Få full koll på hur dina gäster upplever varje avdelning – och hur du ligger till jämfört med dina konkurrenter."
-            ctaText="Se hur ni ligger till"
-            href="#reputation-dashboard"
           />
         </div>
       </div>
