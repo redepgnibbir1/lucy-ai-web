@@ -1,4 +1,3 @@
-
 import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -21,7 +20,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <PricingCard 
             title="Lucy Copilot"
             price="6-12€"
@@ -36,23 +35,6 @@ const Pricing = () => {
             ]}
             buttonText="Kontakta säljare"
             isPopular={true}
-          />
-          
-          <PricingCard 
-            title="Reputation Dashboard"
-            price="+1€"
-            period="rum/månad"
-            description="Förbättra ditt hotells rykte med äkta insikter från gäster."
-            features={[
-              "Integration med recensionssajter",
-              "Konkurrensanalys",
-              "Sentiment-analys",
-              "Personlig handlingsplan",
-              "Varumärkesövervakning"
-            ]}
-            buttonText="Kontakta säljare"
-            isPopular={false}
-            isAdditional={true}
           />
           
           <PricingCard 
