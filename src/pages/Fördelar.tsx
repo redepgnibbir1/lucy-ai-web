@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -21,7 +22,7 @@ const Fördelar = () => {
             <ul className="space-y-4">
               <FeatureItem text="Spara upp till 30 min per person och dag av personalens tid genom automatiserade processer" />
               <FeatureItem text="All information på ditt modersmål minskar risken för missförstånd" />
-              <FeatureItem text="Centraliserad kommunikation minskar risken för missförstånd" />
+              <FeatureItem text="Centraliserad kommunikation ger överblick över informationsflödet" />
               <FeatureItem text="AI-assistans med rutinmässiga uppgifter frigör tid för personlig service" />
             </ul>
           </div>
