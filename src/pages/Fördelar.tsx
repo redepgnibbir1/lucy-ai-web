@@ -2,8 +2,12 @@
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useState } from "react";
+import CalendlyWidget from "@/components/CalendlyWidget";
 
 const Fördelar = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -61,12 +65,13 @@ const Fördelar = () => {
         <div className="mt-16 text-center">
           <Button 
             className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
-            onClick={() => window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank')}
+            onClick={() => setIsCalendlyOpen(true)}
           >
             Boka en demo
           </Button>
         </div>
       </div>
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </div>
   );
 };

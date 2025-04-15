@@ -1,8 +1,11 @@
+
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import CalendlyWidget from './CalendlyWidget';
 
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,7 +17,7 @@ const Hero = () => {
   
   const handleDemoClick = () => {
     console.log('Demo button clicked');
-    window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
+    setIsCalendlyOpen(true);
   };
 
   return (
@@ -41,6 +44,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </section>
   );
 };

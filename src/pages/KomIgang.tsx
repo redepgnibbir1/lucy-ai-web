@@ -1,13 +1,15 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import CalendlyWidget from '@/components/CalendlyWidget';
 
 const KomIgang = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   const handleContactClick = () => {
     console.log('Contact button clicked from KomIgang page');
-    window.open('mailto:contact@lucy.ai?subject=Kom igång med Lucy', '_blank');
+    setIsCalendlyOpen(true);
   };
 
   return (
@@ -77,6 +79,7 @@ const KomIgang = () => {
           </div>
         </div>
       </div>
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </div>
   );
 };

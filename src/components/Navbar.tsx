@@ -4,14 +4,15 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LucyLogo from './LucyLogo';
 import { Link, useLocation } from 'react-router-dom';
+import CalendlyWidget from './CalendlyWidget';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   const handleDemoClick = () => {
     console.log('Demo button clicked from navbar');
-    // In a real implementation, this would navigate to a booking page or open a form
-    window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
+    setIsCalendlyOpen(true);
   };
 
   return (
@@ -62,6 +63,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </nav>
   );
 };

@@ -1,13 +1,16 @@
-
 import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
+import CalendlyWidget from "@/components/CalendlyWidget";
 
 const Pricing = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   const handleDemoClick = () => {
     console.log('Demo button clicked from pricing page');
-    window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
+    setIsCalendlyOpen(true);
   };
 
   return (
@@ -108,6 +111,7 @@ const Pricing = () => {
           </Button>
         </div>
       </div>
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </div>
   );
 };
@@ -133,9 +137,11 @@ const PricingCard = ({
   isPopular,
   isAdditional = false
 }: PricingCardProps) => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   const handleClick = () => {
     console.log(`${title} plan button clicked`);
-    window.open('mailto:contact@lucy.ai?subject=Pricing Inquiry - ' + title, '_blank');
+    setIsCalendlyOpen(true);
   };
 
   return (
@@ -182,6 +188,7 @@ const PricingCard = ({
       >
         {buttonText}
       </Button>
+      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </div>
   );
 };
