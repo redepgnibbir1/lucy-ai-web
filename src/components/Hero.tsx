@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 
@@ -6,8 +5,6 @@ const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
   
   useEffect(() => {
-    // Simple approach: just show content after a short delay
-    // This avoids the complexity of font loading detection which can be unreliable
     const timer = setTimeout(() => {
       setContentVisible(true);
     }, 300);
@@ -29,7 +26,7 @@ const Hero = () => {
           }`}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
-            AI som syns i både bokningar och bottom line.
+            Den nya kommunikationsplattformen för Hotell
           </h1>
           
           <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto font-lab-grotesque">
