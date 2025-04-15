@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
@@ -97,7 +96,7 @@ const GuestCommunicationsSection = () => {
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
-      <Check className="h-5 w-5 text-lucy-neon-yellow mt-0.5 flex-shrink-0" />
+      <Check className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
       <span>{text}</span>
     </li>
   );
