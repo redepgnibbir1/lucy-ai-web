@@ -15,7 +15,8 @@ const logos = [
   },
   { 
     src: "/lovable-uploads/579b972c-d18d-4c9b-b746-d83156364992.png", 
-    alt: "Villa Dahlia" 
+    alt: "Villa Dahlia",
+    scale: 1.5 // Increase the scale for this specific logo
   },
   { 
     src: "/lovable-uploads/6d274ded-05e0-4608-99c6-5691eab77943.png", 
@@ -71,6 +72,7 @@ const CustomerLogos = () => {
                       <img
                         src={logo.src}
                         alt={logo.alt}
+                        style={{ transform: `scale(${logo.scale || 1})` }}
                         className="max-h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -104,6 +106,7 @@ const CustomerLogos = () => {
                 <img
                   src={logo.src}
                   alt={logo.alt}
+                  style={{ transform: `scale(${logo.scale || 1})` }}
                   className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -126,4 +129,3 @@ const CustomerLogos = () => {
 };
 
 export default CustomerLogos;
-
