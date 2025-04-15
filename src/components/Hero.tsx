@@ -1,17 +1,20 @@
 
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Hero = () => {
+  const isMobile = useIsMobile();
+  
   const handleDemoClick = () => {
     console.log('Demo button clicked');
     window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
   };
 
   return (
-    <section className="py-12 md:py-20">
-      <div className="container">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
+    <section className="py-12 md:py-20 w-full">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
             Större intäkter. Mindre friktion.
           </h1>
           
