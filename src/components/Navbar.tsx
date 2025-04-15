@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LucyLogo from './LucyLogo';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,8 +67,9 @@ const Navbar = () => {
 };
 
 const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
+  const location = useLocation();
   const navItems = [
-    { label: 'Produkter', href: '#products' },
+    { label: 'Produkter', href: '/#products' },
     { label: 'Fördelar', href: '/fördelar' },
     { label: 'Priser', href: '/pricing' },
     { label: 'Kom igång', href: '/kom-igang' },
@@ -77,21 +78,28 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
 
   const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetId = href.substring(1);
-    const element = document.getElementById(targetId);
     
-    if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+    // If we're already on the homepage, just scroll to the section
+    if (location.pathname === '/') {
+      const targetId = href.substring(href.indexOf('#') + 1);
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      // If we're on another page, navigate to homepage with the hash
+      window.location.href = href;
     }
   };
 
   return (
     <>
       {navItems.map((item) => (
-        item.href.startsWith('#') ? (
+        item.href.includes('#') ? (
           <a
             key={item.label}
             href={item.href}
