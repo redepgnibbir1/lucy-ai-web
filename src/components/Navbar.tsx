@@ -71,7 +71,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
     { label: 'Produkter', href: '#products' },
     { label: 'Fördelar', href: '/fördelar' },
     { label: 'Priser', href: '/pricing' },
-    { label: 'Om oss', href: '#about' },
+    { label: 'Om oss', href: '/about' },
   ];
 
   const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
