@@ -24,7 +24,7 @@ const Pricing = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <PricingCard 
             title="Lucy Team Communications"
-            price="6-12€"
+            price="8-12€"
             period="rum/månad"
             description="Optimera ditt hotells verksamhet med vår AI-drivna kommunikationsplattform."
             features={[
