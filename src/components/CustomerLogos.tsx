@@ -44,7 +44,7 @@ const duplicatedLogos = [...logos, ...logos];
 
 const CustomerLogos = () => {
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="container">
         <h2 className="text-center font-martina text-3xl md:text-4xl mb-12">
           Våra kunder
@@ -126,3 +126,4 @@ const CustomerLogos = () => {
 };
 
 export default CustomerLogos;
+

@@ -4,12 +4,11 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   const handleDemoClick = () => {
     console.log('Demo button clicked');
-    // In a real implementation, this would navigate to a booking page or open a form
     window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank');
   };
 
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-12 md:py-20">
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-6 font-martina">
@@ -33,3 +32,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
