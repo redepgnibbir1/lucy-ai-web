@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
@@ -43,8 +44,8 @@ const GuestCommunicationsSection = () => {
           <div>
             <h3 className="text-2xl font-medium mb-6">Fördelar:</h3>
             <ul className="space-y-4">
-              <FeatureItem text="Personaliserade meddelanden som ökar merförsäljning och gästnöjdhet." />
-              <FeatureItem text="Automatiserad kommunikation som sparar tid och säkerställer konsekvent service." />
+              <FeatureItem text="Merförsäljning – Ökat upsell med +3000€/100 rum och månad." />
+              <FeatureItem text="Bättre gästupplevelse – Gäster får snabbare, mer träffsäker service – och lämnar bättre omdömen." />
               <FeatureItem text="Mångsidiga kommunikationskanaler: e-post, SMS och WhatsApp i ett enda verktyg." />
             </ul>
           </div>
