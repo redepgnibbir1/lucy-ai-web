@@ -1,9 +1,18 @@
 
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const isMobile = useIsMobile();
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Check if the font is loaded
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true);
+    });
+  }, []);
   
   const handleDemoClick = () => {
     console.log('Demo button clicked');
@@ -13,7 +22,7 @@ const Hero = () => {
   return (
     <section className="py-12 md:py-20 w-full">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className={`max-w-7xl mx-auto text-center transition-opacity duration-300 ${fontsLoaded ? 'opacity-100' : 'opacity-0'}`}>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
             Större intäkter. Mindre friktion.
           </h1>

@@ -107,6 +107,12 @@
   font-display: swap;
 }
 
+/* Add font preloading hints to the HTML */
+:root {
+  --font-loaded-opacity: 1;
+  --font-loading-opacity: 0;
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -123,4 +129,15 @@
 
 .container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Add a class for the fade in animation after fonts are loaded */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
