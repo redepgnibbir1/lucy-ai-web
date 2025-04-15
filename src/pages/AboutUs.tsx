@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Check, Linkedin } from "lucide-react";
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const AboutUs = () => {
   return (
@@ -48,6 +49,7 @@ const AboutUs = () => {
               name="Björn Treje" 
               title="Medgrundare"
               bio="20 års erfarenhet av att bygga tekniska system för B2B. Björn kommer senast från en roll som ansvarig för AI Enablement på spelutvecklaren King."
+              imageSrc="/lovable-uploads/8b52a78b-42c9-4234-96df-088d64ddf8f0.png"
             />
             <TeamMember 
               name="Peder Ribbing" 
@@ -81,12 +83,21 @@ interface TeamMemberProps {
   name: string;
   title: string;
   bio: string;
+  imageSrc?: string;
 }
 
-const TeamMember = ({ name, title, bio }: TeamMemberProps) => {
+const TeamMember = ({ name, title, bio, imageSrc }: TeamMemberProps) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="w-20 h-20 bg-gray-200 rounded-full mb-4 mx-auto"></div>
+      <div className="flex justify-center mb-4">
+        <Avatar className="w-24 h-24">
+          {imageSrc ? (
+            <AvatarImage src={imageSrc} alt={name} className="object-cover" />
+          ) : (
+            <AvatarFallback className="text-lg bg-gray-200">{name.charAt(0)}</AvatarFallback>
+          )}
+        </Avatar>
+      </div>
       <h3 className="font-medium text-xl mb-1 text-center">{name}</h3>
       <p className="text-gray-600 text-center mb-4">{title}</p>
       <p className="text-gray-600 text-sm">{bio}</p>
