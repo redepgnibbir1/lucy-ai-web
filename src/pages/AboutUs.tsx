@@ -55,6 +55,7 @@ const AboutUs = () => {
               name="Peder Ribbing" 
               title="Medgrundare"
               bio="Gedigen erfarenhet av försäljning och försäljningsutveckling inom B2B. Innan Lucy var han en av de första anställda på Peltarion och kommer senast från King som Program Director AI."
+              imageSrc="/lovable-uploads/66c2a77c-5ad1-40ba-9c37-a2c74b08a892.png"
             />
             <TeamMember 
               name="Peter Schierenbeck" 
