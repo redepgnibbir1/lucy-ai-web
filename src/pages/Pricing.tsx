@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Pricing = () => {
   const handleDemoClick = () => {
@@ -14,56 +15,102 @@ const Pricing = () => {
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-5xl font-medium mb-6">Prisplaner för alla behov</h1>
           <p className="text-xl max-w-3xl mx-auto text-gray-600">
-            Oavsett om du driver ett litet hotell eller en stor hotellkedja har vi en prisplan som passar dig.
+            Tydlig, enkel och skalbar prismodell för alla våra produkter.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <PricingCard 
-            title="Starter"
-            price="2 900"
-            description="Perfekt för små hotell som vill komma igång med Lucy."
+            title="Lucy Copilot"
+            price="6-12€"
+            period="rum/månad"
+            description="Optimera ditt hotells verksamhet med vår AI-drivna copilot."
             features={[
-              "Lucy Guest Communications",
-              "Upp till 30 rum",
-              "E-post support",
-              "Begränsade AI-funktioner"
-            ]}
-            buttonText="Kontakta säljare"
-            isPopular={false}
-          />
-          
-          <PricingCard 
-            title="Professional"
-            price="5 900"
-            description="För medelstora hotell som vill få ut maximalt av Lucy."
-            features={[
-              "Alla Starter-funktioner",
-              "Lucy Guest Communications",
-              "Lucy Reputation Dashboard",
-              "Upp till 100 rum",
-              "Prioriterad support",
-              "Fullständiga AI-funktioner"
+              "Uppkoppling mot PMS",
+              "Insikter baserade på AI",
+              "Automatiserade arbetsflöden",
+              "24/7 tillgänglig digital assistent",
+              "Anpassad för hotellbranschen"
             ]}
             buttonText="Kontakta säljare"
             isPopular={true}
           />
           
           <PricingCard 
-            title="Enterprise"
-            price="Kontakta oss"
-            description="Skräddarsydda lösningar för större hotellkedjor."
+            title="Reputation Dashboard"
+            price="+1€"
+            period="rum/månad"
+            description="Förbättra ditt hotells rykte med äkta insikter från gäster."
             features={[
-              "Alla Professional-funktioner",
-              "Lucy Copilot",
-              "Obegränsat antal rum",
-              "Dedikerad kundansvarig",
-              "24/7 support",
-              "Skräddarsydda integrationer"
+              "Integration med recensionssajter",
+              "Konkurrensanalys",
+              "Sentiment-analys",
+              "Personlig handlingsplan",
+              "Varumärkesövervakning"
+            ]}
+            buttonText="Kontakta säljare"
+            isPopular={false}
+            isAdditional={true}
+          />
+          
+          <PricingCard 
+            title="Lucy Guest Communications"
+            price="200€"
+            period="månad + 15% av merförsäljning"
+            description="Maximera intäkter och gästnöjdhet med automatiserad kommunikation."
+            features={[
+              "Automatiserade gästmeddelanden",
+              "Merförsäljning av tjänster",
+              "Uppgradering av rum",
+              "Förbättrad gästnöjdhet",
+              "Enkla upp- och nedsäljningar"
             ]}
             buttonText="Kontakta säljare"
             isPopular={false}
           />
+        </div>
+
+        <div className="mt-16 p-8 bg-gray-50 rounded-xl max-w-5xl mx-auto">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-medium mb-2">Medarbetarundersökning</h2>
+            <p className="text-gray-600">Ett tillägg till Lucy Copilot för endast <span className="font-bold">+1€ per rum och månad</span></p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-medium mb-3">Fördelar för dig</h3>
+              <ul className="space-y-2">
+                {[
+                  "Förbättrad personalengagemang",
+                  "Minskad personalomsättning",
+                  "Identifiera problem tidigt",
+                  "Datadriven personalutveckling",
+                  "Bättre teamsamarbete"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="font-medium mb-3">Inkluderade funktioner</h3>
+              <ul className="space-y-2">
+                {[
+                  "Regelbundna anonyma undersökningar",
+                  "Automatiserad rapportering",
+                  "Trendanalys över tid",
+                  "Insikter genom AI-analys",
+                  "Anpassade frågeuppsättningar"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="mt-20 text-center">
@@ -83,13 +130,24 @@ const Pricing = () => {
 interface PricingCardProps {
   title: string;
   price: string;
+  period: string;
   description: string;
   features: string[];
   buttonText: string;
   isPopular: boolean;
+  isAdditional?: boolean;
 }
 
-const PricingCard = ({ title, price, description, features, buttonText, isPopular }: PricingCardProps) => {
+const PricingCard = ({ 
+  title, 
+  price, 
+  period, 
+  description, 
+  features, 
+  buttonText, 
+  isPopular,
+  isAdditional = false
+}: PricingCardProps) => {
   const handleClick = () => {
     console.log(`${title} plan button clicked`);
     window.open('mailto:contact@lucy.ai?subject=Pricing Inquiry - ' + title, '_blank');
@@ -105,11 +163,17 @@ const PricingCard = ({ title, price, description, features, buttonText, isPopula
         </div>
       )}
       
+      {isAdditional && (
+        <div className="absolute -top-3 left-0 right-0 mx-auto w-fit px-3 py-1 bg-gray-200 text-gray-700 text-sm font-medium rounded-full">
+          Tillägg
+        </div>
+      )}
+      
       <div className="mb-5">
         <h3 className="text-xl font-medium mb-2">{title}</h3>
         <div className="flex items-end gap-1 mb-2">
           <span className="text-3xl font-bold">{price}</span>
-          {price !== "Kontakta oss" && <span className="text-gray-600">kr/mån</span>}
+          <span className="text-gray-600">{period}</span>
         </div>
         <p className="text-gray-600 text-sm">{description}</p>
       </div>
