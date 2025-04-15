@@ -21,19 +21,16 @@ const GuestCommunicationsSection = () => {
         
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
           <div className="order-last md:order-first flex justify-center items-center">
-            {/* Mac screen mockup */}
-            <div className="relative mx-auto">
-              {/* Mac screen frame */}
-              <div className="relative mx-auto bg-gray-800 rounded-t-lg w-[640px] h-[400px] pt-6 pb-4 px-4">
-                {/* Screen top bar with camera */}
-                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-red-500 mr-1"></div>
-                  <div className="w-2 h-2 rounded-full bg-yellow-500 mr-1"></div>
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <div className="relative mx-auto w-full max-w-[640px]">
+              <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
+                <div className="h-6 bg-gray-700 flex items-center px-4">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
                 </div>
-                
-                {/* Screen content */}
-                <div className="h-full w-full bg-white rounded overflow-hidden">
+                <div className="aspect-video">
                   <img 
                     src="/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
                     alt="Lucy Guest Communications interface" 
@@ -41,11 +38,6 @@ const GuestCommunicationsSection = () => {
                   />
                 </div>
               </div>
-              
-              {/* Mac stand */}
-              <div className="w-32 h-3 bg-gray-800 mx-auto rounded-b-lg"></div>
-              <div className="w-48 h-1 bg-gray-700 mx-auto rounded-b-lg"></div>
-              <div className="w-16 h-8 bg-gray-700 mx-auto rounded-b"></div>
             </div>
           </div>
           <div>
