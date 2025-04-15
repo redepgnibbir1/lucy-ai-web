@@ -1,3 +1,4 @@
+
 import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -22,10 +23,10 @@ const Pricing = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <PricingCard 
-            title="Lucy Copilot"
+            title="Lucy Team Communications"
             price="6-12€"
             period="rum/månad"
-            description="Optimera ditt hotells verksamhet med vår AI-drivna copilot."
+            description="Optimera ditt hotells verksamhet med vår AI-drivna kommunikationsplattform."
             features={[
               "Uppkoppling mot PMS",
               "Insikter baserade på AI",
