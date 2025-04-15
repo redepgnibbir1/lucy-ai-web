@@ -70,7 +70,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   const navItems = [
     { label: 'Produkter', href: '#products' },
     { label: 'Fördelar', href: '/fördelar' },
-    { label: 'Priser', href: '#pricing' },
+    { label: 'Priser', href: '/pricing' },
     { label: 'Om oss', href: '#about' },
   ];
 
