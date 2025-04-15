@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 
 const Products = () => {
@@ -39,7 +38,7 @@ const Products = () => {
             description="Vad säger gästerna – egentligen?"
             subtext="Få full koll på hur dina gäster upplever varje avdelning – och hur du ligger till jämfört med dina konkurrenter."
             ctaText="Se hur ni ligger till"
-            href="#"
+            href="#reputation-dashboard"
           />
         </div>
       </div>
