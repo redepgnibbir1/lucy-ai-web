@@ -48,7 +48,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto">
-            Mer försäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.
+            Kraftigt ökad merförsäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.
           </p>
           
           <Button 
