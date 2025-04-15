@@ -20,8 +20,8 @@ const Fördelar = () => {
           <div>
             <h2 className="text-2xl font-medium mb-8">Effektivitetsfördelar</h2>
             <ul className="space-y-4">
-              <FeatureItem text="Spara upp till 40% av personalens tid genom automatiserade processer" />
-              <FeatureItem text="Minska pappersarbete och onödiga administrativa uppgifter" />
+              <FeatureItem text="Spara upp till 30 min per person och dag av personalens tid genom automatiserade processer" />
+              <FeatureItem text="All information på ditt modersmål minskar risken för missförstånd" />
               <FeatureItem text="Centraliserad kommunikation minskar risken för missförstånd" />
               <FeatureItem text="AI-assistans med rutinmässiga uppgifter frigör tid för personlig service" />
             </ul>
@@ -32,7 +32,7 @@ const Fördelar = () => {
               <FeatureItem text="Ökad merförsäljning genom personanpassad kommunikation" />
               <FeatureItem text="Högre gästnöjdhet leder till fler återkommande gäster" />
               <FeatureItem text="Lägre personalomsättning genom bättre arbetsmiljö" />
-              <FeatureItem text="ROI inom 3-6 månader för de flesta hotell" />
+              <FeatureItem text="ROI inom 2 månad för de flesta hotell" />
             </ul>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Fördelar = () => {
             <h2 className="text-2xl font-medium mb-8">Teamfördelar</h2>
             <ul className="space-y-4">
               <FeatureItem text="Bättre intern kommunikation mellan avdelningar" />
-              <FeatureItem text="Enklare onboarding av ny personal" />
+              <FeatureItem text="Snabb onboarding av ny personal gör nya medarbetare produktiva snabbt" />
               <FeatureItem text="Tydlig uppföljning och rapportering" />
               <FeatureItem text="Minskad stress genom tydliga rutiner och instruktioner" />
             </ul>
