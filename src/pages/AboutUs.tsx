@@ -1,6 +1,8 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import { Check } from "lucide-react";
+import { Check, Linkedin } from "lucide-react";
+import { Button } from '@/components/ui/button';
 
 const AboutUs = () => {
   return (
@@ -9,14 +11,11 @@ const AboutUs = () => {
       <div className="container py-12 md:py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
           <div>
-            <h1 className="text-3xl md:text-5xl font-medium mb-6">Om Lucy</h1>
+            <h1 className="text-3xl md:text-5xl font-medium mb-6">Människor bakom maskinen</h1>
             <p className="text-lg text-gray-600 mb-6">
-              Lucy grundades med en vision om att revolutionera hotellbranschen genom 
-              avancerad artificiell intelligens och automatisering.
-            </p>
-            <p className="text-lg text-gray-600">
-              Vår mission är att hjälpa hotell att leverera enastående gästupplevelser 
-              samtidigt som de optimerar sin verksamhet och ökar sina intäkter.
+              Lucy grundades 2023 av Peder Ribbing, Peter Schierenbeck och Björn Treje – tre kollegor 
+              med bakgrund inom tech och hotell. De delar en gemensam vision: att AI kan förbättra 
+              både gästupplevelsen och arbetsmiljön inom hotellvärlden.
             </p>
           </div>
           <div className="bg-lucy-neon-yellow rounded-xl p-8">
@@ -43,23 +42,34 @@ const AboutUs = () => {
         </div>
         
         <div>
-          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Vårt team</h2>
+          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Grundare</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <TeamMember 
-              name="Anna Lindberg" 
-              title="VD & Grundare"
-              bio="Med över 15 års erfarenhet inom hotellbranschen och teknologi grundade Anna Lucy för att lösa de utmaningar hon själv upplevt."
+              name="Björn Treje" 
+              title="Medgrundare"
+              bio="20 års erfarenhet av att bygga tekniska system för B2B. Björn kommer senast från en roll som ansvarig för AI Enablement på spelutvecklaren King."
             />
             <TeamMember 
-              name="Erik Johansson" 
-              title="Teknisk chef"
-              bio="Erik leder vårt utvecklingsteam med sin omfattande erfarenhet inom AI och maskininlärning från både Google och Microsoft."
+              name="Peder Ribbing" 
+              title="Medgrundare"
+              bio="Gedigen erfarenhet av försäljning och försäljningsutveckling inom B2B. Innan Lucy var han en av de första anställda på Peltarion och kommer senast från King som Program Director AI."
             />
             <TeamMember 
-              name="Maria Andersson" 
-              title="Kundrelationschef"
-              bio="Maria har en gedigen bakgrund inom hotellbranschen och ser till att våra lösningar verkligen möter kundernas behov."
+              name="Peter Schierenbeck" 
+              title="Medgrundare"
+              bio="Serieetreprenör med startups som Alvalabs och Lendify bakom sig. Peter arbetade tidigare som Investment Manager på EQT Ventures."
             />
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Button 
+              variant="outline" 
+              className="flex items-center gap-2"
+              onClick={() => window.open('https://www.linkedin.com/company/lucyhotels', '_blank')}
+            >
+              <Linkedin className="h-5 w-5" />
+              Läs mer på LinkedIn
+            </Button>
           </div>
         </div>
       </div>
@@ -80,24 +90,6 @@ const TeamMember = ({ name, title, bio }: TeamMemberProps) => {
       <h3 className="font-medium text-xl mb-1 text-center">{name}</h3>
       <p className="text-gray-600 text-center mb-4">{title}</p>
       <p className="text-gray-600 text-sm">{bio}</p>
-    </div>
-  );
-};
-
-interface HistoryItemProps {
-  year: string;
-  title: string;
-  description: string;
-}
-
-const HistoryItem = ({ year, title, description }: HistoryItemProps) => {
-  return (
-    <div className="flex gap-6">
-      <div className="text-xl font-bold text-lucy-neon-yellow w-16 flex-shrink-0">{year}</div>
-      <div>
-        <h3 className="font-medium text-xl mb-1">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-      </div>
     </div>
   );
 };
