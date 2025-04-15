@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Check, Linkedin } from "lucide-react";
@@ -61,6 +60,7 @@ const AboutUs = () => {
               name="Peter Schierenbeck" 
               title="Medgrundare"
               bio="Serieetreprenör med startups som Alvalabs och Lendify bakom sig. Peter arbetade tidigare som Investment Manager på EQT Ventures."
+              imageSrc="/lovable-uploads/f99fa05a-1681-447e-b3a1-b57f7bd0bb52.png"
             />
           </div>
           
