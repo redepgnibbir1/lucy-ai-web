@@ -56,7 +56,7 @@ const Navbar = () => {
             <NavLinks />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-dark-gray-new">
+                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-medium-gray">
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-dark-gray-new">
+                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-medium-gray">
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -167,7 +167,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
             key={item.label}
             href={item.href}
             onClick={(e) => handleHashLinkClick(e, item.href)}
-            className={`text-lucy-white hover:text-lucy-light-gray-new transition-opacity ${
+            className={`text-lucy-black hover:text-lucy-medium-gray transition-opacity ${
               mobile ? 'block py-2' : ''
             }`}
           >
@@ -177,7 +177,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <Link
             key={item.label}
             to={item.href}
-            className={`text-lucy-white hover:text-lucy-light-gray-new transition-opacity ${
+            className={`text-lucy-black hover:text-lucy-medium-gray transition-opacity ${
               mobile ? 'block py-2' : ''
             }`}
           >
