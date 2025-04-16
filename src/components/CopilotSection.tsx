@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
@@ -6,17 +5,16 @@ import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 
 const CopilotSection = () => {
   const handleLearnMoreClick = () => {
-    console.log('Learn more about Lucy Copilot clicked');
-    // In a real implementation, this might navigate to a product page
-    window.open('mailto:contact@lucy.ai?subject=Lucy Copilot Inquiry', '_blank');
+    console.log('Learn more about Lucy Team Communications clicked');
+    window.open('mailto:contact@lucy.ai?subject=Lucy Team Communications Inquiry', '_blank');
   };
 
   return (
-    <section className="py-16 md:py-24 bg-lucy-dark-gray-new text-lucy-white" id="copilot">
+    <section className="py-16 md:py-24 bg-lucy-dark-gray-new text-lucy-white" id="team-communications">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">LUCY COPILOT</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">LUCY TEAM COMMUNICATIONS</h2>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
             <p className="text-xl md:text-2xl font-medium mb-4">Få hotellet att fungera som ett team.</p>
@@ -40,16 +38,12 @@ const CopilotSection = () => {
             </Animate>
           </div>
           <div className="flex items-center justify-center">
-            {/* iPhone mockup with the app screenshot */}
             <Animate variants={slideInRight}>
               <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-                {/* iPhone notch */}
                 <div className="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-                {/* iPhone buttons */}
                 <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
                 <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                 <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                {/* Content/Screenshot */}
                 <div className="h-full w-full rounded-[2rem] overflow-hidden bg-white">
                   <img 
                     src="/lovable-uploads/2f76131d-b075-4d0f-bac6-c17281009a9b.png" 
@@ -99,7 +93,7 @@ const CopilotSection = () => {
                 className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
                 onClick={handleLearnMoreClick}
               >
-                Läs mer om Lucy Copilot
+                Läs mer om Lucy Team Communications
               </Button>
             </Animate>
           </div>

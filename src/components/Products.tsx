@@ -30,11 +30,11 @@ const Products = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
             <ProductCard 
-              title="LUCY COPILOT" 
+              title="LUCY TEAM COMMUNICATIONS" 
               description="Få hotellet att fungera som ett team."
               subtext="Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe."
-              ctaText="Läs mer om Lucy Copilot"
-              href="#copilot"
+              ctaText="Läs mer om Lucy Team Communications"
+              href="#team-communications"
             />
           </Animate>
           
