@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-[#333333] text-lucy-white shadow-md py-4' : 'bg-[#333333] text-lucy-white py-6'
+      isScrolled ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-white text-lucy-black py-6'
     }`}>
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">
@@ -56,7 +56,7 @@ const Navbar = () => {
             <NavLinks />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-white hover:text-lucy-light-gray-new">
+                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-dark-gray-new">
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-white hover:text-lucy-light-gray-new">
+                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-dark-gray-new">
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -99,9 +99,9 @@ const Navbar = () => {
               aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-lucy-white" />
+                <X className="h-6 w-6 text-lucy-black" />
               ) : (
-                <Menu className="h-6 w-6 text-lucy-white" />
+                <Menu className="h-6 w-6 text-lucy-black" />
               )}
             </button>
           </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden container mt-4 pb-4 bg-lucy-black">
+          <div className="md:hidden container mt-4 pb-4 bg-white">
             <div className="flex flex-col space-y-4">
               <NavLinks mobile />
               <Button 
