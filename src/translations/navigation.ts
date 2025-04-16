@@ -1,4 +1,3 @@
-
 export const navigationTranslations = {
   'nav.products': {
     sv: 'Produkter',
@@ -23,5 +22,9 @@ export const navigationTranslations = {
   'nav.bookDemo': {
     sv: 'Boka en demo',
     en: 'Book a Demo'
+  },
+  'navbar.customerSection': {
+    sv: 'Våra kunder',
+    en: 'Our Clients'
   }
 };

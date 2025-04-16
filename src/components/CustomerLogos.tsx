@@ -1,4 +1,4 @@
-
+import React from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Define customer logo URLs with proper hotel names
 const logos = [
@@ -44,11 +45,13 @@ const logos = [
 const duplicatedLogos = [...logos, ...logos];
 
 const CustomerLogos = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-12 bg-lucy-white text-lucy-black overflow-hidden">
       <div className="container">
         <h2 className="text-center font-martina text-3xl md:text-4xl mb-12">
-          Våra kunder
+          {t('navbar.customerSection')}
         </h2>
         
         {/* Mobile carousel with auto-scroll */}
@@ -129,4 +132,3 @@ const CustomerLogos = () => {
 };
 
 export default CustomerLogos;
-
