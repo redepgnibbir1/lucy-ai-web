@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
@@ -14,7 +15,7 @@ const CopilotSection = () => {
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">LUCY TEAM COMMUNICATIONS</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">Lucy Team Communications</h2>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
             <p className="text-xl md:text-2xl font-medium mb-4">Få hotellet att fungera som ett team.</p>

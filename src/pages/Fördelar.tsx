@@ -17,7 +17,7 @@ const Fördelar = () => {
         <Animate variants={staggerContainer}>
           <Animate variants={fadeInUp}>
             <div className="text-center mb-16">
-              <h1 className="text-3xl md:text-4xl font-medium mb-6">FÖRDELAR MED LUCY</h1>
+              <h1 className="text-3xl md:text-4xl font-medium mb-6">Fördelar med Lucy</h1>
               <p className="text-xl max-w-3xl mx-auto">
                 Genom att välja Lucy får hotell en rad fördelar som förbättrar kommunikation, ökar effektiviteten och förbättrar gästupplevelsen.
               </p>

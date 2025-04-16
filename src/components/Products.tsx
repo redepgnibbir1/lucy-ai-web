@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -9,7 +8,7 @@ const Products = () => {
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">DETTA ÄR LUCY</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">Detta är Lucy</h2>
           </Animate>
           <Animate variants={slideInLeft}>
             <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Två kraftfulla produkter.</p>
