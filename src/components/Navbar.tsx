@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -29,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-lucy-black text-lucy-white shadow-md py-4' : 'bg-transparent text-lucy-white py-6'
+      isScrolled ? 'bg-[#333333] text-lucy-white shadow-md py-4' : 'bg-[#333333] text-lucy-white py-6'
     }`}>
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">

@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-12 md:py-20 w-full bg-lucy-black text-lucy-white">
+    <section className="py-12 md:py-20 w-full bg-[#333333] text-lucy-white">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <Animate variants={fadeInUp}>
