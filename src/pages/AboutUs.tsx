@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import { Check, Linkedin } from "lucide-react";
@@ -5,8 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutUs = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -15,28 +19,25 @@ const AboutUs = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
             <Animate variants={fadeInUp}>
               <div>
-                <h1 className="text-3xl md:text-5xl font-medium mb-6">Människor bakom maskinen</h1>
+                <h1 className="text-3xl md:text-5xl font-medium mb-6">{t('about.title')}</h1>
                 <p className="text-lg text-gray-600 mb-6">
-                  Lucy grundades 2023 av Peder Ribbing, Peter Schierenbeck och Björn Treje – tre kollegor 
-                  med bakgrund inom tech och hotell. De delar en gemensam vision: att AI kan förbättra 
-                  både gästupplevelsen och arbetsmiljön inom hotellvärlden.
+                  {t('about.intro')}
                 </p>
               </div>
             </Animate>
             <Animate variants={slideInRight}>
               <div className="bg-lucy-neon-yellow rounded-xl p-8">
-                <h2 className="text-2xl font-medium mb-4 text-lucy-dark-gray">Vår vision</h2>
+                <h2 className="text-2xl font-medium mb-4 text-lucy-dark-gray">{t('about.vision.title')}</h2>
                 <p className="text-lucy-dark-gray mb-6">
-                  Att vara den ledande AI-partnern för hotellbranschen, som skapar mätbart värde 
-                  genom datadriven insikt och automatisering.
+                  {t('about.vision.text')}
                 </p>
-                <h2 className="text-2xl font-medium mb-4 text-lucy-dark-gray">Våra värderingar</h2>
+                <h2 className="text-2xl font-medium mb-4 text-lucy-dark-gray">{t('about.values.title')}</h2>
                 <ul className="space-y-3">
                   {[
-                    "Innovation i allt vi gör",
-                    "Enkelhet i komplexitet",
-                    "Mätbara resultat för våra kunder",
-                    "Ständig förbättring"
+                    t('about.values.item1'),
+                    t('about.values.item2'),
+                    t('about.values.item3'),
+                    t('about.values.item4')
                   ].map((value, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <Check className="h-5 w-5 text-lucy-dark-gray flex-shrink-0" />
@@ -50,29 +51,29 @@ const AboutUs = () => {
           
           <Animate variants={fadeInUp}>
             <div>
-              <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">Grundare</h2>
+              <h2 className="text-2xl md:text-3xl font-medium mb-8 text-center">{t('about.founders.title')}</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <Animate variants={slideInLeft} transition={{ delay: 0.2 }}>
                   <TeamMember 
-                    name="Björn Treje" 
-                    title="Medgrundare"
-                    bio="20 års erfarenhet av att bygga tekniska system för B2B. Björn kommer senast från en roll som ansvarig för AI Enablement på spelutvecklaren King."
+                    name={t('about.founders.bjorn.name')}
+                    title={t('about.founders.bjorn.title')}
+                    bio={t('about.founders.bjorn.bio')}
                     imageSrc="/lovable-uploads/8b52a78b-42c9-4234-96df-088d64ddf8f0.png"
                   />
                 </Animate>
                 <Animate variants={slideInLeft} transition={{ delay: 0.4 }}>
                   <TeamMember 
-                    name="Peder Ribbing" 
-                    title="Medgrundare"
-                    bio="Gedigen erfarenhet av försäljning och försäljningsutveckling inom B2B. Innan Lucy var han en av de första anställda på Peltarion och kommer senast från King som Program Director AI."
+                    name={t('about.founders.peder.name')}
+                    title={t('about.founders.peder.title')}
+                    bio={t('about.founders.peder.bio')}
                     imageSrc="/lovable-uploads/66c2a77c-5ad1-40ba-9c37-a2c74b08a892.png"
                   />
                 </Animate>
                 <Animate variants={slideInLeft} transition={{ delay: 0.6 }}>
                   <TeamMember 
-                    name="Peter Schierenbeck" 
-                    title="Medgrundare"
-                    bio="Serieetreprenör med startups som Alvalabs och Lendify bakom sig. Peter arbetade tidigare som Investment Manager på EQT Ventures."
+                    name={t('about.founders.peter.name')}
+                    title={t('about.founders.peter.title')}
+                    bio={t('about.founders.peter.bio')}
                     imageSrc="/lovable-uploads/f99fa05a-1681-447e-b3a1-b57f7bd0bb52.png"
                   />
                 </Animate>
@@ -86,7 +87,7 @@ const AboutUs = () => {
                     onClick={() => window.open('https://www.linkedin.com/company/lucy-analytics/', '_blank')}
                   >
                     <Linkedin className="h-5 w-5" />
-                    Läs mer på LinkedIn
+                    {t('about.linkedinButton')}
                   </Button>
                 </div>
               </Animate>
@@ -125,4 +126,3 @@ const TeamMember = ({ name, title, bio, imageSrc }: TeamMemberProps) => {
 };
 
 export default AboutUs;
-
