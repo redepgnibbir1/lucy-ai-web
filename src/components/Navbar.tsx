@@ -1,14 +1,25 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LucyLogo from './LucyLogo';
 import { Link, useLocation } from 'react-router-dom';
 import CalendlyWidget from './CalendlyWidget';
+import { Animate } from '@/components/ui/animate';
+import { fadeIn } from '@/lib/utils';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleDemoClick = () => {
     console.log('Demo button clicked from navbar');
@@ -16,53 +27,57 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="py-6">
-      <div className="container flex items-center justify-between">
-        <div className="flex items-center">
-          <Link to="/">
-            <LucyLogo />
-          </Link>
-        </div>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+    }`}>
+      <Animate variants={fadeIn}>
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center">
+            <Link to="/">
+              <LucyLogo />
+            </Link>
+          </div>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
-          <NavLinks />
-          <Button 
-            className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium"
-            onClick={handleDemoClick}
-          >
-            Boka en demo
-          </Button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
-        >
-          {isMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <Menu className="h-6 w-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden container mt-4 pb-4">
-          <div className="flex flex-col space-y-4">
-            <NavLinks mobile />
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <NavLinks />
             <Button 
-              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 w-full font-medium"
+              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium"
               onClick={handleDemoClick}
             >
               Boka en demo
             </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
         </div>
-      )}
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden container mt-4 pb-4">
+            <div className="flex flex-col space-y-4">
+              <NavLinks mobile />
+              <Button 
+                className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 w-full font-medium"
+                onClick={handleDemoClick}
+              >
+                Boka en demo
+              </Button>
+            </div>
+          </div>
+        )}
+      </Animate>
       <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </nav>
   );

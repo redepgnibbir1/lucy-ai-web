@@ -69,7 +69,7 @@
 @layer base {
   @font-face {
     font-family: 'Lab Grotesque';
-    src: url('/fonts/LabGrotesque-Regular.woff2') format('woff2');
+    src: url('/fonts/LabGrotesqueRegularWeb/LabGrotesque-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -77,7 +77,7 @@
 
   @font-face {
     font-family: 'Lab Grotesque';
-    src: url('/fonts/LabGrotesque-Medium.woff2') format('woff2');
+    src: url('/fonts/LabGrotesqueMediumWeb/LabGrotesque-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -93,7 +93,8 @@
 
   @font-face {
     font-family: 'Martina Plantijn';
-    src: url('/fonts/MartinaPlantijn-Regular.woff2') format('woff2');
+    /* src: url('/fonts/MartinaPlantijn-Regular.woff2') format('woff2'); */
+    src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -101,7 +102,7 @@
 
   @font-face {
     font-family: 'Martina Plantijn';
-    src: url('/fonts/MartinaPlantijn-Medium.woff2') format('woff2');
+    src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Medium.otf') format('opentype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

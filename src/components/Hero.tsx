@@ -1,7 +1,8 @@
-
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import CalendlyWidget from './CalendlyWidget';
+import { Animate } from '@/components/ui/animate';
+import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
@@ -23,25 +24,27 @@ const Hero = () => {
   return (
     <section className="py-12 md:py-20 w-full">
       <div className="container px-4 sm:px-6 lg:px-8">
-        <div 
-          className={`max-w-7xl mx-auto text-center transition-opacity duration-300 ${
-            contentVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6 font-martina">
-            Den nya kommunikationsplattformen för Hotell
-          </h1>
+        <div className="max-w-7xl mx-auto text-center">
+          <Animate variants={fadeInUp}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6">
+              Den nya kommunikationsplattformen för Hotell
+            </h1>
+          </Animate>
           
-          <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto font-lab-grotesque">
-            Kraftigt ökad merförsäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.
-          </p>
+          <Animate variants={slideInLeft} transition={{ delay: 0.4 }}>
+            <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray/80 max-w-4xl mx-auto font-lab-grotesque">
+              Kraftigt ökad merförsäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.
+            </p>
+          </Animate>
           
-          <Button 
-            className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto"
-            onClick={handleDemoClick}
-          >
-            Boka en demo
-          </Button>
+          <Animate variants={slideInRight} transition={{ delay: 0.8 }}>
+            <Button 
+              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto"
+              onClick={handleDemoClick}
+            >
+              Boka en demo
+            </Button>
+          </Animate>
         </div>
       </div>
       <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />

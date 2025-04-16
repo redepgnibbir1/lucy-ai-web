@@ -1,38 +1,51 @@
-
 import { Button } from '@/components/ui/button';
+import { Animate } from '@/components/ui/animate';
+import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 
 const Products = () => {
   return (
     <section className="py-16 md:py-24 bg-lucy-beige" id="products">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">DETTA ÄR LUCY</h2>
-          <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Två kraftfulla produkter.</p>
+          <Animate variants={fadeInUp}>
+            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">DETTA ÄR LUCY</h2>
+          </Animate>
+          <Animate variants={slideInLeft}>
+            <p className="text-xl md:text-2xl font-medium mb-4">En plattform. Två kraftfulla produkter.</p>
+          </Animate>
           
-          <p className="max-w-3xl mx-auto text-lg">
-            Lucy består av två AI-drivna verktyg som gör hotellen bättre på det som spelar mest roll – samarbete i teamet och smart kommunikation med gäster.
-          </p>
-          <p className="max-w-3xl mx-auto text-lg mt-4">
-            Produkter som fungerar var för sig. Men tillsammans blir de ett oslagbart system.
-          </p>
+          <Animate variants={slideInRight}>
+            <p className="max-w-3xl mx-auto text-lg">
+              Lucy består av två AI-drivna verktyg som gör hotellen bättre på det som spelar mest roll – samarbete i teamet och smart kommunikation med gäster.
+            </p>
+          </Animate>
+          <Animate variants={slideInLeft}>
+            <p className="max-w-3xl mx-auto text-lg mt-4">
+              Produkter som fungerar var för sig. Men tillsammans blir de ett oslagbart system.
+            </p>
+          </Animate>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <ProductCard 
-            title="LUCY COPILOT" 
-            description="Få hotellet att fungera som ett team."
-            subtext="Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe."
-            ctaText="Läs mer om Lucy Copilot"
-            href="#copilot"
-          />
+          <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
+            <ProductCard 
+              title="LUCY COPILOT" 
+              description="Få hotellet att fungera som ett team."
+              subtext="Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe."
+              ctaText="Läs mer om Lucy Copilot"
+              href="#copilot"
+            />
+          </Animate>
           
-          <ProductCard 
-            title="LUCY GUEST COMMUNICATIONS" 
-            description="När gästen får ett personligt meddelande – och bokar mer."
-            subtext="AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen."
-            ctaText="Utforska Lucy Guest Communications"
-            href="#guest-communications"
-          />
+          <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
+            <ProductCard 
+              title="LUCY GUEST COMMUNICATIONS" 
+              description="När gästen får ett personligt meddelande – och bokar mer."
+              subtext="AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen."
+              ctaText="Utforska Lucy Guest Communications"
+              href="#guest-communications"
+            />
+          </Animate>
         </div>
       </div>
     </section>
