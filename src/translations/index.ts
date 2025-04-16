@@ -6,6 +6,7 @@ import { guestCommunicationsTranslations } from './guest-communications';
 import { benefitsTranslations } from './benefits';
 import { getStartedTranslations } from './get-started';
 import { aboutTranslations } from './about';
+import { teamCommunicationsTranslations } from './team-communications';
 
 // Merge all translation objects into one
 export const translations = {
@@ -15,5 +16,6 @@ export const translations = {
   ...guestCommunicationsTranslations,
   ...benefitsTranslations,
   ...getStartedTranslations,
-  ...aboutTranslations
+  ...aboutTranslations,
+  ...teamCommunicationsTranslations
 };

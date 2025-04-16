@@ -3,8 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CopilotSection = () => {
+  const { t } = useLanguage();
+  
   const handleLearnMoreClick = () => {
     console.log('Learn more about Lucy Team Communications clicked');
     window.open('mailto:contact@lucy.ai?subject=Lucy Team Communications Inquiry', '_blank');
@@ -15,14 +18,14 @@ const CopilotSection = () => {
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">Lucy Team Communications</h2>
+            <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">{t('teamComm.title')}</h2>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
-            <p className="text-xl md:text-2xl font-medium mb-4">Få hotellet att fungera som ett team.</p>
+            <p className="text-xl md:text-2xl font-medium mb-4">{t('teamComm.subtitle')}</p>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
             <p className="max-w-3xl mx-auto text-lg text-lucy-light-gray-new">
-              Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe.
+              {t('teamComm.description')}
             </p>
           </Animate>
         </div>
@@ -30,11 +33,11 @@ const CopilotSection = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
           <div>
             <Animate variants={slideInLeft}>
-              <h3 className="text-2xl font-medium mb-6">Fördelar:</h3>
+              <h3 className="text-2xl font-medium mb-6">{t('teamComm.benefits.title')}</h3>
               <ul className="space-y-4 text-lucy-light-gray-new">
-                <FeatureItem text="Bygger bort silos – all intern kommunikation i en kanal." />
-                <FeatureItem text="Sparar tid – AI hjälper till med rapporter, översättningar och arbetsordrar." />
-                <FeatureItem text="Gör vardagen enklare – onboarding, instruktioner och rutiner alltid nära till hands." />
+                <FeatureItem text={t('teamComm.benefits.silos')} />
+                <FeatureItem text={t('teamComm.benefits.time')} />
+                <FeatureItem text={t('teamComm.benefits.daily')} />
               </ul>
             </Animate>
           </div>
@@ -59,31 +62,31 @@ const CopilotSection = () => {
         
         <div>
           <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
-            <h3 className="text-2xl font-medium mb-8 text-center">Exempel på funktioner:</h3>
+            <h3 className="text-2xl font-medium mb-8 text-center">{t('teamComm.functions.title')}</h3>
           </Animate>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Animate variants={fadeInUp} transition={{ delay: 0.8 }}>
               <FunctionCard 
-                title="Skiftrapporter" 
-                description="Medarbetare rapporterar sina skift → Lucy sammanställer automatiskt och skickar en överblick varje morgon."
+                title={t('teamComm.functions.shifts')} 
+                description={t('teamComm.functions.shifts.desc')}
               />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.0 }}>
               <FunctionCard 
-                title="Automatisk översättning" 
-                description="Alla meddelanden och rapporter översätts till medarbetarens modersmål."
+                title={t('teamComm.functions.translation')} 
+                description={t('teamComm.functions.translation.desc')}
               />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.2 }}>
               <FunctionCard 
-                title="Onboarding & utbildning" 
-                description="Skapa och skicka onboardingmaterial direkt via Lucy. Anpassa per roll och avdelning."
+                title={t('teamComm.functions.onboarding')} 
+                description={t('teamComm.functions.onboarding.desc')}
               />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
               <FunctionCard 
-                title="Work orders" 
-                description="Enkla felanmälningar och uppföljning. Med realtidsnotiser i mobilen eller på klockan."
+                title={t('teamComm.functions.workorders')} 
+                description={t('teamComm.functions.workorders.desc')}
               />
             </Animate>
           </div>
@@ -94,7 +97,7 @@ const CopilotSection = () => {
                 className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
                 onClick={handleLearnMoreClick}
               >
-                Läs mer om Lucy Team Communications
+                {t('teamComm.cta')}
               </Button>
             </Animate>
           </div>
