@@ -1,12 +1,15 @@
+
 import Navbar from '@/components/Navbar';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState } from "react";
 import CalendlyWidget from "@/components/CalendlyWidget";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Pricing = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const { t, language } = useLanguage();
 
   const handleDemoClick = () => {
     console.log('Demo button clicked from pricing page');
@@ -18,62 +21,44 @@ const Pricing = () => {
       <Navbar />
       <div className="container py-12 md:py-24">
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-medium mb-6">Prisplaner för alla behov</h1>
+          <h1 className="text-3xl md:text-5xl font-medium mb-6">{t('pricing.pageTitle')}</h1>
           <p className="text-xl max-w-3xl mx-auto text-gray-600">
-            Tydlig, enkel och skalbar prismodell för alla våra produkter.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <PricingCard 
-            title="Lucy Team Communications"
-            price="8-12€"
-            period="rum/månad"
-            description="Optimera ditt hotells verksamhet med vår AI-drivna kommunikationsplattform."
-            features={[
-              "Uppkoppling mot PMS",
-              "Insikter baserade på AI",
-              "Automatiserade arbetsflöden",
-              "24/7 tillgänglig digital assistent",
-              "Anpassad för hotellbranschen"
-            ]}
-            buttonText="Kontakta säljare"
+            title={t('pricing.teamCommunications.title')}
+            price={t('pricing.teamCommunications.price')}
+            period={t('pricing.teamCommunications.period')}
+            description={t('pricing.teamCommunications.description')}
+            features={t('pricing.teamCommunications.features')}
+            buttonText={t('pricing.teamCommunications.buttonText')}
             isPopular={true}
           />
           
           <PricingCard 
-            title="Lucy Guest Communications"
-            price="200€"
-            period="månad + 15% av merförsäljning"
-            description="Maximera intäkter och gästnöjdhet med automatiserad kommunikation."
-            features={[
-              "Automatiserade gästmeddelanden",
-              "Merförsäljning av tjänster",
-              "Uppgradering av rum",
-              "Förbättrad gästnöjdhet",
-              "Enkla upp- och nedsäljningar"
-            ]}
-            buttonText="Kontakta säljare"
+            title={t('pricing.guestCommunications.title')}
+            price={t('pricing.guestCommunications.price')}
+            period={t('pricing.guestCommunications.period')}
+            description={t('pricing.guestCommunications.description')}
+            features={t('pricing.guestCommunications.features')}
+            buttonText={t('pricing.guestCommunications.buttonText')}
             isPopular={false}
           />
         </div>
 
         <div className="mt-16 p-8 bg-gray-50 rounded-xl max-w-5xl mx-auto">
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-medium mb-2">Medarbetarundersökning</h2>
-            <p className="text-gray-600">Ett tillägg till Lucy Copilot för endast <span className="font-bold">+1€ per rum och månad</span></p>
+            <h2 className="text-2xl font-medium mb-2">{t('pricing.staffSurvey.title')}</h2>
+            <p className="text-gray-600">{t('pricing.staffSurvey.subtitle')} <span className="font-bold">{t('pricing.staffSurvey.price')}</span></p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-medium mb-3">Fördelar för dig</h3>
+              <h3 className="font-medium mb-3">{t('pricing.staffSurvey.benefits.title')}</h3>
               <ul className="space-y-2">
-                {[
-                  "Förbättrad personalengagemang",
-                  "Minskad personalomsättning",
-                  "Identifiera problem tidigt",
-                  "Datadriven personalutveckling",
-                  "Bättre teamsamarbete"
-                ].map((item, index) => (
+                {t('pricing.staffSurvey.benefits.items').map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
                     <span className="text-sm">{item}</span>
@@ -82,15 +67,9 @@ const Pricing = () => {
               </ul>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-medium mb-3">Inkluderade funktioner</h3>
+              <h3 className="font-medium mb-3">{t('pricing.staffSurvey.features.title')}</h3>
               <ul className="space-y-2">
-                {[
-                  "Regelbundna anonyma undersökningar",
-                  "Automatiserad rapportering",
-                  "Trendanalys över tid",
-                  "Insikter genom AI-analys",
-                  "Anpassade frågeuppsättningar"
-                ].map((item, index) => (
+                {t('pricing.staffSurvey.features.items').map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
                     <span className="text-sm">{item}</span>
@@ -102,12 +81,12 @@ const Pricing = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <h2 className="text-2xl md:text-3xl font-medium mb-8">Har du frågor om våra prisplaner?</h2>
+          <h2 className="text-2xl md:text-3xl font-medium mb-8">{t('pricing.questions.title')}</h2>
           <Button 
             className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
             onClick={handleDemoClick}
           >
-            Boka en demo
+            {t('pricing.questions.buttonText')}
           </Button>
         </div>
       </div>
@@ -138,6 +117,7 @@ const PricingCard = ({
   isAdditional = false
 }: PricingCardProps) => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const { t } = useLanguage();
 
   const handleClick = () => {
     console.log(`${title} plan button clicked`);
@@ -150,7 +130,7 @@ const PricingCard = ({
     }`}>
       {isPopular && (
         <div className="absolute -top-3 left-0 right-0 mx-auto w-fit px-3 py-1 bg-lucy-neon-yellow text-lucy-dark-gray text-sm font-medium rounded-full">
-          Populärast
+          {t('pricing.popular')}
         </div>
       )}
       
