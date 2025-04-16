@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,7 +29,7 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+      isScrolled ? 'bg-lucy-black text-lucy-white shadow-md py-4' : 'bg-transparent text-lucy-white py-6'
     }`}>
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">
@@ -42,7 +43,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <NavLinks />
             <Button 
-              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium"
+              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium"
               onClick={handleDemoClick}
             >
               Boka en demo
@@ -56,20 +57,20 @@ const Navbar = () => {
             aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 text-lucy-white" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-lucy-white" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden container mt-4 pb-4">
+          <div className="md:hidden container mt-4 pb-4 bg-lucy-black">
             <div className="flex flex-col space-y-4">
               <NavLinks mobile />
               <Button 
-                className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 w-full font-medium"
+                className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 w-full font-medium"
                 onClick={handleDemoClick}
               >
                 Boka en demo
@@ -121,7 +122,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
             key={item.label}
             href={item.href}
             onClick={(e) => handleHashLinkClick(e, item.href)}
-            className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
+            className={`text-lucy-white hover:text-lucy-light-gray-new transition-opacity ${
               mobile ? 'block py-2' : ''
             }`}
           >
@@ -131,7 +132,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <Link
             key={item.label}
             to={item.href}
-            className={`text-lucy-dark-gray hover:opacity-80 transition-opacity ${
+            className={`text-lucy-white hover:text-lucy-light-gray-new transition-opacity ${
               mobile ? 'block py-2' : ''
             }`}
           >

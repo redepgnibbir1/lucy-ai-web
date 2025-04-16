@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -68,6 +69,12 @@ export default {
 					'neon-yellow': '#C9FD59',
 					'beige': '#F1ECE5',
 					'blue-green': '#D1EAE3',
+					// New color palette
+					'black': '#000000',
+					'dark-gray-new': '#333333',
+					'medium-gray': '#777777',
+					'light-gray-new': '#CCCCCC',
+					'white': '#FFFFFF',
 				}
 			},
 			fontFamily: {

@@ -1,10 +1,11 @@
+
 import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 
 const Products = () => {
   return (
-    <section className="py-16 md:py-24 bg-lucy-beige" id="products">
+    <section className="py-16 md:py-24 bg-lucy-medium-gray text-lucy-white" id="products">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
@@ -69,13 +70,13 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg flex flex-col h-full">
-      <h3 className="text-lg font-medium text-gray-500 mb-4">{title}</h3>
+    <div className="bg-lucy-dark-gray-new p-8 rounded-lg flex flex-col h-full text-lucy-white">
+      <h3 className="text-lg font-medium text-lucy-light-gray-new mb-4">{title}</h3>
       <h4 className="text-xl font-medium mb-4">{description}</h4>
-      <p className="text-gray-700 mb-6 flex-grow">{subtext}</p>
+      <p className="text-lucy-light-gray-new mb-6 flex-grow">{subtext}</p>
       <Button 
         variant="link" 
-        className="text-lucy-dark-gray p-0 justify-start font-medium"
+        className="text-lucy-neon-yellow p-0 justify-start font-medium"
         onClick={handleClick}
       >
         {ctaText} →

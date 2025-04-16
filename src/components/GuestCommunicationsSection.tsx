@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
@@ -11,7 +12,7 @@ const GuestCommunicationsSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-lucy-blue-green" id="guest-communications">
+    <section className="py-16 md:py-24 bg-lucy-light-gray-new text-lucy-black" id="guest-communications">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
@@ -21,7 +22,7 @@ const GuestCommunicationsSection = () => {
           <p className="text-xl md:text-2xl font-medium mb-4">När gästen får ett personligt meddelande – och bokar mer.</p>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
-          <p className="max-w-3xl mx-auto text-lg">
+          <p className="max-w-3xl mx-auto text-lg text-lucy-dark-gray-new">
             AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen.
           </p>
           </Animate>
@@ -53,7 +54,7 @@ const GuestCommunicationsSection = () => {
           <div>
             <Animate variants={slideInRight}>
             <h3 className="text-2xl font-medium mb-6">Fördelar:</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-lucy-dark-gray-new">
               <FeatureItem text="Merförsäljning – Ökat upsell med +3000€/100 rum och månad." />
               <FeatureItem text="Bättre gästupplevelse – Gäster får snabbare, mer träffsäker service – och lämnar bättre omdömen." />
               <FeatureItem text="Mångsidiga kommunikationskanaler: e-post, SMS och WhatsApp i ett enda verktyg." />
@@ -96,7 +97,7 @@ const GuestCommunicationsSection = () => {
           <div className="mt-12 text-center">
             <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
             <Button 
-              className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
+              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
               onClick={handleExploreClick}
             >
               Utforska Lucy Guest Communications
@@ -112,7 +113,7 @@ const GuestCommunicationsSection = () => {
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
-      <Check className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
+      <Check className="h-5 w-5 text-lucy-black mt-0.5 flex-shrink-0" />
       <span>{text}</span>
     </li>
   );
@@ -125,9 +126,9 @@ interface FunctionCardProps {
 
 const FunctionCard = ({ title, description }: FunctionCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md h-[200px] flex flex-col">
-      <h4 className="text-lg font-medium mb-3">{title}</h4>
-      <p className="text-gray-600 flex-grow">{description}</p>
+    <div className="bg-lucy-white p-6 rounded-lg shadow-md h-[200px] flex flex-col">
+      <h4 className="text-lg font-medium mb-3 text-lucy-black">{title}</h4>
+      <p className="text-lucy-dark-gray-new flex-grow">{description}</p>
     </div>
   );
 };

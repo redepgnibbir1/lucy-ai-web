@@ -45,7 +45,7 @@ const duplicatedLogos = [...logos, ...logos];
 
 const CustomerLogos = () => {
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="py-12 bg-lucy-white text-lucy-black overflow-hidden">
       <div className="container">
         <h2 className="text-center font-martina text-3xl md:text-4xl mb-12">
           Våra kunder
@@ -67,7 +67,7 @@ const CustomerLogos = () => {
                 <CarouselItem key={index} className="basis-1/2 sm:basis-1/3">
                   <div className="p-4">
                     <Card 
-                      className="border-none shadow-sm p-6 flex items-center justify-center h-24"
+                      className="border-none shadow-sm p-6 flex items-center justify-center h-24 bg-lucy-light-gray-new"
                     >
                       <img
                         src={logo.src}
@@ -101,7 +101,7 @@ const CustomerLogos = () => {
             {duplicatedLogos.map((logo, index) => (
               <Card
                 key={index}
-                className="border-none shadow-sm p-6 flex-shrink-0 w-48 h-24 flex items-center justify-center"
+                className="border-none shadow-sm p-6 flex-shrink-0 w-48 h-24 flex items-center justify-center bg-lucy-light-gray-new"
               >
                 <img
                   src={logo.src}

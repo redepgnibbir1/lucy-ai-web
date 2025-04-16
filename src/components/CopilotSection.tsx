@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
@@ -11,7 +12,7 @@ const CopilotSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24" id="copilot">
+    <section className="py-16 md:py-24 bg-lucy-dark-gray-new text-lucy-white" id="copilot">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
@@ -21,7 +22,7 @@ const CopilotSection = () => {
             <p className="text-xl md:text-2xl font-medium mb-4">Få hotellet att fungera som ett team.</p>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
-            <p className="max-w-3xl mx-auto text-lg">
+            <p className="max-w-3xl mx-auto text-lg text-lucy-light-gray-new">
               Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe.
             </p>
           </Animate>
@@ -31,7 +32,7 @@ const CopilotSection = () => {
           <div>
             <Animate variants={slideInLeft}>
               <h3 className="text-2xl font-medium mb-6">Fördelar:</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 text-lucy-light-gray-new">
                 <FeatureItem text="Bygger bort silos – all intern kommunikation i en kanal." />
                 <FeatureItem text="Sparar tid – AI hjälper till med rapporter, översättningar och arbetsordrar." />
                 <FeatureItem text="Gör vardagen enklare – onboarding, instruktioner och rutiner alltid nära till hands." />
@@ -95,7 +96,7 @@ const CopilotSection = () => {
           <div className="mt-12 text-center">
             <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
               <Button 
-                className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
+                className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
                 onClick={handleLearnMoreClick}
               >
                 Läs mer om Lucy Copilot
@@ -111,7 +112,7 @@ const CopilotSection = () => {
 const FeatureItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-start gap-3">
-      <Check className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
+      <Check className="h-5 w-5 text-lucy-neon-yellow mt-0.5 flex-shrink-0" />
       <span>{text}</span>
     </li>
   );
@@ -124,9 +125,9 @@ interface FunctionCardProps {
 
 const FunctionCard = ({ title, description }: FunctionCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
-      <h4 className="text-lg font-medium mb-2">{title}</h4>
-      <p className="text-sm text-gray-700">{description}</p>
+    <div className="bg-lucy-black p-6 rounded-lg shadow-sm">
+      <h4 className="text-lg font-medium mb-2 text-lucy-white">{title}</h4>
+      <p className="text-sm text-lucy-light-gray-new">{description}</p>
     </div>
   );
 };
