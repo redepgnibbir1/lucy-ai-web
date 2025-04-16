@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -5,9 +6,11 @@ import { Check } from 'lucide-react';
 import CalendlyWidget from '@/components/CalendlyWidget';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const KomIgang = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const { t } = useLanguage();
 
   const handleContactClick = () => {
     console.log('Contact button clicked from KomIgang page');
@@ -23,34 +26,33 @@ const KomIgang = () => {
           <div className="max-w-4xl mx-auto">
             <Animate variants={fadeInUp}>
               <h1 className="text-4xl md:text-5xl font-medium mb-8 font-martina">
-                Kom igång med Lucy
+                {t('getStarted.title')}
               </h1>
             </Animate>
             
             <Animate variants={slideInLeft}>
               <p className="text-lg mb-8 text-lucy-dark-gray/80">
-                Vi på Lucy gör det enkelt för er att komma igång med våra AI-lösningar. 
-                Vi erbjuder en smidig och professionell implementeringsprocess för att säkerställa att ert hotell får maximal nytta av vår plattform.
+                {t('getStarted.intro')}
               </p>
             </Animate>
 
             <Animate variants={slideInRight}>
               <div className="bg-white rounded-lg p-8 mb-12 shadow-sm">
                 <h2 className="text-2xl font-medium mb-6 font-martina">
-                  Gratis onboarding för hotell med över 50 rum
+                  {t('getStarted.onboarding.title')}
                 </h2>
                 
                 <p className="mb-6">
-                  Vi investerar i er framgång. Därför erbjuder vi hotell med över 50 rum gratis onboarding, vilket inkluderar:
+                  {t('getStarted.onboarding.intro')}
                 </p>
                 
                 <ul className="space-y-3 mb-8">
                   {[
-                    'Personlig implementeringsplan',
-                    'Skräddarsydd konfiguration av Lucy-plattformen',
-                    'Fysiska utbildningsmöten med ert team',
-                    'Kontinuerligt stöd under uppstartsperioden',
-                    'Uppföljningsmöten för att optimera användningen',
+                    t('getStarted.onboarding.item1'),
+                    t('getStarted.onboarding.item2'),
+                    t('getStarted.onboarding.item3'),
+                    t('getStarted.onboarding.item4'),
+                    t('getStarted.onboarding.item5'),
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
@@ -60,13 +62,13 @@ const KomIgang = () => {
                 </ul>
                 
                 <div className="bg-gray-50 p-6 rounded-md border border-gray-100">
-                  <h3 className="text-xl font-medium mb-3 font-martina">Vår process</h3>
+                  <h3 className="text-xl font-medium mb-3 font-martina">{t('getStarted.process.title')}</h3>
                   <ol className="list-decimal list-inside space-y-2 ml-2">
-                    <li>Inledande konsultation för att förstå era behov</li>
-                    <li>Skräddarsydd implementeringsplan</li>
-                    <li>Teknisk installation och konfiguration</li>
-                    <li>Fysiska utbildningssessioner med personalen</li>
-                    <li>Uppföljning och optimering</li>
+                    <li>{t('getStarted.process.step1')}</li>
+                    <li>{t('getStarted.process.step2')}</li>
+                    <li>{t('getStarted.process.step3')}</li>
+                    <li>{t('getStarted.process.step4')}</li>
+                    <li>{t('getStarted.process.step5')}</li>
                   </ol>
                 </div>
               </div>
@@ -75,16 +77,16 @@ const KomIgang = () => {
             <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
               <div className="text-center">
                 <h2 className="text-2xl font-medium mb-4 font-martina">
-                  Redo att ta nästa steg?
+                  {t('getStarted.cta.title')}
                 </h2>
                 <p className="mb-6">
-                  Kontakta oss idag för att diskutera hur vi kan hjälpa ert hotell att öka intäkterna och effektivisera arbetsflödena.
+                  {t('getStarted.cta.text')}
                 </p>
                 <Button 
                   className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto"
                   onClick={handleContactClick}
                 >
-                  Kontakta oss
+                  {t('getStarted.cta.button')}
                 </Button>
               </div>
             </Animate>

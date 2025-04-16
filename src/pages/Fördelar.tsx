@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -5,9 +6,11 @@ import { useState } from "react";
 import CalendlyWidget from "@/components/CalendlyWidget";
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from '@/lib/utils';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Fördelar = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-white">
@@ -17,9 +20,9 @@ const Fördelar = () => {
         <Animate variants={staggerContainer}>
           <Animate variants={fadeInUp}>
             <div className="text-center mb-16">
-              <h1 className="text-3xl md:text-4xl font-medium mb-6">Fördelar med Lucy</h1>
+              <h1 className="text-3xl md:text-4xl font-medium mb-6">{t('benefits.title')}</h1>
               <p className="text-xl max-w-3xl mx-auto">
-                Genom att välja Lucy får hotell en rad fördelar som förbättrar kommunikation, ökar effektiviteten och förbättrar gästupplevelsen.
+                {t('benefits.subtitle')}
               </p>
             </div>
           </Animate>
@@ -27,23 +30,23 @@ const Fördelar = () => {
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <Animate variants={slideInLeft}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">Effektivitetsfördelar</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.efficiency.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text="Spara upp till 30 min per person och dag av personalens tid genom automatiserade processer" />
-                  <FeatureItem text="All information på ditt modersmål minskar risken för missförstånd" />
-                  <FeatureItem text="Centraliserad kommunikation ger överblick över informationsflödet" />
-                  <FeatureItem text="AI-assistans med rutinmässiga uppgifter frigör tid för personlig service" />
+                  <FeatureItem text={t('benefits.efficiency.item1')} />
+                  <FeatureItem text={t('benefits.efficiency.item2')} />
+                  <FeatureItem text={t('benefits.efficiency.item3')} />
+                  <FeatureItem text={t('benefits.efficiency.item4')} />
                 </ul>
               </div>
             </Animate>
             <Animate variants={slideInRight}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">Ekonomiska fördelar</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.economic.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text="Ökad merförsäljning genom personanpassad kommunikation" />
-                  <FeatureItem text="Högre gästnöjdhet leder till fler återkommande gäster" />
-                  <FeatureItem text="Lägre personalomsättning genom bättre arbetsmiljö" />
-                  <FeatureItem text="ROI inom 2 månader för de flesta hotell" />
+                  <FeatureItem text={t('benefits.economic.item1')} />
+                  <FeatureItem text={t('benefits.economic.item2')} />
+                  <FeatureItem text={t('benefits.economic.item3')} />
+                  <FeatureItem text={t('benefits.economic.item4')} />
                 </ul>
               </div>
             </Animate>
@@ -52,23 +55,23 @@ const Fördelar = () => {
           <div className="grid md:grid-cols-2 gap-16">
             <Animate variants={slideInLeft} transition={{ delay: 0.2 }}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">Gästupplevelse</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.guest.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text="Personlig kommunikation på gästens eget språk" />
-                  <FeatureItem text="Snabbare responstid på förfrågningar och behov" />
-                  <FeatureItem text="Konsekvent servicenivå oavsett tid på dygnet" />
-                  <FeatureItem text="Sömlös digital upplevelse från bokning till utcheckning" />
+                  <FeatureItem text={t('benefits.guest.item1')} />
+                  <FeatureItem text={t('benefits.guest.item2')} />
+                  <FeatureItem text={t('benefits.guest.item3')} />
+                  <FeatureItem text={t('benefits.guest.item4')} />
                 </ul>
               </div>
             </Animate>
             <Animate variants={slideInRight} transition={{ delay: 0.2 }}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">Teamfördelar</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.team.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text="Bättre intern kommunikation mellan avdelningar" />
-                  <FeatureItem text="Snabb onboarding av ny personal gör nya medarbetare produktiva snabbt" />
-                  <FeatureItem text="Tydlig uppföljning och rapportering" />
-                  <FeatureItem text="Minskad stress genom tydliga rutiner och instruktioner" />
+                  <FeatureItem text={t('benefits.team.item1')} />
+                  <FeatureItem text={t('benefits.team.item2')} />
+                  <FeatureItem text={t('benefits.team.item3')} />
+                  <FeatureItem text={t('benefits.team.item4')} />
                 </ul>
               </div>
             </Animate>
@@ -80,7 +83,7 @@ const Fördelar = () => {
                 className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
                 onClick={() => window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank')}
               >
-                Boka en demo
+                {t('benefits.bookDemo')}
               </Button>
             </div>
           </Animate>

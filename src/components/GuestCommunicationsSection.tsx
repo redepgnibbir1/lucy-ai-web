@@ -1,9 +1,13 @@
+
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const GuestCommunicationsSection = () => {
+  const { t } = useLanguage();
+
   const handleExploreClick = () => {
     console.log('Explore Lucy Guest Communications clicked');
     // In a real implementation, this might navigate to a product page
@@ -15,14 +19,14 @@ const GuestCommunicationsSection = () => {
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">Lucy Guest Communications</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">{t('guestComm.title')}</h2>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
-          <p className="text-xl md:text-2xl font-medium mb-4">När gästen får ett personligt meddelande – och bokar mer.</p>
+          <p className="text-xl md:text-2xl font-medium mb-4">{t('guestComm.subtitle')}</p>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
           <p className="max-w-3xl mx-auto text-lg text-lucy-dark-gray-new">
-            AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen.
+            {t('guestComm.description')}
           </p>
           </Animate>
         </div>
@@ -52,11 +56,11 @@ const GuestCommunicationsSection = () => {
           </div>
           <div>
             <Animate variants={slideInRight}>
-            <h3 className="text-2xl font-medium mb-6">Fördelar:</h3>
+            <h3 className="text-2xl font-medium mb-6">{t('guestComm.benefits.title')}</h3>
             <ul className="space-y-4 text-lucy-dark-gray-new">
-              <FeatureItem text="Merförsäljning – Ökat upsell med +3000€/100 rum och månad." />
-              <FeatureItem text="Bättre gästupplevelse – Gäster får snabbare, mer träffsäker service – och lämnar bättre omdömen." />
-              <FeatureItem text="Mångsidiga kommunikationskanaler: e-post, SMS och WhatsApp i ett enda verktyg." />
+              <FeatureItem text={t('guestComm.benefits.upsell')} />
+              <FeatureItem text={t('guestComm.benefits.experience')} />
+              <FeatureItem text={t('guestComm.benefits.channels')} />
             </ul>
             </Animate>
           </div>
@@ -64,31 +68,31 @@ const GuestCommunicationsSection = () => {
         
         <div>
           <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
-          <h3 className="text-2xl font-medium mb-8 text-center">Exempel på funktioner:</h3>
+          <h3 className="text-2xl font-medium mb-8 text-center">{t('guestComm.functions.title')}</h3>
           </Animate>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <Animate variants={fadeInUp} transition={{ delay: 0.8 }}>
             <FunctionCard 
-              title="Personaliserade välkomstmeddelanden" 
-              description="Automatiska hälsningar som anpassas efter gästinformation och tidigare bokningar."
+              title={t('guestComm.functions.welcome')} 
+              description={t('guestComm.functions.welcome.desc')}
             />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.0 }}>
             <FunctionCard 
-              title="Pre-arrival upsell" 
-              description="Smarta erbjudanden som ökar RevPAR genom att sälja uppgraderingar före ankomst."
+              title={t('guestComm.functions.upsell')} 
+              description={t('guestComm.functions.upsell.desc')}
             />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.2 }}>
             <FunctionCard 
-              title="Gästenkäter & feedback" 
-              description="Automatiserad insamling av gästrecensioner med åtgärdbara insikter."
+              title={t('guestComm.functions.feedback')} 
+              description={t('guestComm.functions.feedback.desc')}
             />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
             <FunctionCard 
-              title="AI-assistans" 
-              description="Lucy skriver och översätter meddelanden, skapar mallar och analyserar svar automatiskt."
+              title={t('guestComm.functions.ai')} 
+              description={t('guestComm.functions.ai.desc')}
             />
             </Animate>
           </div>
@@ -99,7 +103,7 @@ const GuestCommunicationsSection = () => {
               className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
               onClick={handleExploreClick}
             >
-              Utforska Lucy Guest Communications
+              {t('guestComm.explore')}
             </Button>
             </Animate>
           </div>
