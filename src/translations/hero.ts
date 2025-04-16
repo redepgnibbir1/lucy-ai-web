@@ -5,15 +5,15 @@ export const heroTranslations = {
     en: 'AI for hotels.'
   },
   'hero.title': {
-    sv: 'Vi hjälper hotell att växa',
-    en: 'We help hotels grow'
+    sv: 'Den nya kommunikationsplattformen för Hotell',
+    en: 'The new communication platform for hotels'
   },
   'hero.description': {
-    sv: 'Lucy tar hand om rutinuppgifter och hjälper er att ge gästerna bästa möjliga service dygnet runt – alltid på gästens språk.',
-    en: 'Lucy handles routine tasks and helps you provide guests with the best possible service around the clock – always in the guest\'s language.'
+    sv: 'Kraftigt ökad merförsäljning, färre fel och nöjdare gäster. Lucys AI-agenter gör jobbet bakom kulisserna.',
+    en: 'Significantly increased upselling, fewer errors, and happier guests. Lucy\'s AI agents do the work behind the scenes.'
   },
   'hero.button': {
-    sv: 'Se hur vi kan hjälpa er',
-    en: 'See how we can help you'
+    sv: 'Boka en demo',
+    en: 'Book a demo'
   }
 };
