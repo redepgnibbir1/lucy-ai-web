@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
@@ -16,7 +15,7 @@ const GuestCommunicationsSection = () => {
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">LUCY GUEST COMMUNICATIONS</h2>
+          <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">Lucy Guest Communications</h2>
           </Animate>
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
           <p className="text-xl md:text-2xl font-medium mb-4">När gästen får ett personligt meddelande – och bokar mer.</p>
