@@ -1,5 +1,4 @@
 
-import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -7,12 +6,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const GuestCommunicationsSection = () => {
   const { t } = useLanguage();
-
-  const handleExploreClick = () => {
-    console.log('Explore Lucy Guest Communications clicked');
-    // In a real implementation, this might navigate to a product page
-    window.open('mailto:contact@lucy.ai?subject=Guest Communications Inquiry', '_blank');
-  };
 
   return (
     <section className="py-16 md:py-24 bg-lucy-light-gray-new text-lucy-black" id="guest-communications">
@@ -96,17 +89,6 @@ const GuestCommunicationsSection = () => {
             />
             </Animate>
           </div>
-          
-          <div className="mt-12 text-center">
-            <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
-            <Button 
-              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
-              onClick={handleExploreClick}
-            >
-              {t('guestComm.explore')}
-            </Button>
-            </Animate>
-          </div>
         </div>
       </div>
     </section>
@@ -137,3 +119,4 @@ const FunctionCard = ({ title, description }: FunctionCardProps) => {
 };
 
 export default GuestCommunicationsSection;
+

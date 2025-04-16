@@ -1,5 +1,4 @@
 
-import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -7,11 +6,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 const CopilotSection = () => {
   const { t } = useLanguage();
-  
-  const handleLearnMoreClick = () => {
-    console.log('Learn more about Lucy Team Communications clicked');
-    window.open('mailto:contact@lucy.ai?subject=Lucy Team Communications Inquiry', '_blank');
-  };
 
   return (
     <section className="py-16 md:py-24 bg-lucy-dark-gray-new text-lucy-white" id="team-communications">
@@ -88,17 +82,6 @@ const CopilotSection = () => {
                 title={t('teamComm.functions.workorders')} 
                 description={t('teamComm.functions.workorders.desc')}
               />
-            </Animate>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
-              <Button 
-                className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium px-8"
-                onClick={handleLearnMoreClick}
-              >
-                {t('teamComm.cta')}
-              </Button>
             </Animate>
           </div>
         </div>
