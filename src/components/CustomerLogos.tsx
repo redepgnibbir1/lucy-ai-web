@@ -37,8 +37,13 @@ const logos = [
     alt: "Villa Dagmar" 
   },
   { 
-    src: "/lovable-uploads/efa7d032-e77a-4a96-b162-3230fb174ee9.png", // Updated Marholmen logo
+    src: "/lovable-uploads/efa7d032-e77a-4a96-b162-3230fb174ee9.png", 
     alt: "Marholmen" 
+  },
+  // Add the new logo here
+  { 
+    src: "/lovable-uploads/260e1d44-6dbe-4878-b03e-e9ea90bf85e1.png", 
+    alt: "New Hotel Logo" 
   }
 ];
 
