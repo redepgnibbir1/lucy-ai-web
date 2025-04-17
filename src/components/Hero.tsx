@@ -28,9 +28,14 @@ const Hero = () => {
     const title = t('hero.title');
     const isSv = language === 'sv';
     
+    // More specific split pattern to ensure we don't lose any text
+    const firstPart = isSv 
+      ? 'Den nya kommunikationsplattformen för hotell' 
+      : 'The new communications platform for hotels';
+    
     const titleParts = isSv 
-      ? title.split('Samla gäst- och teamkommunikation') 
-      : title.split('Gather guest and team communication');
+      ? [firstPart, title.substring(firstPart.length)]
+      : [firstPart, title.substring(firstPart.length)];
 
     return (
       <>
