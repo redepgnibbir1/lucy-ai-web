@@ -30,8 +30,9 @@ export const customerLogos: CustomerLogo[] = [
     alt: "Vår Gård Hotel" 
   },
   { 
-    src: "/lovable-uploads/c72583e4-9056-46d6-921a-fa64e31fa9fe.png", 
-    alt: "Villa Dagmar" 
+    src: "/lovable-uploads/84444c96-9dbd-4859-898d-19327cfe74fc.png", 
+    alt: "Villa Dagmar",
+    scale: 1.2 // Adjust scale if needed for the new logo
   },
   { 
     src: "/lovable-uploads/efa7d032-e77a-4a96-b162-3230fb174ee9.png", 
