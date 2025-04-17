@@ -33,7 +33,7 @@ const Pricing = () => {
             price={t('pricing.teamCommunications.price')}
             period={t('pricing.teamCommunications.period')}
             description={t('pricing.teamCommunications.description')}
-            features={t('pricing.teamCommunications.features')}
+            features={t('pricing.teamCommunications.features') as string[]}
             buttonText={t('pricing.teamCommunications.buttonText')}
             isPopular={true}
           />
@@ -43,7 +43,7 @@ const Pricing = () => {
             price={t('pricing.guestCommunications.price')}
             period={t('pricing.guestCommunications.period')}
             description={t('pricing.guestCommunications.description')}
-            features={t('pricing.guestCommunications.features')}
+            features={t('pricing.guestCommunications.features') as string[]}
             buttonText={t('pricing.guestCommunications.buttonText')}
             isPopular={false}
           />
@@ -58,7 +58,7 @@ const Pricing = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-medium mb-3">{t('pricing.staffSurvey.benefits.title')}</h3>
               <ul className="space-y-2">
-                {t('pricing.staffSurvey.benefits.items').map((item, index) => (
+                {(t('pricing.staffSurvey.benefits.items') as string[]).map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
                     <span className="text-sm">{item}</span>
@@ -69,7 +69,7 @@ const Pricing = () => {
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-medium mb-3">{t('pricing.staffSurvey.features.title')}</h3>
               <ul className="space-y-2">
-                {t('pricing.staffSurvey.features.items').map((item, index) => (
+                {(t('pricing.staffSurvey.features.items') as string[]).map((item, index) => (
                   <li key={index} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
                     <span className="text-sm">{item}</span>
