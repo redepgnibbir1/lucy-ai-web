@@ -38,6 +38,12 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, feat
 const Pricing = () => {
   const { t } = useLanguage();
 
+  // Explicitly cast the feature arrays to string[]
+  const teamFeatures = t('pricing.teamCommunications.features') as string[];
+  const guestFeatures = t('pricing.guestCommunications.features') as string[];
+  const benefitsItems = t('pricing.staffSurvey.benefits.items') as string[];
+  const featuresItems = t('pricing.staffSurvey.features.items') as string[];
+
   return (
     <div className="min-h-screen bg-white">
       <div className="container py-16">
@@ -52,7 +58,7 @@ const Pricing = () => {
             title={t('pricing.teamCommunications.title')}
             price={t('pricing.teamCommunications.price')}
             priceInfo={t('pricing.teamCommunications.period')}
-            features={t('pricing.teamCommunications.features') as string[]}
+            features={teamFeatures}
             buttonText={t('pricing.teamCommunications.buttonText')}
             popular={false}
           />
@@ -62,7 +68,7 @@ const Pricing = () => {
             title={t('pricing.guestCommunications.title')}
             price={t('pricing.guestCommunications.price')}
             priceInfo={t('pricing.guestCommunications.period')}
-            features={t('pricing.guestCommunications.features') as string[]}
+            features={guestFeatures}
             buttonText={t('pricing.guestCommunications.buttonText')}
             popular={true}
           />
@@ -79,7 +85,7 @@ const Pricing = () => {
             <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
               <h3 className="text-xl font-medium mb-4">{t('pricing.staffSurvey.benefits.title')}</h3>
               <ul className="space-y-2 mb-8">
-                {(t('pricing.staffSurvey.benefits.items') as string[]).map((feature, index) => (
+                {benefitsItems.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
@@ -94,7 +100,7 @@ const Pricing = () => {
             <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
               <h3 className="text-xl font-medium mb-4">{t('pricing.staffSurvey.features.title')}</h3>
               <ul className="space-y-2 mb-8">
-                {(t('pricing.staffSurvey.features.items') as string[]).map((feature, index) => (
+                {featuresItems.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
