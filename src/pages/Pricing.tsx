@@ -38,11 +38,16 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, feat
 const Pricing = () => {
   const { t } = useLanguage();
 
-  // Explicitly cast the feature arrays to string[]
-  const teamFeatures = t('pricing.teamCommunications.features') as string[];
-  const guestFeatures = t('pricing.guestCommunications.features') as string[];
-  const benefitsItems = t('pricing.staffSurvey.benefits.items') as string[];
-  const featuresItems = t('pricing.staffSurvey.features.items') as string[];
+  // Properly handle casting with a safeguard approach
+  const getStringArray = (key: string): string[] => {
+    const value = t(key);
+    return Array.isArray(value) ? value : [];
+  };
+
+  const teamFeatures = getStringArray('pricing.teamCommunications.features');
+  const guestFeatures = getStringArray('pricing.guestCommunications.features');
+  const benefitsItems = getStringArray('pricing.staffSurvey.benefits.items');
+  const featuresItems = getStringArray('pricing.staffSurvey.features.items');
 
   return (
     <div className="min-h-screen bg-white">

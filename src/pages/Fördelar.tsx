@@ -1,5 +1,4 @@
 
-import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
@@ -14,8 +13,6 @@ const Fördelar = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      
       <div className="container py-16 md:py-24">
         <Animate variants={staggerContainer}>
           <Animate variants={fadeInUp}>
