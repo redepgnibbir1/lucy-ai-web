@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
@@ -73,12 +72,6 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-gray-300">
                 {t('footer.email')}: <a href="mailto:info@lucyanalytics.com" className="hover:text-lucy-neon-yellow transition-colors">info@lucyanalytics.com</a>
-              </li>
-              <li className="text-gray-300">
-                {t('footer.phone')}: <a href="tel:+46701234567" className="hover:text-lucy-neon-yellow transition-colors">+46 70 123 4567</a>
-              </li>
-              <li className="text-gray-300">
-                {t('footer.address')}: Storgatan 1, 111 23 Stockholm
               </li>
             </ul>
           </div>
