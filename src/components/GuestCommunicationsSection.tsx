@@ -1,4 +1,3 @@
-
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -8,7 +7,7 @@ const GuestCommunicationsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 bg-lucy-light-gray-new text-lucy-black" id="guest-communications">
+    <section className="py-16 md:py-24 bg-white text-lucy-black" id="guest-communications">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
