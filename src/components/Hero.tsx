@@ -47,8 +47,9 @@ const Hero = () => {
 
   return (
     <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full">
+      {/* Remove px-4 sm:px-6 lg:px-8 padding classes from here */}
+      <div className="container">
+        <div className="w-full">
           <Animate variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
               {renderTitle()}
