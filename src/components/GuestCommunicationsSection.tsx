@@ -1,3 +1,4 @@
+
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -34,12 +35,12 @@ const GuestCommunicationsSection = () => {
                   alt="Laptop mockup" 
                   className="w-full h-auto"
                 />
-                {/* Screen content - positioned absolutely inside the laptop screen */}
-                <div className="absolute top-[5.2%] left-[11.5%] right-[11.5%] bottom-[30.5%] overflow-hidden bg-white">
+                {/* Screen content - adjusted to match laptop screen dimensions exactly */}
+                <div className="absolute top-[5.2%] left-[11.5%] right-[11.5%] bottom-[30.5%] overflow-hidden">
                   <img 
                     src="/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
                     alt="Lucy Guest Communications interface" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
               </div>
