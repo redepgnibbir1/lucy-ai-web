@@ -1,49 +1,53 @@
 
-import React from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Products = () => {
   const { t } = useLanguage();
-
+  
   return (
-    <section className="py-16 md:py-24 bg-lucy-black text-lucy-white" id="products">
+    <section className="py-16 md:py-24 bg-lucy-medium-gray text-lucy-white" id="products">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
             <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">{t('products.title')}</h2>
           </Animate>
-          <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
+          <Animate variants={slideInLeft}>
             <p className="text-xl md:text-2xl font-medium mb-4">{t('products.subtitle')}</p>
           </Animate>
-          <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
-            <p className="max-w-3xl mx-auto text-lg">{t('products.description')}</p>
+          
+          <Animate variants={slideInRight}>
+            <p className="max-w-3xl mx-auto text-lg">
+              {t('products.description')}
+            </p>
           </Animate>
-          <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
-            <p className="max-w-3xl mx-auto text-base mt-4 italic">{t('products.additionalInfo')}</p>
+          <Animate variants={slideInLeft}>
+            <p className="max-w-3xl mx-auto text-lg mt-4">
+              {t('products.additionalInfo')}
+            </p>
           </Animate>
         </div>
-
+        
         <div className="grid md:grid-cols-2 gap-8">
-          <Animate variants={slideInLeft}>
+          <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
             <ProductCard 
               title={t('products.team.title')} 
               description={t('products.team.description')}
               subtext={t('products.team.subtext')}
-              cta={t('products.team.cta')}
-              imageSrc="/lovable-uploads/260e1d44-6dbe-4878-b03e-e9ea90bf85e1.png"
-              bgColor="bg-lucy-dark-gray-new"
+              ctaText={t('products.team.cta')}
+              href="#team-communications"
             />
           </Animate>
-          <Animate variants={slideInRight}>
+          
+          <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
             <ProductCard 
               title={t('products.guest.title')} 
               description={t('products.guest.description')}
               subtext={t('products.guest.subtext')}
-              cta={t('products.guest.cta')}
-              imageSrc="/lovable-uploads/579b972c-d18d-4c9b-b746-d83156364992.png"
-              bgColor="bg-lucy-dark-gray-new"
+              ctaText={t('products.guest.cta')}
+              href="#guest-communications"
             />
           </Animate>
         </div>
@@ -56,42 +60,32 @@ interface ProductCardProps {
   title: string;
   description: string;
   subtext: string;
-  cta: string;
-  imageSrc: string;
-  bgColor: string;
+  ctaText: string;
+  href: string;
 }
 
-const ProductCard = ({ 
-  title, 
-  description, 
-  subtext, 
-  cta, 
-  imageSrc,
-  bgColor 
-}: ProductCardProps) => {
+const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCardProps) => {
+  const handleClick = () => {
+    console.log(`Product card clicked: ${title}`);
+    if (href) {
+      window.location.href = href;
+    }
+  };
+
   return (
-    <div className={`${bgColor} rounded-xl p-8 flex flex-col justify-between h-full`}>
-      <div>
-        <h3 className="text-2xl font-medium mb-4">{title}</h3>
-        <p className="text-xl mb-4">{description}</p>
-        <p className="mb-6">{subtext}</p>
-      </div>
-      <div className="mt-6">
-        <img 
-          src={imageSrc} 
-          alt={title} 
-          className="w-full h-auto object-contain mb-6" 
-        />
-        <a 
-          href="#" 
-          className="inline-block px-6 py-3 bg-lucy-neon-yellow text-lucy-black rounded-lg hover:bg-opacity-90 transition-colors"
-        >
-          {cta}
-        </a>
-      </div>
+    <div className="bg-lucy-dark-gray-new p-8 rounded-lg flex flex-col h-full text-lucy-white">
+      <h3 className="text-lg font-medium text-lucy-light-gray-new mb-4">{title}</h3>
+      <h4 className="text-xl font-medium mb-4">{description}</h4>
+      <p className="text-lucy-light-gray-new mb-6 flex-grow">{subtext}</p>
+      <Button 
+        variant="link" 
+        className="text-lucy-neon-yellow p-0 justify-start font-medium"
+        onClick={handleClick}
+      >
+        {ctaText} →
+      </Button>
     </div>
   );
 };
 
 export default Products;
-

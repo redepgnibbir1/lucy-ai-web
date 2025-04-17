@@ -28,15 +28,15 @@ const GuestCommunicationsSection = () => {
           <div className="order-last md:order-first flex justify-center items-center">
             <Animate variants={slideInLeft}>
             <div className="relative mx-auto w-full max-w-[640px]">
-              <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
-                <div className="h-6 bg-gray-700 flex items-center px-4">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                </div>
-                <div className="aspect-video">
+              {/* Laptop mockup */}
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/c286aa08-0656-45a7-8595-6af8e79193b1.png" 
+                  alt="Laptop mockup" 
+                  className="w-full h-auto"
+                />
+                {/* Screen content - positioned absolutely inside the laptop screen */}
+                <div className="absolute top-[5.2%] left-[11.5%] right-[11.5%] bottom-[30.5%] overflow-hidden bg-white">
                   <img 
                     src="/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
                     alt="Lucy Guest Communications interface" 
@@ -119,4 +119,3 @@ const FunctionCard = ({ title, description }: FunctionCardProps) => {
 };
 
 export default GuestCommunicationsSection;
-
