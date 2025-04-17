@@ -27,24 +27,27 @@ const Hero = () => {
     const title = t('hero.title');
     const isSv = language === 'sv';
     
-    if (isSv) {
-      const parts = title.split('kommunikationsplattform');
-      return (
-        <>
-          {parts[0]}
-          <span className="text-black">kommunikationsplattform</span>
-          {parts[1]}
-        </>
-      );
-    }
-    
-    const parts = title.split('communication');
+    const titleParts = isSv 
+      ? title.split('kommunikationsplattformen') 
+      : title.split('communications platform');
+
     return (
       <>
-        {parts[0]}
-        <span className="text-black">communication</span>
-        {parts[1]}
+        <span className="text-black">{titleParts[0]}</span>
+        <span className={`${isSv ? '' : 'text-black'}`}>
+          {isSv ? 'kommunikationsplattformen' : 'communications platform'}
+        </span>
+        <span className="text-black">{titleParts[1]}</span>
       </>
+    );
+  };
+
+  const renderDescription = () => {
+    const description = t('hero.description');
+    return (
+      <p className="text-xl md:text-2xl mb-16 text-[#777777] max-w-4xl mx-auto font-lab-grotesque">
+        {description}
+      </p>
     );
   };
 
@@ -59,9 +62,7 @@ const Hero = () => {
           </Animate>
           
           <Animate variants={slideInLeft} transition={{ delay: 0.4 }}>
-            <p className="text-xl md:text-2xl mb-16 text-lucy-dark-gray-new max-w-4xl mx-auto font-lab-grotesque">
-              {t('hero.description')}
-            </p>
+            {renderDescription()}
           </Animate>
           
           <Animate variants={slideInRight} transition={{ delay: 0.8 }}>
