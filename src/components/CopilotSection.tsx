@@ -1,3 +1,4 @@
+
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -32,6 +33,20 @@ const CopilotSection = () => {
                 <FeatureItem text={t('teamComm.benefits.time')} />
                 <FeatureItem text={t('teamComm.benefits.daily')} />
               </ul>
+            </Animate>
+          </div>
+          <div className="flex items-center justify-center">
+            <Animate variants={slideInRight}>
+              <div className="relative mx-auto border-gray-300 bg-white border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+                <div className="w-[148px] h-[18px] bg-gray-300 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+                <div className="rounded-[2rem] overflow-hidden bg-white h-full w-full">
+                  <img 
+                    src="/lovable-uploads/ac74c410-1f92-48da-8607-dfc07d5e07a7.png" 
+                    alt="Lucy Team Communications app interface showing messages and work orders" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </Animate>
           </div>
         </div>
