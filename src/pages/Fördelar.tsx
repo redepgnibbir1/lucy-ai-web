@@ -11,6 +11,11 @@ const Fördelar = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const { t } = useLanguage();
 
+  const handleDemoClick = () => {
+    console.log('Demo button clicked from Fördelar page');
+    setIsCalendlyOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <div className="container py-16 md:py-24">
@@ -78,7 +83,7 @@ const Fördelar = () => {
             <div className="mt-16 text-center">
               <Button 
                 className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
-                onClick={() => window.open('mailto:contact@lucy.ai?subject=Demo Request', '_blank')}
+                onClick={handleDemoClick}
               >
                 {t('benefits.bookDemo')}
               </Button>
