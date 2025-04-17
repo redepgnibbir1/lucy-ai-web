@@ -11,8 +11,21 @@ import Pricing from "./pages/Pricing";
 import AboutUs from "./pages/AboutUs";
 import KomIgang from "./pages/KomIgang";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
+
+// Layout component to wrap all pages with Navbar and Footer
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  <div className="min-h-screen bg-white flex flex-col">
+    <Navbar />
+    <div className="flex-grow">
+      {children}
+    </div>
+    <Footer />
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -23,12 +36,32 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/fördelar" element={<Fördelar />} />
-            <Route path="/pricing" element={<Pricing />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/kom-igang" element={<KomIgang />} />
+            <Route path="/fördelar" element={
+              <Layout>
+                <Fördelar />
+              </Layout>
+            } />
+            <Route path="/pricing" element={
+              <Layout>
+                <Pricing />
+              </Layout>
+            } />
+            <Route path="/about" element={
+              <Layout>
+                <AboutUs />
+              </Layout>
+            } />
+            <Route path="/kom-igang" element={
+              <Layout>
+                <KomIgang />
+              </Layout>
+            } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={
+              <Layout>
+                <NotFound />
+              </Layout>
+            } />
           </Routes>
         </BrowserRouter>
       </LanguageProvider>

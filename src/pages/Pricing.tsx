@@ -1,174 +1,158 @@
-
-import Navbar from '@/components/Navbar';
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
-import CalendlyWidget from "@/components/CalendlyWidget";
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const Pricing = () => {
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const { t, language } = useLanguage();
-
-  const handleDemoClick = () => {
-    console.log('Demo button clicked from pricing page');
-    setIsCalendlyOpen(true);
-  };
-
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="container py-12 md:py-24">
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-medium mb-6">{t('pricing.pageTitle')}</h1>
-          <p className="text-xl max-w-3xl mx-auto text-gray-600">
-            {t('pricing.subtitle')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <PricingCard 
-            title={t('pricing.teamCommunications.title')}
-            price={t('pricing.teamCommunications.price')}
-            period={t('pricing.teamCommunications.period')}
-            description={t('pricing.teamCommunications.description')}
-            features={t('pricing.teamCommunications.features') as string[]}
-            buttonText={t('pricing.teamCommunications.buttonText')}
-            isPopular={true}
-          />
-          
-          <PricingCard 
-            title={t('pricing.guestCommunications.title')}
-            price={t('pricing.guestCommunications.price')}
-            period={t('pricing.guestCommunications.period')}
-            description={t('pricing.guestCommunications.description')}
-            features={t('pricing.guestCommunications.features') as string[]}
-            buttonText={t('pricing.guestCommunications.buttonText')}
-            isPopular={false}
-          />
-        </div>
-
-        <div className="mt-16 p-8 bg-gray-50 rounded-xl max-w-5xl mx-auto">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-medium mb-2">{t('pricing.staffSurvey.title')}</h2>
-            <p className="text-gray-600">{t('pricing.staffSurvey.subtitle')} <span className="font-bold">{t('pricing.staffSurvey.price')}</span></p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-medium mb-3">{t('pricing.staffSurvey.benefits.title')}</h3>
-              <ul className="space-y-2">
-                {(t('pricing.staffSurvey.benefits.items') as string[]).map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-medium mb-3">{t('pricing.staffSurvey.features.title')}</h3>
-              <ul className="space-y-2">
-                {(t('pricing.staffSurvey.features.items') as string[]).map((item, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-20 text-center">
-          <h2 className="text-2xl md:text-3xl font-medium mb-8">{t('pricing.questions.title')}</h2>
-          <Button 
-            className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90 font-medium px-8"
-            onClick={handleDemoClick}
-          >
-            {t('pricing.questions.buttonText')}
-          </Button>
-        </div>
-      </div>
-      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
-    </div>
-  );
-};
 
 interface PricingCardProps {
   title: string;
   price: string;
-  period: string;
-  description: string;
+  priceInfo: string;
   features: string[];
   buttonText: string;
-  isPopular: boolean;
-  isAdditional?: boolean;
+  popular: boolean;
 }
 
-const PricingCard = ({ 
-  title, 
-  price, 
-  period, 
-  description, 
-  features, 
-  buttonText, 
-  isPopular,
-  isAdditional = false
-}: PricingCardProps) => {
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const { t } = useLanguage();
-
-  const handleClick = () => {
-    console.log(`${title} plan button clicked`);
-    setIsCalendlyOpen(true);
-  };
-
+const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, features, buttonText, popular }) => {
   return (
-    <div className={`relative rounded-xl border shadow-sm p-6 flex flex-col ${
-      isPopular ? 'border-lucy-neon-yellow shadow-lg' : 'border-gray-200'
-    }`}>
-      {isPopular && (
-        <div className="absolute -top-3 left-0 right-0 mx-auto w-fit px-3 py-1 bg-lucy-neon-yellow text-lucy-dark-gray text-sm font-medium rounded-full">
-          {t('pricing.popular')}
-        </div>
-      )}
-      
-      {isAdditional && (
-        <div className="absolute -top-3 left-0 right-0 mx-auto w-fit px-3 py-1 bg-gray-200 text-gray-700 text-sm font-medium rounded-full">
-          Tillägg
-        </div>
-      )}
-      
-      <div className="mb-5">
-        <h3 className="text-xl font-medium mb-2">{title}</h3>
-        <div className="flex items-end gap-1 mb-2">
-          <span className="text-3xl font-bold">{price}</span>
-          <span className="text-gray-600">{period}</span>
-        </div>
-        <p className="text-gray-600 text-sm">{description}</p>
-      </div>
-      
-      <ul className="space-y-3 mb-8 flex-grow">
+    <div className={`bg-white rounded-lg shadow-md p-8 border border-gray-200 ${popular ? 'border-2 border-lucy-neon-yellow' : ''}`}>
+      <h3 className="text-2xl font-martina mb-4">{title}</h3>
+      <p className="text-4xl font-bold mb-4">
+        {price} <span className="text-sm font-normal text-gray-500">{priceInfo}</span>
+      </p>
+      <ul className="space-y-2 mb-8">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-start gap-2">
-            <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-            <span className="text-sm">{feature}</span>
+          <li key={index} className="flex items-start">
+            <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            {feature}
           </li>
         ))}
       </ul>
-      
-      <Button 
-        className={`w-full ${
-          isPopular 
-            ? 'bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-opacity-90' 
-            : 'bg-white text-gray-800 border border-gray-300 hover:bg-gray-50'
-        }`}
-        onClick={handleClick}
-      >
+      <button className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium">
         {buttonText}
-      </Button>
-      <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
+      </button>
+    </div>
+  );
+};
+
+const Pricing = () => {
+  const { t } = useLanguage();
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container py-16">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-martina mb-4">{t('pricing.title', 'Simple Pricing for Powerful Tools')}</h1>
+          <p className="text-lg text-gray-700">{t('pricing.subtitle', 'Choose the plan that fits your needs.')}</p>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
+          {/* Standard Plan */}
+          <PricingCard
+            title={t('pricing.standardTitle', 'Standard')}
+            price={t('pricing.standardPrice', '595')}
+            priceInfo={t('pricing.perRoom', '/room/month')}
+            features={t('pricing.standardFeatures', [
+              'Guest communications',
+              'Team communications',
+              'Basic analytics',
+              'Email support'
+            ]) as string[]}
+            buttonText={t('pricing.getStarted', 'Get Started')}
+            popular={false}
+          />
+
+          {/* Premium Plan */}
+          <PricingCard
+            title={t('pricing.premiumTitle', 'Premium')}
+            price={t('pricing.premiumPrice', '895')}
+            priceInfo={t('pricing.perRoom', '/room/month')}
+            features={t('pricing.premiumFeatures', [
+              'All Standard features',
+              'Premium analytics',
+              'Custom integrations',
+              'Priority support',
+              'Dedicated account manager'
+            ]) as string[]}
+            buttonText={t('pricing.contactSales', 'Contact Sales')}
+            popular={true}
+          />
+        </div>
+
+        {/* Add-ons Section */}
+        <div className="mt-20">
+          <h2 className="text-3xl font-martina text-center mb-12">{t('pricing.staffSurvey', 'Staff Satisfaction Survey')}</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Basic */}
+            <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
+              <h3 className="text-xl font-medium mb-4">{t('pricing.basicTitle', 'Basic')}</h3>
+              <p className="text-2xl font-bold mb-8">
+                {t('pricing.basicSurveyPrice', '10 000')} <span className="text-sm font-normal text-gray-500">{t('pricing.perYear', '/year')}</span>
+              </p>
+              <ul className="space-y-2 mb-8">
+                {(t('pricing.basicSurveyFeatures', [
+                  'Quarterly survey',
+                  'Basic reporting',
+                  'Department level insights',
+                  'Year over year comparison'
+                ]) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium">
+                {t('pricing.getStarted', 'Get Started')}
+              </button>
+            </div>
+            
+            {/* Premium */}
+            <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200">
+              <h3 className="text-xl font-medium mb-4">{t('pricing.advancedTitle', 'Advanced')}</h3>
+              <p className="text-2xl font-bold mb-8">
+                {t('pricing.advancedSurveyPrice', '25 000')} <span className="text-sm font-normal text-gray-500">{t('pricing.perYear', '/year')}</span>
+              </p>
+              <ul className="space-y-2 mb-8">
+                {(t('pricing.advancedSurveyFeatures', [
+                  'Monthly survey',
+                  'Advanced reporting & dashboards',
+                  'Individual level insights',
+                  'Custom questions',
+                  'Dedicated support'
+                ]) as string[]).map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium">
+                {t('pricing.contactSales', 'Contact Sales')}
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* FAQ Section (Example) */}
+        {/* <div className="mt-20">
+          <h2 className="text-3xl font-martina text-center mb-12">Frequently Asked Questions</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-medium mb-2">What is included in the Standard plan?</h3>
+              <p className="text-gray-700">The Standard plan includes guest communications, team communications, basic analytics, and email support.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-2">What is included in the Premium plan?</h3>
+              <p className="text-gray-700">The Premium plan includes all Standard features, premium analytics, custom integrations, priority support, and a dedicated account manager.</p>
+            </div>
+          </div>
+        </div> */}
+      </div>
     </div>
   );
 };
