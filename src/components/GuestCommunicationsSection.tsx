@@ -27,23 +27,13 @@ const GuestCommunicationsSection = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
           <div className="order-last md:order-first flex justify-center items-center">
             <Animate variants={slideInLeft}>
-            <div className="relative mx-auto w-full max-w-[640px]">
-              {/* Laptop mockup */}
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/c286aa08-0656-45a7-8595-6af8e79193b1.png" 
-                  alt="Laptop mockup" 
-                  className="w-full h-auto"
-                />
-                {/* Screen content - adjusted to match laptop screen dimensions exactly */}
-                <div className="absolute top-[5.2%] left-[11.5%] right-[11.5%] bottom-[30.5%] overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/b90b9d31-7d0a-4002-aa07-5aacc9705e0b.png" 
-                    alt="Lucy Guest Communications interface" 
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
+            <div className="relative mx-auto w-full max-w-[800px]">
+              {/* New MacBook mockup image */}
+              <img 
+                src="/lovable-uploads/24e89f2b-5a4d-49e1-91d8-b1361f9efacf.png" 
+                alt="Lucy Guest Communications platform" 
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </div>
             </Animate>
           </div>
