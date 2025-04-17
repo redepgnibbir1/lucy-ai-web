@@ -136,3 +136,14 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* Ensure the marquee animation is properly defined */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  min-width: max-content;
+}

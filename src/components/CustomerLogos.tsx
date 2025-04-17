@@ -10,7 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { customerLogos, CustomerLogo } from '@/config/customerLogos';
 
-// Double the logos array for seamless scrolling
+// Create a properly duplicated array for the marquee effect
 const duplicatedLogos = [...customerLogos, ...customerLogos];
 
 const CustomerLogos = () => {
@@ -73,6 +73,7 @@ const LogoCard = ({ logo, className = '' }: LogoCardProps) => {
         alt={logo.alt}
         style={{ transform: `scale(${logo.scale || 1})` }}
         className="max-h-12 max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+        loading="eager" // Force immediate loading
         onError={(e) => {
           const target = e.target as HTMLImageElement;
           target.style.display = 'none';
