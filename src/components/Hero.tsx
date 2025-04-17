@@ -43,15 +43,6 @@ const Hero = () => {
     );
   };
 
-  const renderDescription = () => {
-    const description = t('hero.description');
-    return (
-      <p className="text-xl md:text-2xl mb-16 text-[#777777] max-w-4xl mx-auto font-lab-grotesque">
-        {description}
-      </p>
-    );
-  };
-
   return (
     <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
       <div className="container px-4 sm:px-6 lg:px-8">
@@ -60,10 +51,6 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
               {renderTitle()}
             </h1>
-          </Animate>
-          
-          <Animate variants={slideInLeft} transition={{ delay: 0.4 }}>
-            {renderDescription()}
           </Animate>
           
           <Animate variants={slideInRight} transition={{ delay: 0.8 }}>
