@@ -28,11 +28,11 @@ const GuestCommunicationsSection = () => {
           <div className="order-last md:order-first flex justify-center items-center">
             <Animate variants={slideInLeft}>
             <div className="relative mx-auto w-full max-w-[800px]">
-              {/* New MacBook mockup image */}
+              {/* Improved image integration */}
               <img 
                 src="/lovable-uploads/24e89f2b-5a4d-49e1-91d8-b1361f9efacf.png" 
                 alt="Lucy Guest Communications platform" 
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto bg-transparent mix-blend-multiply"
               />
             </div>
             </Animate>
