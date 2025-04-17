@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import CalendlyWidget from './CalendlyWidget';
@@ -33,7 +32,7 @@ const Hero = () => {
       return (
         <>
           {parts[0]}
-          <span className="text-[#333333]">kommunikationsplattform</span>
+          <span className="text-black">kommunikationsplattform</span>
           {parts[1]}
         </>
       );
@@ -43,7 +42,7 @@ const Hero = () => {
     return (
       <>
         {parts[0]}
-        <span className="text-[#333333]">communication</span>
+        <span className="text-black">communication</span>
         {parts[1]}
       </>
     );
