@@ -9,7 +9,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Hero = () => {
   const [contentVisible, setContentVisible] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,25 +24,50 @@ const Hero = () => {
     setIsCalendlyOpen(true);
   };
 
+  const renderTitle = () => {
+    const title = t('hero.title');
+    const isSv = language === 'sv';
+    
+    if (isSv) {
+      const parts = title.split('kommunikationsplattform');
+      return (
+        <>
+          {parts[0]}
+          <span className="text-[#333333]">kommunikationsplattform</span>
+          {parts[1]}
+        </>
+      );
+    }
+    
+    const parts = title.split('communication');
+    return (
+      <>
+        {parts[0]}
+        <span className="text-[#333333]">communication</span>
+        {parts[1]}
+      </>
+    );
+  };
+
   return (
-    <section className="py-12 md:py-20 w-full bg-white text-lucy-black">
+    <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <Animate variants={fadeInUp}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6">
-              {t('hero.title')}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
+              {renderTitle()}
             </h1>
           </Animate>
           
           <Animate variants={slideInLeft} transition={{ delay: 0.4 }}>
-            <p className="text-lg md:text-xl mb-12 text-lucy-dark-gray-new max-w-4xl mx-auto font-lab-grotesque">
+            <p className="text-xl md:text-2xl mb-16 text-lucy-dark-gray-new max-w-4xl mx-auto font-lab-grotesque">
               {t('hero.description')}
             </p>
           </Animate>
           
           <Animate variants={slideInRight} transition={{ delay: 0.8 }}>
             <Button 
-              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium text-lg px-8 py-6 h-auto"
+              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium text-lg px-10 py-7 h-auto"
               onClick={handleDemoClick}
             >
               {t('hero.button')}
