@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Carousel,
@@ -36,7 +37,7 @@ const logos = [
     alt: "Villa Dagmar" 
   },
   { 
-    src: "/lovable-uploads/0ca0bb41-e029-40af-a7bd-4b765e8c45af.png", 
+    src: "/lovable-uploads/efa7d032-e77a-4a96-b162-3230fb174ee9.png", // Updated Marholmen logo
     alt: "Marholmen" 
   }
 ];
@@ -50,8 +51,6 @@ const CustomerLogos = () => {
   return (
     <section className="py-12 bg-lucy-white text-lucy-black overflow-hidden">
       <div className="container">
-        {/* Headline removed */}
-        
         {/* Mobile carousel with auto-scroll */}
         <div className="md:hidden">
           <Carousel
