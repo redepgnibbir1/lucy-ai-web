@@ -17,10 +17,10 @@ const Footer = () => {
           {/* Logo and Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <LucyLogo className="text-white" />
+              <LucyLogo />
             </div>
             <p className="text-sm text-gray-300 max-w-xs">
-              {t('footer.tagline', 'AI-driven tools for hotels that want to do more.')}
+              {t('footer.tagline')}
             </p>
             
             {/* Social Media */}
@@ -42,7 +42,7 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="font-martina text-lg mb-4">{t('footer.quickLinks', 'Quick Links')}</h3>
+            <h3 className="font-martina text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/fördelar" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
@@ -69,32 +69,32 @@ const Footer = () => {
           
           {/* Contact */}
           <div>
-            <h3 className="font-martina text-lg mb-4">{t('footer.contact', 'Contact')}</h3>
+            <h3 className="font-martina text-lg mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">
-                {t('footer.email', 'Email')}: <a href="mailto:contact@lucyai.com" className="hover:text-lucy-neon-yellow transition-colors">contact@lucyai.com</a>
+                {t('footer.email')}: <a href="mailto:contact@lucyai.com" className="hover:text-lucy-neon-yellow transition-colors">contact@lucyai.com</a>
               </li>
               <li className="text-gray-300">
-                {t('footer.phone', 'Phone')}: <a href="tel:+46701234567" className="hover:text-lucy-neon-yellow transition-colors">+46 70 123 4567</a>
+                {t('footer.phone')}: <a href="tel:+46701234567" className="hover:text-lucy-neon-yellow transition-colors">+46 70 123 4567</a>
               </li>
               <li className="text-gray-300">
-                {t('footer.address', 'Address')}: Storgatan 1, 111 23 Stockholm
+                {t('footer.address')}: Storgatan 1, 111 23 Stockholm
               </li>
             </ul>
           </div>
           
           {/* Newsletter - Hidden on mobile */}
           <div className="hidden lg:block">
-            <h3 className="font-martina text-lg mb-4">{t('footer.newsletter', 'Newsletter')}</h3>
-            <p className="text-sm text-gray-300 mb-4">{t('footer.newsletterDesc', 'Subscribe to our newsletter for updates')}</p>
+            <h3 className="font-martina text-lg mb-4">{t('footer.newsletter')}</h3>
+            <p className="text-sm text-gray-300 mb-4">{t('footer.newsletterDesc')}</p>
             <div className="flex">
               <input 
                 type="email" 
-                placeholder={t('footer.emailPlaceholder', 'Your email') as string} 
+                placeholder={t('footer.emailPlaceholder')} 
                 className="bg-white bg-opacity-10 text-white px-3 py-2 rounded-l text-sm focus:outline-none focus:ring-1 focus:ring-lucy-neon-yellow"
               />
               <button className="bg-lucy-neon-yellow text-lucy-black px-3 py-2 rounded-r text-sm font-medium hover:bg-opacity-90 transition-colors">
-                {t('footer.subscribe', 'Subscribe')}
+                {t('footer.subscribe')}
               </button>
             </div>
           </div>
@@ -103,14 +103,14 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            &copy; {currentYear} Lucy AI. {t('footer.allRightsReserved', 'All rights reserved.')}
+            &copy; {currentYear} Lucy AI. {t('footer.allRightsReserved')}
           </p>
           <div className="flex space-x-6">
             <Link to="/privacy" className="text-sm text-gray-400 hover:text-lucy-neon-yellow transition-colors">
-              {t('footer.privacy', 'Privacy Policy')}
+              {t('footer.privacy')}
             </Link>
             <Link to="/terms" className="text-sm text-gray-400 hover:text-lucy-neon-yellow transition-colors">
-              {t('footer.terms', 'Terms of Service')}
+              {t('footer.terms')}
             </Link>
           </div>
         </div>
