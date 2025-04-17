@@ -50,9 +50,7 @@ const CustomerLogos = () => {
   return (
     <section className="py-12 bg-lucy-white text-lucy-black overflow-hidden">
       <div className="container">
-        <h2 className="text-center font-martina text-3xl md:text-4xl mb-12">
-          {t('navbar.customerSection')}
-        </h2>
+        {/* Headline removed */}
         
         {/* Mobile carousel with auto-scroll */}
         <div className="md:hidden">
