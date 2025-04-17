@@ -44,8 +44,8 @@ const CopilotSection = () => {
                 <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
                 <div className="h-full w-full rounded-[2rem] overflow-hidden bg-white">
                   <img 
-                    src="/lovable-uploads/2f76131d-b075-4d0f-bac6-c17281009a9b.png" 
-                    alt="Lucy Copilot app screenshot" 
+                    src="/lovable-uploads/d5a18fe3-5a14-4c16-b992-6e2bc1d36d7e.png" 
+                    alt="Lucy Team Communications app screenshot" 
                     className="w-full h-full object-cover"
                   />
                 </div>
