@@ -1,4 +1,3 @@
-
 import { navigationTranslations } from './navigation';
 import { heroTranslations } from './hero';
 import { productsTranslations } from './products';
@@ -9,9 +8,10 @@ import { aboutTranslations } from './about';
 import { teamCommunicationsTranslations } from './team-communications';
 import { pricingTranslations } from './pricing';
 import { footerTranslations } from './footer';
+import { contactTranslations } from './contact';
 
-// Merge all translation objects into one
-export const translations = {
+// Merge all translations into a single object
+const translations = {
   ...navigationTranslations,
   ...heroTranslations,
   ...productsTranslations,
@@ -21,5 +21,8 @@ export const translations = {
   ...aboutTranslations,
   ...teamCommunicationsTranslations,
   ...pricingTranslations,
-  ...footerTranslations
+  ...footerTranslations,
+  ...contactTranslations,
 };
+
+export default translations;

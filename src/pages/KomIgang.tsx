@@ -6,14 +6,16 @@ import CalendlyWidget from '@/components/CalendlyWidget';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ContactForm from '@/components/ContactForm';
 
 const KomIgang = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const { t } = useLanguage();
 
   const handleContactClick = () => {
     console.log('Contact button clicked from KomIgang page');
-    setIsCalendlyOpen(true);
+    setIsContactFormOpen(true);
   };
 
   return (
@@ -91,6 +93,7 @@ const KomIgang = () => {
         </Animate>
       </div>
       <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
+      <ContactForm isOpen={isContactFormOpen} onClose={() => setIsContactFormOpen(false)} />
     </div>
   );
 };

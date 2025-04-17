@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ContactForm from '@/components/ContactForm';
 
 interface PricingCardProps {
   title: string;
@@ -9,9 +10,18 @@ interface PricingCardProps {
   features: string[];
   buttonText: string;
   popular: boolean;
+  onContactClick: () => void;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, features, buttonText, popular }) => {
+const PricingCard: React.FC<PricingCardProps> = ({ 
+  title, 
+  price, 
+  priceInfo, 
+  features, 
+  buttonText, 
+  popular,
+  onContactClick 
+}) => {
   return (
     <div className={`bg-white rounded-lg shadow-md p-8 border border-gray-200 ${popular ? 'border-2 border-lucy-neon-yellow' : ''}`}>
       <h3 className="text-2xl font-martina mb-4">{title}</h3>
@@ -28,7 +38,10 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, feat
           </li>
         ))}
       </ul>
-      <button className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium">
+      <button 
+        className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium"
+        onClick={onContactClick}
+      >
         {buttonText}
       </button>
     </div>
@@ -37,6 +50,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, priceInfo, feat
 
 const Pricing = () => {
   const { t } = useLanguage();
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   // Properly handle casting with a safeguard approach
   const getStringArray = (key: string): string[] => {
@@ -48,6 +62,11 @@ const Pricing = () => {
   const guestFeatures = getStringArray('pricing.guestCommunications.features');
   const benefitsItems = getStringArray('pricing.staffSurvey.benefits.items');
   const featuresItems = getStringArray('pricing.staffSurvey.features.items');
+
+  const handleContactClick = () => {
+    console.log('Contact button clicked from Pricing page');
+    setIsContactFormOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -66,6 +85,7 @@ const Pricing = () => {
             features={teamFeatures}
             buttonText={t('pricing.teamCommunications.buttonText')}
             popular={false}
+            onContactClick={handleContactClick}
           />
 
           {/* Guest Communications */}
@@ -76,6 +96,7 @@ const Pricing = () => {
             features={guestFeatures}
             buttonText={t('pricing.guestCommunications.buttonText')}
             popular={true}
+            onContactClick={handleContactClick}
           />
         </div>
 
@@ -121,11 +142,19 @@ const Pricing = () => {
         {/* CTA Section */}
         <div className="mt-20 text-center">
           <h2 className="text-3xl font-martina mb-6">{t('pricing.questions.title')}</h2>
-          <button className="px-8 py-3 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded-md font-medium">
+          <button 
+            className="px-8 py-3 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded-md font-medium"
+            onClick={handleContactClick}
+          >
             {t('pricing.questions.buttonText')}
           </button>
         </div>
       </div>
+      
+      <ContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </div>
   );
 };
