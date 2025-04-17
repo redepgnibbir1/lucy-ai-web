@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -8,7 +7,7 @@ const Products = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-16 md:py-24 bg-lucy-medium-gray text-lucy-white" id="products">
+    <section className="py-16 md:py-24 bg-lucy-black text-lucy-white" id="products">
       <div className="container">
         <div className="text-center mb-16">
           <Animate variants={fadeInUp}>
