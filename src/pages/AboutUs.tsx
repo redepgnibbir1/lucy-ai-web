@@ -1,6 +1,4 @@
-
 import React from 'react';
-import Navbar from '@/components/Navbar';
 import { Check, Linkedin } from "lucide-react";
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -13,7 +11,6 @@ const AboutUs = () => {
   
   return (
     <div className="min-h-screen">
-      <Navbar />
       <div className="container py-12 md:py-24">
         <Animate variants={staggerContainer}>
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">

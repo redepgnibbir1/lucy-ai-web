@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 import CalendlyWidget from '@/components/CalendlyWidget';
@@ -19,8 +18,6 @@ const KomIgang = () => {
 
   return (
     <div className="min-h-screen bg-lucy-light-gray">
-      <Navbar />
-      
       <div className="container py-16 md:py-24">
         <Animate variants={staggerContainer}>
           <div className="max-w-4xl mx-auto">
