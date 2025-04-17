@@ -1,4 +1,3 @@
-
 import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -33,23 +32,6 @@ const CopilotSection = () => {
                 <FeatureItem text={t('teamComm.benefits.time')} />
                 <FeatureItem text={t('teamComm.benefits.daily')} />
               </ul>
-            </Animate>
-          </div>
-          <div className="flex items-center justify-center">
-            <Animate variants={slideInRight}>
-              <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-                <div className="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-                <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-                <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                <div className="h-full w-full rounded-[2rem] overflow-hidden bg-white">
-                  <img 
-                    src="/lovable-uploads/d5a18fe3-5a14-4c16-b992-6e2bc1d36d7e.png" 
-                    alt="Lucy Team Communications app screenshot" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
             </Animate>
           </div>
         </div>
