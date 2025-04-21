@@ -57,14 +57,21 @@ const App = () => (
                 <KomIgang />
               </Layout>
             } />
-            <Route path="/terms" element={
-              <Layout>
-                <TermsOfService />
-              </Layout>
-            } />
             <Route path="/privacy" element={
               <Layout>
                 <PrivacyPolicy />
+              </Layout>
+            } />
+            <Route path="/gdpr" element={
+              <Layout>
+                {/* Lazy import the GDPR page for performance if needed */}
+                {/* import GDPR from "./pages/GDPR"; */}
+                {React.createElement(require("./pages/GDPR.tsx").default)}
+              </Layout>
+            } />
+            <Route path="/terms" element={
+              <Layout>
+                <TermsOfService />
               </Layout>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

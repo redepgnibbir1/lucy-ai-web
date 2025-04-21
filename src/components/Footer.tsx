@@ -102,6 +102,9 @@ const Footer = () => {
             <Link to="/privacy" className="text-sm text-gray-400 hover:text-lucy-neon-yellow transition-colors">
               {t('footer.privacy')}
             </Link>
+            <Link to="/gdpr" className="text-sm text-gray-400 hover:text-lucy-neon-yellow transition-colors">
+              GDPR
+            </Link>
             <Link to="/terms" className="text-sm text-gray-400 hover:text-lucy-neon-yellow transition-colors">
               {t('footer.terms')}
             </Link>
