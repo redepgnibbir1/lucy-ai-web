@@ -1,31 +1,23 @@
+
 import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CalendlyWidget from './CalendlyWidget';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInRight } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
-  const [contentVisible, setContentVisible] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const { t, language } = useLanguage();
-  
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setContentVisible(true);
-    }, 300);
-    
-    return () => clearTimeout(timer);
-  }, []);
-  
+
   const handleDemoClick = () => {
     console.log('Demo button clicked');
     setIsCalendlyOpen(true);
   };
 
   const renderTitle = () => {
-    const firstPart = 'Den nya kommunikationsplattformen för hotell';
-    const secondPart = ' Öka merförsäljningen förbättra teamsamarbetet och höj gästnöjdheten';
+    const firstPart = 'Den nya kommunikationsplattformen för hotell.';
+    const secondPart = ' Öka merförsäljningen, förbättra teamsamarbetet och höj gästnöjdheten.';
 
     return (
       <>
@@ -44,7 +36,7 @@ const Hero = () => {
               {renderTitle()}
             </h1>
           </Animate>
-          
+
           <Animate variants={slideInRight} transition={{ delay: 0.8 }}>
             <div className="flex justify-center">
               <Button 
@@ -63,3 +55,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
