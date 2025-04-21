@@ -1,8 +1,9 @@
+
 import React from "react";
 
 const PrivacyPolicy = () => (
   <div className="min-h-screen bg-white py-12">
-    <div className="container max-w-3xl mx-auto px-4 md:px-0">
+    <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-5xl font-medium mb-8">Privacy Policy</h1>
       <div className="prose max-w-none text-gray-800">
         <p>Your privacy is very important for us at Lucy Analytics AB (“Lucy”). In our capacity as a data controller we, therefore, ensure that applicable law regarding data privacy is complied with when we process your personal data. By way of this privacy notice (“Privacy Notice”), we want to inform you about how we ensure that your personal data is processed in accordance with applicable law.</p>

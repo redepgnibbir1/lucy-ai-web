@@ -1,8 +1,9 @@
+
 import React from "react";
 
 const GDPR = () => (
   <div className="min-h-screen bg-white py-12">
-    <div className="container max-w-3xl mx-auto px-4 md:px-0">
+    <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-5xl font-medium mb-8">Right to be Forgotten (Data Erasure Request)</h1>
       <div className="prose max-w-none text-gray-800">
         <h2>Overview</h2>
