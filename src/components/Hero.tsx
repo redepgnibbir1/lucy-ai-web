@@ -15,10 +15,21 @@ const Hero = () => {
     setIsCalendlyOpen(true);
   };
 
+  // Use translations depending on the language
   const renderTitle = () => {
+    if (language === 'en') {
+      const firstPart = 'The new communications platform for hotels.';
+      const secondPart = ' Increase upsell, improve team collaboration and boost guest satisfaction.';
+      return (
+        <>
+          <span className="text-black">{firstPart}</span>
+          <span className="text-[#777777]">{secondPart}</span>
+        </>
+      );
+    }
+    // Default to Swedish
     const firstPart = 'Den nya kommunikationsplattformen för hotell.';
     const secondPart = ' Öka merförsäljningen, förbättra teamsamarbetet och höj gästnöjdheten.';
-
     return (
       <>
         <span className="text-black">{firstPart}</span>
@@ -55,4 +66,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
