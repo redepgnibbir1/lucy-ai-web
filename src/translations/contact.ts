@@ -4,6 +4,10 @@ export const contactTranslations = {
     sv: 'Kontakta oss',
     en: 'Contact Us'
   },
+  'contact.thankYouTitle': {
+    sv: 'Tack!',
+    en: 'Thank You!'
+  },
   'contact.nameLabel': {
     sv: 'Namn',
     en: 'Name'
@@ -75,5 +79,57 @@ export const contactTranslations = {
   'contact.emailInfo': {
     sv: 'Ditt meddelande kommer att skickas till peder.ribbing@lucyanalytics.com och peter.schierenbeck@lucyanalytics.com.',
     en: 'Your message will be sent to peder.ribbing@lucyanalytics.com and peter.schierenbeck@lucyanalytics.com.'
+  },
+  'contact.successMessage': {
+    sv: 'Ditt meddelande har förberetts!',
+    en: 'Your message has been prepared!'
+  },
+  'contact.nextSteps': {
+    sv: 'Följ dessa steg för att skicka ditt meddelande:',
+    en: 'Follow these steps to send your message:'
+  },
+  'contact.instructions': {
+    sv: 'Instruktioner:',
+    en: 'Instructions:'
+  },
+  'contact.step1': {
+    sv: 'Kopiera ditt meddelande till urklipp genom att klicka på knappen nedan',
+    en: 'Copy your message to clipboard by clicking the button below'
+  },
+  'contact.step2': {
+    sv: 'Öppna din e-postapplikation',
+    en: 'Open your email application'
+  },
+  'contact.step3': {
+    sv: 'Klistra in innehållet i ett nytt e-postmeddelande',
+    en: 'Paste the content into a new email'
+  },
+  'contact.step4': {
+    sv: 'Skicka e-postmeddelandet',
+    en: 'Send the email'
+  },
+  'contact.copyToClipboard': {
+    sv: 'Kopiera till urklipp',
+    en: 'Copy to Clipboard'
+  },
+  'contact.copied': {
+    sv: 'Kopierat!',
+    en: 'Copied!'
+  },
+  'contact.emailAddresses': {
+    sv: 'Ditt meddelande kommer att skickas till:',
+    en: 'Your message will be sent to:'
+  },
+  'contact.copiedTitle': {
+    sv: 'Kopierat till urklipp!',
+    en: 'Copied to clipboard!'
+  },
+  'contact.copiedDescription': {
+    sv: 'Meddelandet har kopierats till ditt urklipp.',
+    en: 'The message has been copied to your clipboard.'
+  },
+  'contact.copyErrorDescription': {
+    sv: 'Kunde inte kopiera till urklipp. Försök igen.',
+    en: 'Could not copy to clipboard. Please try again.'
   }
 };
