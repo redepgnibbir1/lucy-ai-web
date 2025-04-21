@@ -20,9 +20,9 @@ const KomIgang = () => {
 
   return (
     <div className="min-h-screen bg-lucy-light-gray">
-      <div className="container py-16 md:py-24">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <Animate variants={staggerContainer}>
-          <div className="max-w-4xl mx-auto">
+          <div>
             <Animate variants={fadeInUp}>
               <h1 className="text-4xl md:text-5xl font-medium mb-8 font-martina">
                 {t('getStarted.title')}
