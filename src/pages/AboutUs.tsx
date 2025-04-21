@@ -1,11 +1,21 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, staggerContainer } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutUs = () => {
   const { t } = useLanguage();
+  
+  // Ensure fonts are checked on component mount
+  useEffect(() => {
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        document.documentElement.classList.remove('font-loading');
+        document.documentElement.classList.add('font-loaded');
+      });
+    }
+  }, []);
   
   return (
     <div className="min-h-screen">
@@ -42,4 +52,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-

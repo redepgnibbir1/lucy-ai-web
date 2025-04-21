@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,18 +17,55 @@
     <meta name="twitter:site" content="@lucyai" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Font preloading - absolute URLs with crossorigin attribute -->
-    <link rel="preload" href="/fonts/MartinaPlantijn-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/MartinaPlantijn-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/LabGrotesque-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/LabGrotesque-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/LabGrotesque-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <!-- Preload critical fonts with high priority -->
+    <link rel="preload" href="/fonts/martina-plantijn-font-family/MartinaPlantijn-Regular.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/martina-plantijn-font-family/MartinaPlantijn-Medium.otf" as="font" type="font/otf" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/LabGrotesqueRegularWeb/LabGrotesque-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/LabGrotesqueMediumWeb/LabGrotesque-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
     
-    <!-- Fallback font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
-    
-    <!-- Critical CSS with simplified font handling -->
+    <!-- Add font-display: swap for better performance -->
     <style>
+      /* Define fonts with font-display: swap for better performance */
+      @font-face {
+        font-family: 'Lab Grotesque';
+        src: url('/fonts/LabGrotesqueRegularWeb/LabGrotesque-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Lab Grotesque';
+        src: url('/fonts/LabGrotesqueMediumWeb/LabGrotesque-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Lab Grotesque';
+        src: url('/fonts/LabGrotesque-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Martina Plantijn';
+        src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Martina Plantijn';
+        src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      
       /* Simple body styling */
       body {
         margin: 0;
@@ -52,6 +90,9 @@
         to { opacity: 1; }
       }
     </style>
+    
+    <!-- Fallback font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
   </head>
 
   <body>

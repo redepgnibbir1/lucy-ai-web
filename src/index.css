@@ -67,48 +67,10 @@
   }
 }
 
+/* Moving font-face declarations to HTML for earlier loading */
+/* Font declarations are now directly in HTML head for better performance */
+
 @layer base {
-  @font-face {
-    font-family: 'Lab Grotesque';
-    src: url('/fonts/LabGrotesqueRegularWeb/LabGrotesque-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Lab Grotesque';
-    src: url('/fonts/LabGrotesqueMediumWeb/LabGrotesque-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Lab Grotesque';
-    src: url('/fonts/LabGrotesque-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Martina Plantijn';
-    /* src: url('/fonts/MartinaPlantijn-Regular.woff2') format('woff2'); */
-    src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Martina Plantijn';
-    src: url('/fonts/martina-plantijn-font-family/MartinaPlantijn-Medium.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  
   * {
     @apply border-border;
   }
@@ -120,6 +82,16 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Martina Plantijn', serif;
+  }
+  
+  /* Add a class for no-font-flash to prevent FOUT */
+  .font-loaded {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+  }
+  
+  .font-loading {
+    opacity: 0.95;
   }
 }
 
