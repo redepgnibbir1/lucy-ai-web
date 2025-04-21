@@ -37,16 +37,11 @@ const CopilotSection = () => {
           </div>
           <div className="flex items-center justify-center">
             <Animate variants={slideInRight}>
-              <div className="relative mx-auto border-gray-300 bg-white border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-                <div className="w-[148px] h-[18px] bg-gray-300 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-                <div className="rounded-[2rem] overflow-hidden bg-white h-full w-full">
-                  <img 
-                    src="/lovable-uploads/f29c017e-c8bd-4293-99d6-b5b0d9f7b3d4.png"
-                    alt="Lucy Team Communications app interface showing messages and work orders"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/f29c017e-c8bd-4293-99d6-b5b0d9f7b3d4.png"
+                alt="Lucy Team Communications app interface showing messages and work orders"
+                className="rounded-[2rem] max-h-[600px] object-contain"
+              />
             </Animate>
           </div>
         </div>
@@ -111,3 +106,4 @@ const FunctionCard = ({ title, description }: FunctionCardProps) => {
 };
 
 export default CopilotSection;
+
