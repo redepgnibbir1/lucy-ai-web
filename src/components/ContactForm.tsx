@@ -61,9 +61,12 @@ ${data.message}
 This message was sent from the Lucy Analytics website contact form.
       `;
       
-      // Use mailto link to open email client
-      const mailtoLink = `mailto:${recipientEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink, '_blank');
+      // Create and click a temporary anchor element to open the email client
+      const tempLink = document.createElement('a');
+      tempLink.href = `mailto:${recipientEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
       
       toast({
         title: t('contact.successTitle') || 'Message sent!',
