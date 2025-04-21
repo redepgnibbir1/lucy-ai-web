@@ -15,10 +15,9 @@ const checkFontsLoaded = () => {
     });
   } else {
     // Fallback for browsers that don't support document.fonts
-    setTimeout(() => {
-      document.documentElement.classList.remove('font-loading');
-      document.documentElement.classList.add('font-loaded');
-    }, 300);
+    // Remove delay and set loaded immediately
+    document.documentElement.classList.remove('font-loading');
+    document.documentElement.classList.add('font-loaded');
   }
 };
 
