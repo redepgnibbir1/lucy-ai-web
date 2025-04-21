@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -53,12 +52,11 @@ ${data.message}
 This message was sent from the Lucy Analytics website contact form.
       `;
 
-      // Create and click a temporary anchor element to open the email client
-      const tempLink = document.createElement('a');
-      tempLink.href = `mailto:${recipientEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      document.body.appendChild(tempLink);
-      tempLink.click();
-      document.body.removeChild(tempLink);
+      // Create mailto URL
+      const mailtoUrl = `mailto:${recipientEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open email client in a new window
+      window.open(mailtoUrl, '_blank');
 
       toast({
         title: t('contact.successTitle') || 'Message sent!',
