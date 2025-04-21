@@ -1,4 +1,3 @@
-
 export const aboutTranslations = {
   'about.title': {
     sv: 'Människor bakom maskinen',
@@ -79,5 +78,25 @@ export const aboutTranslations = {
   'about.linkedinButton': {
     sv: 'Läs mer på LinkedIn',
     en: 'Read more on LinkedIn'
+  },
+  'about.ourStory.title': {
+    sv: 'Vår historia',
+    en: 'Our Story'
+  },
+  'about.ourStory.text': {
+    sv: `För oss som står bakom Lucy var mötet med BERT-modellen (Bidirectional Encoder Representations from Transformers) en vändpunkt. När vi 2016 för första gången såg hur en AI faktiskt kunde tolka och förstå det kontextuella sammanhanget i en text, insåg vi att något stort hade hänt – världen skulle inte längre vara densamma.
+
+Vi valde att rikta vårt fokus mot hospitalitybranschen, helt enkelt för att vi ville verka i en miljö där tekniken får komma nära människor. En värld där AI kan göra verklig nytta – särskilt för dem vars arbetsdagar inte kretsar kring en skärm.
+
+Idag hjälper vi hotell och andra serviceintensiva verksamheter att effektivisera sin kommunikation – från första kontakt med gästen eller kunden, till den allra sista länken i organisationen. Våra AI-agenter tar hand om uppgifter längs hela kedjan, vilket skapar smidigare flöden och säkerställer att rätt information når rätt person i rätt ögonblick.
+
+Resultatet? Ökad merförsäljning, snabbare ledtider, förbättrad service och en personalstyrka som både är mer engagerad och bättre informerad`,
+    en: `For us behind Lucy, the meeting with the BERT model (Bidirectional Encoder Representations from Transformers) was a turning point. When, in 2016, we first saw how an AI could actually interpret and understand the contextual meaning of text, we realized something great had happened—the world would never be the same.
+
+We chose to focus on the hospitality industry, simply because we wanted to work in an environment where technology comes close to people. A world where AI can make a real difference—especially for those whose days do not revolve around a screen.
+
+Today, we help hotels and other service-intensive businesses streamline their communication—from the first guest or customer contact to the very last link in the organization. Our AI agents handle tasks along the whole chain, creating smoother flows and ensuring the right information reaches the right person at the right time.
+
+The result? Increased upselling, faster lead times, improved service, and a workforce that is both more engaged and better informed.`
   }
 };
