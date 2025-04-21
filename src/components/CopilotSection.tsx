@@ -41,8 +41,8 @@ const CopilotSection = () => {
                 <div className="w-[148px] h-[18px] bg-gray-300 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
                 <div className="rounded-[2rem] overflow-hidden bg-white h-full w-full">
                   <img 
-                    src="/lovable-uploads/ac74c410-1f92-48da-8607-dfc07d5e07a7.png" 
-                    alt="Lucy Team Communications app interface showing messages and work orders" 
+                    src="/lovable-uploads/f29c017e-c8bd-4293-99d6-b5b0d9f7b3d4.png"
+                    alt="Lucy Team Communications app interface showing messages and work orders"
                     className="w-full h-full object-cover"
                   />
                 </div>
