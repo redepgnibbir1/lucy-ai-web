@@ -6,7 +6,7 @@ const Products = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 md:py-24 bg-white text-lucy-black">
+    <section className="py-16 md:py-24 bg-lucy-black text-white">
       <div className="container text-center max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-medium mb-4">{t('products.title')}</h2>
         {/* Combined subtitle, description, and additionalInfo into one paragraph */}
@@ -19,3 +19,4 @@ const Products = () => {
 };
 
 export default Products;
+
