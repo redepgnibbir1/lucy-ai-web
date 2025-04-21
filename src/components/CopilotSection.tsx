@@ -38,7 +38,7 @@ const CopilotSection = () => {
           <div className="flex items-center justify-center">
             <Animate variants={slideInRight}>
               <img 
-                src="/lovable-uploads/f29c017e-c8bd-4293-99d6-b5b0d9f7b3d4.png"
+                src="/lovable-uploads/77f528a6-9e53-40b6-8285-d1b1d41b5339.png"
                 alt="Lucy Team Communications app interface showing messages and work orders"
                 className="rounded-[2rem] max-h-[600px] object-contain"
               />
