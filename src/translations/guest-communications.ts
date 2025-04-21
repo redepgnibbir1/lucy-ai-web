@@ -17,8 +17,8 @@ export const guestCommunicationsTranslations = {
     en: 'Benefits:'
   },
   'guestComm.benefits.upsell': {
-    sv: 'Merförsäljning – Ökat upsell med +3000€/100 rum och månad.',
-    en: 'Upselling – Increased upsell with +3000€/100 rooms per month.'
+    sv: 'Merförsäljning – Ökat upsell med +100€/rum och månad.',
+    en: 'Upselling – Increased upsell with +100€/room per month.'
   },
   'guestComm.benefits.experience': {
     sv: 'Bättre gästupplevelse – Gäster får snabbare, mer träffsäker service – och lämnar bättre omdömen.',
