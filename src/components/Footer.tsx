@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import LucyLogo from './LucyLogo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -25,9 +25,6 @@ const Footer = () => {
             
             {/* Social Media */}
             <div className="flex space-x-4 pt-2">
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
-                <Instagram size={20} />
-              </a>
               <a href="https://www.linkedin.com/company/lucy-analytics/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
                 <Linkedin size={20} />
               </a>
@@ -114,3 +111,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
