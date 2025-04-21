@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import LucyLogo from './LucyLogo';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import CalendlyWidget from './CalendlyWidget';
 import { Animate } from '@/components/ui/animate';
 import { fadeIn } from '@/lib/utils';
@@ -20,6 +20,9 @@ const Navbar = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +42,22 @@ const Navbar = () => {
     setLanguage(language === 'sv' ? 'en' : 'sv');
   };
 
+  // New handler to click on Lucy logo
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      // Scroll to the top of hero section or top of page
+      const heroElement = document.querySelector('section.py-16');
+      if (heroElement) {
+        heroElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-white text-lucy-black py-6'
@@ -46,9 +65,10 @@ const Navbar = () => {
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/">
+            {/* Replace Link by a clickable div with navigation */}
+            <a href="/" onClick={handleLogoClick} aria-label="Go to home and top of hero">
               <LucyLogo />
-            </Link>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
