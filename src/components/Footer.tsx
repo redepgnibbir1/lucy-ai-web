@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
@@ -30,7 +31,7 @@ const Footer = () => {
               <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
+              <a href="https://www.linkedin.com/company/lucy-analytics/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
                 <Linkedin size={20} />
               </a>
               <a href="mailto:contact@lucyai.com" target="_blank" rel="noopener noreferrer" aria-label="Email" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
@@ -116,3 +117,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
