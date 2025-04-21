@@ -1,8 +1,8 @@
 
 export const footerTranslations = {
   'footer.tagline': {
-    sv: 'AI-drivna verktyg för hotell som vill göra mer.',
-    en: 'AI-driven tools for hotels that want to do more.'
+    sv: 'The new communication platform for Hotels.',
+    en: 'The new communication platform for Hotels.'
   },
   'footer.quickLinks': {
     sv: 'Snabblänkar',
