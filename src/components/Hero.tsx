@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
 import CalendlyWidget from './CalendlyWidget';
@@ -25,29 +24,19 @@ const Hero = () => {
   };
 
   const renderTitle = () => {
-    const title = t('hero.title');
-    const isSv = language === 'sv';
-    
-    // More specific split pattern to ensure we don't lose any text
-    const firstPart = isSv 
-      ? 'Den nya kommunikationsplattformen för hotell' 
-      : 'The new communications platform for hotels';
-    
-    const titleParts = isSv 
-      ? [firstPart, title.substring(firstPart.length)]
-      : [firstPart, title.substring(firstPart.length)];
+    const firstPart = 'Den nya kommunikationsplattformen för hotell';
+    const secondPart = ' Öka merförsäljningen förbättra teamsamarbetet och höj gästnöjdheten';
 
     return (
       <>
-        <span className="text-black">{titleParts[0]}</span>
-        <span className="text-[#777777]">{titleParts[1]}</span>
+        <span className="text-black">{firstPart}</span>
+        <span className="text-[#777777]">{secondPart}</span>
       </>
     );
   };
 
   return (
     <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
-      {/* Remove px-4 sm:px-6 lg:px-8 padding classes from here */}
       <div className="container">
         <div className="w-full">
           <Animate variants={fadeInUp}>
