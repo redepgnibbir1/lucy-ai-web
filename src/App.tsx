@@ -13,6 +13,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,11 @@ const App = () => (
             <Route path="/terms" element={
               <Layout>
                 <TermsOfService />
+              </Layout>
+            } />
+            <Route path="/privacy" element={
+              <Layout>
+                <PrivacyPolicy />
               </Layout>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
