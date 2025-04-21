@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const PrivacyPolicy = () => (
@@ -110,4 +109,3 @@ const PrivacyPolicy = () => (
 );
 
 export default PrivacyPolicy;
-
