@@ -43,14 +43,27 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    console.log('Form data submitted:', data);
+    
     try {
-      // In a real implementation, this would send the email via a backend service
-      // For now, we'll just simulate the request
-      console.log('Form data submitted:', data);
+      // Format email body
+      const recipientEmails = ['peder.ribbing@lucyanalytics.com', 'peter.schierenbeck@lucyanalytics.com'];
+      const subject = `Contact Form Submission from ${data.name}`;
+      const body = `
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Company: ${data.company}
+
+Message:
+${data.message}
+
+This message was sent from the Lucy Analytics website contact form.
+      `;
       
-      // Here you would typically make an API call to a server endpoint
-      // that would send an email to the specified addresses
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network request
+      // Use mailto link to open email client
+      const mailtoLink = `mailto:${recipientEmails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, '_blank');
       
       toast({
         title: t('contact.successTitle') || 'Message sent!',
