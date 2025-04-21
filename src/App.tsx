@@ -1,3 +1,5 @@
+
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +16,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import GDPR from "./pages/GDPR";
 
 const queryClient = new QueryClient();
 
@@ -64,9 +67,7 @@ const App = () => (
             } />
             <Route path="/gdpr" element={
               <Layout>
-                {/* Lazy import the GDPR page for performance if needed */}
-                {/* import GDPR from "./pages/GDPR"; */}
-                {React.createElement(require("./pages/GDPR.tsx").default)}
+                <GDPR />
               </Layout>
             } />
             <Route path="/terms" element={
