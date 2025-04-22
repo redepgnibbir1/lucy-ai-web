@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { X, Copy, Check } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Form } from '@/components/ui/form';
@@ -10,6 +9,8 @@ import ContactFormFields from './ContactFormFields';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { contactFormSchema, ContactFormValues } from './ContactFormValidation';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '@/config/emailjs';
 
 interface ContactFormProps {
   isOpen: boolean;
@@ -19,9 +20,7 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   const { toast } = useToast();
   const { t } = useLanguage();
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState<ContactFormValues | null>(null);
-  const [isCopied, setIsCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -35,60 +34,47 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    console.log('Form data submitted:', data);
-    setFormData(data);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        company: data.company,
+        message: data.message,
+        to_email: EMAILJS_CONFIG.toEmail
+      };
+
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      toast({
+        title: t('contact.successTitle') || 'Success!',
+        description: t('contact.successDescription') || 'Your message has been sent successfully.',
+        variant: 'default',
+      });
+      
+      form.reset();
+      onClose();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: t('contact.errorTitle') || 'Error',
+        description: t('contact.errorDescription') || 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
     form.reset();
-    setIsSubmitted(false);
-    setIsCopied(false);
     onClose();
-  };
-
-  const copyToClipboard = () => {
-    if (!formData) return;
-
-    const recipientEmails = [
-      'peder.ribbing@lucyanalytics.com', 
-      'peter.schierenbeck@lucyanalytics.com'
-    ];
-    const subject = `Contact Form Submission from ${formData.name}`;
-    const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone || 'Not provided'}
-Company: ${formData.company}
-
-Message:
-${formData.message}
-
-This message was sent from the Lucy Analytics website contact form.
-    `;
-
-    const text = `To: ${recipientEmails.join(', ')}\nSubject: ${subject}\n\n${body}`;
-    
-    navigator.clipboard.writeText(text).then(() => {
-      setIsCopied(true);
-      toast({
-        title: t('contact.copiedTitle') || 'Copied to clipboard!',
-        description: t('contact.copiedDescription') || 'The message has been copied to your clipboard.',
-        variant: 'default',
-      });
-      
-      // Reset copied state after 3 seconds
-      setTimeout(() => {
-        setIsCopied(false);
-      }, 3000);
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-      toast({
-        title: t('contact.errorTitle') || 'Error',
-        description: t('contact.copyErrorDescription') || 'Could not copy to clipboard. Please try again.',
-        variant: 'destructive',
-      });
-    });
   };
 
   return (
@@ -96,9 +82,7 @@ This message was sent from the Lucy Analytics website contact form.
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-martina">
-            {isSubmitted 
-              ? (t('contact.thankYouTitle') || 'Thank You!')
-              : (t('contact.title') || 'Contact Us')}
+            {t('contact.title') || 'Contact Us'}
           </DialogTitle>
           <button 
             onClick={resetForm} 
@@ -109,65 +93,25 @@ This message was sent from the Lucy Analytics website contact form.
           </button>
         </DialogHeader>
 
-        {!isSubmitted ? (
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <ContactFormFields form={form} />
-              <div className="pt-4 flex justify-end gap-3">
-                <Button variant="outline" type="button" onClick={resetForm}>
-                  {t('contact.cancelButton') || 'Cancel'}
-                </Button>
-                <Button 
-                  type="submit" 
-                  className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-lucy-neon-yellow/90"
-                >
-                  {t('contact.submitButton') || 'Send Message'}
-                </Button>
-              </div>
-            </form>
-          </Form>
-        ) : (
-          <div className="space-y-6 py-4">
-            <div className="text-center mb-4">
-              <p className="text-lg font-medium mb-2">
-                {t('contact.successMessage') || 'Your message has been prepared!'}
-              </p>
-              <p className="text-gray-600">
-                {t('contact.nextSteps') || 'Follow these steps to send your message:'}
-              </p>
-            </div>
-            
-            <div className="space-y-4 bg-gray-50 p-5 rounded-md">
-              <h3 className="font-medium">{t('contact.instructions') || 'Instructions:'}</h3>
-              <ol className="list-decimal pl-5 space-y-2">
-                <li>{t('contact.step1') || 'Copy your message to clipboard by clicking the button below'}</li>
-                <li>{t('contact.step2') || 'Open your email application'}</li>
-                <li>{t('contact.step3') || 'Paste the content into a new email'}</li>
-                <li>{t('contact.step4') || 'Send the email'}</li>
-              </ol>
-            </div>
-            
-            <div className="flex justify-center">
-              <Button
-                onClick={copyToClipboard}
-                className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-lucy-neon-yellow/90 flex items-center gap-2"
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <ContactFormFields form={form} />
+            <div className="pt-4 flex justify-end gap-3">
+              <Button variant="outline" type="button" onClick={resetForm}>
+                {t('contact.cancelButton') || 'Cancel'}
+              </Button>
+              <Button 
+                type="submit" 
+                className="bg-lucy-neon-yellow text-lucy-dark-gray hover:bg-lucy-neon-yellow/90"
+                disabled={isSubmitting}
               >
-                {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                {isCopied 
-                  ? (t('contact.copied') || 'Copied!') 
-                  : (t('contact.copyToClipboard') || 'Copy to Clipboard')}
+                {isSubmitting 
+                  ? (t('contact.sendingButton') || 'Sending...') 
+                  : (t('contact.submitButton') || 'Send Message')}
               </Button>
             </div>
-            
-            <div className="pt-4 border-t border-gray-200 mt-4">
-              <p className="text-center text-sm text-gray-600">
-                {t('contact.emailAddresses') || 'Your message will be sent to:'}
-                <br />
-                <span className="font-medium">peder.ribbing@lucyanalytics.com, peter.schierenbeck@lucyanalytics.com</span>
-              </p>
-            </div>
-          </div>
-        )}
+          </form>
+        </Form>
         
         <div className="text-xs text-gray-500 mt-4">
           <p>
