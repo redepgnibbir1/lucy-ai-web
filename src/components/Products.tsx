@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
@@ -13,18 +14,10 @@ const Products = () => {
           <Animate variants={fadeInUp}>
             <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">{t('products.title')}</h2>
           </Animate>
-          <Animate variants={slideInLeft}>
-            <p className="text-xl md:text-2xl font-medium mb-4">{t('products.subtitle')}</p>
-          </Animate>
           
-          <Animate variants={slideInRight}>
-            <p className="max-w-3xl mx-auto text-lg">
-              {t('products.description')}
-            </p>
-          </Animate>
           <Animate variants={slideInLeft}>
-            <p className="max-w-3xl mx-auto text-lg mt-4">
-              {t('products.additionalInfo')}
+            <p className="max-w-3xl mx-auto text-lg whitespace-pre-line">
+              {`${t('products.subtitle')}\n\n${t('products.description')}\n\n${t('products.additionalInfo')}`}
             </p>
           </Animate>
         </div>
@@ -66,7 +59,15 @@ interface ProductCardProps {
 const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCardProps) => {
   const handleClick = () => {
     console.log(`Product card clicked: ${title}`);
-    if (href) {
+    if (href && href.startsWith('#')) {
+      const targetElement = document.getElementById(href.substring(1));
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback if element not found
+        window.location.href = href;
+      }
+    } else if (href) {
       window.location.href = href;
     }
   };

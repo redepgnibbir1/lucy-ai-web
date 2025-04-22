@@ -151,10 +151,12 @@ const Pricing = () => {
         </div>
       </div>
       
-      <ContactForm 
-        isOpen={isContactFormOpen} 
-        onClose={() => setIsContactFormOpen(false)} 
-      />
+      {isContactFormOpen && (
+        <ContactForm 
+          isOpen={isContactFormOpen} 
+          onClose={() => setIsContactFormOpen(false)} 
+        />
+      )}
     </div>
   );
 };
