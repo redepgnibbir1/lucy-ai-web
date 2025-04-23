@@ -1,4 +1,3 @@
-
 export const contactTranslations = {
   'contact.title': {
     sv: 'Kontakta oss',
@@ -55,6 +54,10 @@ export const contactTranslations = {
   'contact.submitButton': {
     sv: 'Skicka meddelande',
     en: 'Send Message'
+  },
+  'contact.sendingButton': {
+    sv: 'Skickar...',
+    en: 'Sending...'
   },
   'contact.successTitle': {
     sv: 'Meddelande skickat!',
