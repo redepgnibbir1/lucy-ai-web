@@ -8,9 +8,9 @@ const Products = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-16 md:py-24 bg-lucy-black text-lucy-white" id="products">
-      <div className="container">
-        <div className="text-center mb-16">
+    <section className="py-16 md:py-24 bg-lucy-black text-lucy-white overflow-x-hidden" id="products">
+      <div className="container px-3 sm:px-4">
+        <div className="text-center mb-16 max-w-full">
           <Animate variants={fadeInUp}>
             <h2 className="text-3xl md:text-4xl font-medium mt-4 mb-6">{t('products.title')}</h2>
           </Animate>
@@ -73,10 +73,10 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
   };
 
   return (
-    <div className="bg-lucy-dark-gray-new p-8 rounded-lg flex flex-col h-full text-lucy-white">
+    <div className="bg-lucy-dark-gray-new p-4 sm:p-8 rounded-lg flex flex-col h-full text-lucy-white w-full">
       <h3 className="text-lg font-medium text-lucy-light-gray-new mb-4">{title}</h3>
-      <h4 className="text-xl font-medium mb-4">{description}</h4>
-      <p className="text-lucy-light-gray-new mb-6 flex-grow">{subtext}</p>
+      <h4 className="text-xl font-medium mb-4 break-words">{description}</h4>
+      <p className="text-lucy-light-gray-new mb-6 flex-grow break-words">{subtext}</p>
       <Button 
         variant="link" 
         className="text-lucy-neon-yellow p-0 justify-start font-medium"
