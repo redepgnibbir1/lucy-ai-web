@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="container">
         <div className="w-full">
           <Animate variants={fadeInUp}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight md:leading-[1.15] lg:leading-[1.15] mb-8">
               {renderTitle()}
             </h1>
           </Animate>
@@ -65,4 +65,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero;    

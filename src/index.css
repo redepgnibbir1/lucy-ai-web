@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,6 +77,16 @@
   body {
     @apply bg-lucy-white text-lucy-black;
     font-family: 'Lab Grotesque', 'Inter', sans-serif;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Ensure all direct children of body don't cause horizontal overflow */
+  body > * {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -97,6 +106,9 @@
 
 .container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* Ensure container doesn't cause horizontal overflow */
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .fade-in {
@@ -118,4 +130,18 @@
 .animate-marquee {
   animation: marquee 30s linear infinite;
   min-width: max-content;
+}
+
+/* Add responsive overflow handling */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
