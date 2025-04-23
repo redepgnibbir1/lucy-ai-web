@@ -89,7 +89,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
             className="absolute right-4 top-4 p-1 rounded-full hover:bg-gray-100 transition-colors"
             aria-label="Close"
           >
-            <X className="h-5 w-5" />
+            {/* <X className="h-5 w-5" /> */}
           </button>
         </DialogHeader>
 
