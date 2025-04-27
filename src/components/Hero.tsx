@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import CalendlyWidget from './CalendlyWidget';
@@ -15,7 +14,6 @@ const Hero = () => {
     setIsCalendlyOpen(true);
   };
 
-  // Use translations depending on the language
   const renderTitle = () => {
     if (language === 'en') {
       const firstPart = 'The new communications platform for hotels.';
@@ -27,9 +25,9 @@ const Hero = () => {
         </>
       );
     }
-    // Default to Swedish
-    const firstPart = 'Den nya kommunikationsplattformen för hotell.';
-    const secondPart = ' Öka merförsäljningen, förbättra teamsamarbetet och höj gästnöjdheten.';
+    // Swedish text
+    const firstPart = 'Det nya sättet för hotell att kommunicera.';
+    const secondPart = ' Ökad merförsäljning, bättre teamsamarbete och nöjdare gäster.';
     return (
       <>
         <span className="text-black">{firstPart}</span>
@@ -65,4 +63,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;    
+export default Hero;
