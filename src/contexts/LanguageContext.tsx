@@ -10,7 +10,8 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const defaultLanguage: Language = 'sv';
+// Changed default language to 'en'
+const defaultLanguage: Language = 'en';
 
 const LanguageContext = createContext<LanguageContextType>({
   language: defaultLanguage,
