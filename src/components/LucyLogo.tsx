@@ -5,8 +5,8 @@ const LucyLogo = () => {
   return (
     <div className="flex items-center">
       <img 
-        src="/lovable-uploads/bb87bab1-89b6-4e26-aaf4-111c8fa9954c.png" 
-        alt="Lucy Logo" 
+        src="/lovable-uploads/b2fc82cb-8f48-4eae-b824-2bb8c21ae2ac.png" 
+        alt="Lucy Logo (White)" 
         className="h-8 w-auto" 
       />
     </div>
@@ -14,4 +14,3 @@ const LucyLogo = () => {
 };
 
 export default LucyLogo;
-
