@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -89,12 +88,6 @@ const Navbar = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button 
-              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium"
-              onClick={handleDemoClick}
-            >
-              {t('nav.bookDemo')}
-            </Button>
             <a 
               href="https://copilot.lucyanalytics.com/copilot" 
               target="_blank" 
@@ -103,6 +96,12 @@ const Navbar = () => {
             >
               {t('nav.signIn')}
             </a>
+            <Button 
+              className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 font-medium"
+              onClick={handleDemoClick}
+            >
+              {t('nav.bookDemo')}
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
