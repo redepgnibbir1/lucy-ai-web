@@ -95,6 +95,14 @@ const Navbar = () => {
             >
               {t('nav.bookDemo')}
             </Button>
+            <a 
+              href="https://copilot.lucyanalytics.com/copilot" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-lucy-black hover:text-lucy-medium-gray transition-colors"
+            >
+              {t('nav.signIn')}
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,6 +140,14 @@ const Navbar = () => {
           <div className="md:hidden container mt-4 pb-4 bg-white">
             <div className="flex flex-col space-y-4">
               <NavLinks mobile />
+              <a 
+                href="https://copilot.lucyanalytics.com/copilot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block text-lucy-black hover:text-lucy-medium-gray transition-colors py-2"
+              >
+                {t('nav.signIn')}
+              </a>
               <Button 
                 className="bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 w-full font-medium"
                 onClick={handleDemoClick}

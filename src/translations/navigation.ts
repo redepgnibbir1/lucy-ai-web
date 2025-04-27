@@ -26,5 +26,9 @@ export const navigationTranslations = {
   'navbar.customerSection': {
     sv: 'Våra kunder',
     en: 'Our Clients'
-  }
+  },
+  'nav.signIn': {
+    sv: 'Logga in',
+    en: 'Sign in'
+  },
 };
