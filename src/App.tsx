@@ -18,6 +18,12 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import GDPR from "./pages/GDPR";
 
+// Create a global window object property to disable the Lovable badge
+if (typeof window !== 'undefined') {
+  // @ts-ignore
+  window.__LOVABLE_BADGE__ = false;
+}
+
 const queryClient = new QueryClient();
 
 // Layout component to wrap all pages with Navbar and Footer
