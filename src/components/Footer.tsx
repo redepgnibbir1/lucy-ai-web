@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail } from 'lucide-react';
@@ -17,7 +16,7 @@ const Footer = () => {
           {/* Logo and Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <LucyLogo />
+              <LucyLogo variant="light" />
             </div>
             <p className="text-sm text-gray-300 max-w-xs">
               {t('footer.tagline')}
@@ -111,4 +110,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
