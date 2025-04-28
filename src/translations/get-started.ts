@@ -9,12 +9,12 @@ export const getStartedTranslations = {
     en: 'At Lucy, we make it easy for you to get started with our AI solutions. We offer a smooth and professional implementation process to ensure your hotel gets maximum benefit from our platform.'
   },
   'getStarted.onboarding.title': {
-    sv: 'Gratis onboarding för hotell med över 50 rum',
-    en: 'Free onboarding for hotels with over 50 rooms'
+    sv: 'Professionell onboarding med på-plats utbildning för alla våra kunder',
+    en: 'Professional onboarding with on-site training for all our customers'
   },
   'getStarted.onboarding.intro': {
-    sv: 'Vi investerar i er framgång. Därför erbjuder vi hotell med över 50 rum gratis onboarding, vilket inkluderar:',
-    en: 'We invest in your success. That\'s why we offer hotels with over 50 rooms free onboarding, which includes:'
+    sv: 'Vi investerar i er framgång. Därför erbjuder vi våra kunder ett omfattande onboardingprogram som inkluderar:',
+    en: 'We invest in your success. That\'s why we offer our customers a comprehensive onboarding program which includes:'
   },
   'getStarted.onboarding.item1': {
     sv: 'Personlig implementeringsplan',
