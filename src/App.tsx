@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -77,18 +78,37 @@ const App = () => {
           '[class*="lovable-badge"]',
           '[id*="lovable-badge"]',
           '[class*="lovable"]',
-          '[id*="lovable"]'
+          '[id*="lovable"]',
+          // Add extremely specific selectors that might target the badge
+          '[style*="position: fixed"]',
+          '[style*="bottom: 0"]',
+          '[style*="right: 0"]',
+          'a[href*="lovable"]',
+          // Target any fixed positioned elements in the bottom-right corner
+          'div[style*="position: fixed"][style*="bottom"][style*="right"]',
+          'a[style*="position: fixed"][style*="bottom"][style*="right"]'
         ];
         
         selectors.forEach(selector => {
           const elements = document.querySelectorAll(selector);
-          elements.forEach(el => el.remove());
+          elements.forEach(el => {
+            // Check if it might be the badge before removing
+            const text = el.textContent?.toLowerCase() || '';
+            const href = (el as HTMLAnchorElement).href || '';
+            if (text.includes('lovable') || 
+                text.includes('edit') || 
+                href.includes('lovable') || 
+                el.className.includes('lovable') ||
+                (el.getAttribute('style') || '').includes('position: fixed')) {
+              el.remove();
+            }
+          });
         });
       };
       
-      // Run immediately and then after a short delay to catch any dynamically added badges
+      // Run immediately and then at short intervals to catch any dynamically added badges
       removeExistingBadge();
-      const cleanupInterval = setInterval(removeExistingBadge, 500);
+      const cleanupInterval = setInterval(removeExistingBadge, 200);
       
       // Cleanup the interval when component unmounts
       return () => clearInterval(cleanupInterval);
@@ -104,11 +124,36 @@ const App = () => {
         [class*="lovable-badge"],
         [id*="lovable-badge"],
         [class*="lovable"]:not(.lovable-exclude),
-        [id*="lovable"]:not(.lovable-exclude) {
+        [id*="lovable"]:not(.lovable-exclude),
+        a[href*="lovable.dev"],
+        div[style*="position: fixed"][style*="bottom: 16px"][style*="right: 16px"],
+        div[style*="position: fixed"][style*="bottom: 1rem"][style*="right: 1rem"],
+        a[style*="position: fixed"][style*="bottom"][style*="right"],
+        div[style*="position: fixed"][style*="bottom"][style*="right"],
+        div[style*="z-index: 9999"][style*="position: fixed"],
+        div[style*="z-index: 999"][style*="position: fixed"] {
           display: none !important;
           visibility: hidden !important;
           opacity: 0 !important;
           pointer-events: none !important;
+          width: 0 !important;
+          height: 0 !important;
+          overflow: hidden !important;
+          position: absolute !important;
+          top: -9999px !important;
+          left: -9999px !important;
+        }
+        
+        /* Target any fixed position elements in the bottom right corner specifically */
+        body:after {
+          content: "";
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 150px;
+          height: 80px;
+          background-color: white;
+          z-index: 10000;
         }
       `;
       document.head.appendChild(style);
