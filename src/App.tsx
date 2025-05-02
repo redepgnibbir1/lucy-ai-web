@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -24,6 +24,7 @@ if (typeof window !== 'undefined') {
   window.__LOVABLE_BADGE__ = false;
 }
 
+// Also add a useEffect to ensure the badge is disabled when the app is mounted
 const queryClient = new QueryClient();
 
 // Layout component to wrap all pages with Navbar and Footer
@@ -37,61 +38,71 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <LanguageProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/fördelar" element={
-              <Layout>
-                <Fördelar />
-              </Layout>
-            } />
-            <Route path="/pricing" element={
-              <Layout>
-                <Pricing />
-              </Layout>
-            } />
-            <Route path="/about" element={
-              <Layout>
-                <AboutUs />
-              </Layout>
-            } />
-            <Route path="/kom-igang" element={
-              <Layout>
-                <KomIgang />
-              </Layout>
-            } />
-            <Route path="/privacy" element={
-              <Layout>
-                <PrivacyPolicy />
-              </Layout>
-            } />
-            <Route path="/gdpr" element={
-              <Layout>
-                <GDPR />
-              </Layout>
-            } />
-            <Route path="/terms" element={
-              <Layout>
-                <TermsOfService />
-              </Layout>
-            } />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={
-              <Layout>
-                <NotFound />
-              </Layout>
-            } />
-          </Routes>
-        </BrowserRouter>
-      </LanguageProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Add this useEffect to ensure the badge is removed after component mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // @ts-ignore
+      window.__LOVABLE_BADGE__ = false;
+    }
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <LanguageProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/fördelar" element={
+                <Layout>
+                  <Fördelar />
+                </Layout>
+              } />
+              <Route path="/pricing" element={
+                <Layout>
+                  <Pricing />
+                </Layout>
+              } />
+              <Route path="/about" element={
+                <Layout>
+                  <AboutUs />
+                </Layout>
+              } />
+              <Route path="/kom-igang" element={
+                <Layout>
+                  <KomIgang />
+                </Layout>
+              } />
+              <Route path="/privacy" element={
+                <Layout>
+                  <PrivacyPolicy />
+                </Layout>
+              } />
+              <Route path="/gdpr" element={
+                <Layout>
+                  <GDPR />
+                </Layout>
+              } />
+              <Route path="/terms" element={
+                <Layout>
+                  <TermsOfService />
+                </Layout>
+              } />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={
+                <Layout>
+                  <NotFound />
+                </Layout>
+              } />
+            </Routes>
+          </BrowserRouter>
+        </LanguageProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
