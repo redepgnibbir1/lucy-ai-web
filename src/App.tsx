@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -22,9 +21,34 @@ import GDPR from "./pages/GDPR";
 if (typeof window !== 'undefined') {
   // @ts-ignore
   window.__LOVABLE_BADGE__ = false;
+  
+  // Also try removing any existing badge elements that might be in the DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    const removeExistingBadge = () => {
+      // Try various selectors that might match the badge
+      const selectors = [
+        '[data-testid="lovable-badge"]',
+        '[class*="lovable-badge"]',
+        '[id*="lovable-badge"]',
+        '[class*="lovable"]',
+        '[id*="lovable"]'
+      ];
+      
+      selectors.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => el.remove());
+      });
+    };
+    
+    // Run immediately and then periodically to catch dynamically added badges
+    removeExistingBadge();
+    const interval = setInterval(removeExistingBadge, 1000);
+    
+    // Clear after some time to not keep running forever
+    setTimeout(() => clearInterval(interval), 10000);
+  });
 }
 
-// Also add a useEffect to ensure the badge is disabled when the app is mounted
 const queryClient = new QueryClient();
 
 // Layout component to wrap all pages with Navbar and Footer
@@ -44,6 +68,50 @@ const App = () => {
     if (typeof window !== 'undefined') {
       // @ts-ignore
       window.__LOVABLE_BADGE__ = false;
+      
+      // Enhanced badge removal in React context
+      const removeExistingBadge = () => {
+        // Try various selectors that might match the badge
+        const selectors = [
+          '[data-testid="lovable-badge"]',
+          '[class*="lovable-badge"]',
+          '[id*="lovable-badge"]',
+          '[class*="lovable"]',
+          '[id*="lovable"]'
+        ];
+        
+        selectors.forEach(selector => {
+          const elements = document.querySelectorAll(selector);
+          elements.forEach(el => el.remove());
+        });
+      };
+      
+      // Run immediately and then after a short delay to catch any dynamically added badges
+      removeExistingBadge();
+      const cleanupInterval = setInterval(removeExistingBadge, 500);
+      
+      // Cleanup the interval when component unmounts
+      return () => clearInterval(cleanupInterval);
+    }
+  }, []);
+
+  // CSS to hide Lovable badge via styles
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        [data-testid="lovable-badge"],
+        [class*="lovable-badge"],
+        [id*="lovable-badge"],
+        [class*="lovable"]:not(.lovable-exclude),
+        [id*="lovable"]:not(.lovable-exclude) {
+          display: none !important;
+          visibility: hidden !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+      `;
+      document.head.appendChild(style);
     }
   }, []);
 
