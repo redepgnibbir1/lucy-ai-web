@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,38 +18,7 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import GDPR from "./pages/GDPR";
 
-// Create a global window object property to disable the Lovable badge
-if (typeof window !== 'undefined') {
-  // @ts-ignore
-  window.__LOVABLE_BADGE__ = false;
-  
-  // Also try removing any existing badge elements that might be in the DOM
-  document.addEventListener('DOMContentLoaded', () => {
-    const removeExistingBadge = () => {
-      // Try various selectors that might match the badge
-      const selectors = [
-        '[data-testid="lovable-badge"]',
-        '[class*="lovable-badge"]',
-        '[id*="lovable-badge"]',
-        '[class*="lovable"]',
-        '[id*="lovable"]'
-      ];
-      
-      selectors.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(el => el.remove());
-      });
-    };
-    
-    // Run immediately and then periodically to catch dynamically added badges
-    removeExistingBadge();
-    const interval = setInterval(removeExistingBadge, 1000);
-    
-    // Clear after some time to not keep running forever
-    setTimeout(() => clearInterval(interval), 10000);
-  });
-}
-
+// Create a queryClient instance
 const queryClient = new QueryClient();
 
 // Layout component to wrap all pages with Navbar and Footer
@@ -64,99 +33,186 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
 );
 
 const App = () => {
+  const cleanupIntervalRef = useRef<number | null>(null);
+  const observerRef = useRef<MutationObserver | null>(null);
+
   // Add this useEffect to ensure the badge is removed after component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // Set global variables to disable the badge
       // @ts-ignore
       window.__LOVABLE_BADGE__ = false;
+      // @ts-ignore
+      window.__LOVABLE_BADGE_DISABLED__ = true;
       
-      // Enhanced badge removal in React context
+      // Enhanced badge removal function
       const removeExistingBadge = () => {
-        // Try various selectors that might match the badge
         const selectors = [
           '[data-testid="lovable-badge"]',
           '[class*="lovable-badge"]',
           '[id*="lovable-badge"]',
           '[class*="lovable"]',
           '[id*="lovable"]',
-          // Add extremely specific selectors that might target the badge
-          '[style*="position: fixed"]',
-          '[style*="bottom: 0"]',
-          '[style*="right: 0"]',
           'a[href*="lovable"]',
-          // Target any fixed positioned elements in the bottom-right corner
           'div[style*="position: fixed"][style*="bottom"][style*="right"]',
-          'a[style*="position: fixed"][style*="bottom"][style*="right"]'
+          'a[style*="position: fixed"][style*="bottom"][style*="right"]',
+          'iframe[src*="lovable"]',
+          // Extremely precise targeting for known badge locations
+          'div[style*="z-index: 9999"][style*="position: fixed"]',
+          'div[style*="bottom: 16px"][style*="right: 16px"]',
+          'div[style*="bottom: 1rem"][style*="right: 1rem"]'
         ];
         
         selectors.forEach(selector => {
-          const elements = document.querySelectorAll(selector);
-          elements.forEach(el => {
-            // Check if it might be the badge before removing
-            const text = el.textContent?.toLowerCase() || '';
-            const href = (el as HTMLAnchorElement).href || '';
-            if (text.includes('lovable') || 
-                text.includes('edit') || 
-                href.includes('lovable') || 
-                el.className.includes('lovable') ||
-                (el.getAttribute('style') || '').includes('position: fixed')) {
-              el.remove();
-            }
-          });
+          try {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+              const text = el.textContent?.toLowerCase() || '';
+              const href = (el as HTMLAnchorElement).href || '';
+              const className = el.className || '';
+              const style = el.getAttribute('style') || '';
+              
+              // Check if it might be the badge
+              if (text.includes('lovable') || 
+                  text.includes('edit') || 
+                  href.includes('lovable') || 
+                  className.includes('lovable') ||
+                  style.includes('position: fixed') && 
+                  (style.includes('bottom') || style.includes('right'))) {
+                el.remove();
+              }
+            });
+          } catch (e) {
+            // Silently continue if any error occurs when removing elements
+          }
         });
+        
+        // Create a white overlay for the bottom right corner
+        const existingOverlay = document.getElementById('lovable-badge-overlay');
+        if (!existingOverlay) {
+          const overlay = document.createElement('div');
+          overlay.id = 'lovable-badge-overlay';
+          overlay.style.cssText = `
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            z-index: 99999;
+            pointer-events: none;
+          `;
+          document.body.appendChild(overlay);
+        }
       };
       
-      // Run immediately and then at short intervals to catch any dynamically added badges
-      removeExistingBadge();
-      const cleanupInterval = setInterval(removeExistingBadge, 200);
+      // Setup mutation observer to detect and remove dynamically added badges
+      if (!observerRef.current) {
+        observerRef.current = new MutationObserver((mutations) => {
+          // Check if any of the mutations might be adding the badge
+          const shouldRemoveBadge = mutations.some(mutation => {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              return Array.from(mutation.addedNodes).some((node: any) => {
+                if (node.nodeType === 1) { // Element node
+                  const el = node as HTMLElement;
+                  const innerHTML = el.innerHTML?.toLowerCase() || '';
+                  const outerHTML = el.outerHTML?.toLowerCase() || '';
+                  const className = el.className || '';
+                  const id = el.id || '';
+                  
+                  return innerHTML.includes('lovable') || 
+                         outerHTML.includes('lovable') || 
+                         className.includes('lovable') || 
+                         id.includes('lovable') ||
+                         (el.style?.position === 'fixed' && 
+                          (el.style?.bottom || el.style?.right));
+                }
+                return false;
+              });
+            }
+            return false;
+          });
+          
+          if (shouldRemoveBadge) {
+            removeExistingBadge();
+          }
+        });
+        
+        observerRef.current.observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          characterData: false
+        });
+      }
       
-      // Cleanup the interval when component unmounts
-      return () => clearInterval(cleanupInterval);
+      // Run immediately and then at a more frequent interval
+      removeExistingBadge();
+      if (cleanupIntervalRef.current) {
+        clearInterval(cleanupIntervalRef.current);
+      }
+      cleanupIntervalRef.current = window.setInterval(removeExistingBadge, 100);
+      
+      // Cleanup function when component unmounts
+      return () => {
+        if (cleanupIntervalRef.current) {
+          clearInterval(cleanupIntervalRef.current);
+        }
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+        }
+      };
     }
   }, []);
 
   // CSS to hide Lovable badge via styles
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      const style = document.createElement('style');
-      style.innerHTML = `
-        [data-testid="lovable-badge"],
-        [class*="lovable-badge"],
-        [id*="lovable-badge"],
-        [class*="lovable"]:not(.lovable-exclude),
-        [id*="lovable"]:not(.lovable-exclude),
-        a[href*="lovable.dev"],
-        div[style*="position: fixed"][style*="bottom: 16px"][style*="right: 16px"],
-        div[style*="position: fixed"][style*="bottom: 1rem"][style*="right: 1rem"],
-        a[style*="position: fixed"][style*="bottom"][style*="right"],
-        div[style*="position: fixed"][style*="bottom"][style*="right"],
-        div[style*="z-index: 9999"][style*="position: fixed"],
-        div[style*="z-index: 999"][style*="position: fixed"] {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-          width: 0 !important;
-          height: 0 !important;
-          overflow: hidden !important;
-          position: absolute !important;
-          top: -9999px !important;
-          left: -9999px !important;
-        }
-        
-        /* Target any fixed position elements in the bottom right corner specifically */
-        body:after {
-          content: "";
-          position: fixed;
-          bottom: 0;
-          right: 0;
-          width: 150px;
-          height: 80px;
-          background-color: white;
-          z-index: 10000;
-        }
-      `;
-      document.head.appendChild(style);
+      const existingStyle = document.getElementById('badge-removal-style');
+      if (!existingStyle) {
+        const style = document.createElement('style');
+        style.id = 'badge-removal-style';
+        style.innerHTML = `
+          [data-testid="lovable-badge"],
+          [class*="lovable-badge"],
+          [id*="lovable-badge"],
+          [class*="lovable"]:not(.lovable-exclude),
+          [id*="lovable"]:not(.lovable-exclude),
+          a[href*="lovable"],
+          div[style*="position: fixed"][style*="bottom: 16px"][style*="right: 16px"],
+          div[style*="position: fixed"][style*="bottom: 1rem"][style*="right: 1rem"],
+          a[style*="position: fixed"][style*="bottom"][style*="right"],
+          div[style*="position: fixed"][style*="bottom"][style*="right"],
+          div[style*="z-index: 9999"][style*="position: fixed"],
+          div[style*="z-index: 999"][style*="position: fixed"],
+          iframe[src*="lovable"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            overflow: hidden !important;
+            position: absolute !important;
+            top: -9999px !important;
+            left: -9999px !important;
+          }
+          
+          /* Target any fixed position elements in the bottom right corner specifically */
+          body::after {
+            content: "";
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            z-index: 99999;
+            pointer-events: none;
+          }
+        `;
+        document.head.appendChild(style);
+      }
     }
   }, []);
 
