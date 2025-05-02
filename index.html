@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,39 +89,6 @@
         from { opacity: 0; }
         to { opacity: 1; }
       }
-
-      /* Hide Lovable badge */
-      [data-testid="lovable-badge"],
-      [class*="lovable-badge"],
-      [id*="lovable-badge"],
-      [class*="lovable"]:not(.lovable-exclude),
-      [id*="lovable"]:not(.lovable-exclude),
-      a[href*="lovable"],
-      div[style*="position: fixed"][style*="bottom"][style*="right"],
-      a[style*="position: fixed"][style*="bottom"][style*="right"],
-      iframe[src*="lovable"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        pointer-events: none !important;
-        top: -9999px !important;
-        left: -9999px !important;
-      }
-      
-      /* Create a white overlay for bottom right corner */
-      body::after {
-        content: "";
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 200px;
-        height: 100px;
-        background-color: white;
-        z-index: 99999;
-      }
     </style>
     
     <!-- Fallback font -->
@@ -131,59 +99,7 @@
     <div id="root"></div>
     <!-- Calendly Widget Script -->
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Modified GPT Engineer script -->
-    <script>
-      // Block lovable badge creation
-      window.__LOVABLE_BADGE__ = false;
-      window.__LOVABLE_BADGE_DISABLED__ = true;
-      
-      // Function to remove any badge that might get injected
-      function removeBadge() {
-        const selectors = [
-          '[data-testid="lovable-badge"]',
-          '[class*="lovable-badge"]',
-          '[id*="lovable-badge"]',
-          '[class*="lovable"]',
-          '[id*="lovable"]',
-          'a[href*="lovable"]',
-          'div[style*="position: fixed"][style*="bottom"][style*="right"]',
-          'a[style*="position: fixed"][style*="bottom"][style*="right"]',
-          'iframe[src*="lovable"]'
-        ];
-        
-        selectors.forEach(selector => {
-          document.querySelectorAll(selector).forEach(el => {
-            el.remove();
-          });
-        });
-      }
-      
-      // Run immediately and set interval to catch injected elements
-      removeBadge();
-      setInterval(removeBadge, 100);
-      
-      // Intercept createElement to prevent badge creation
-      const originalCreateElement = document.createElement;
-      document.createElement = function() {
-        const element = originalCreateElement.apply(this, arguments);
-        const elementToString = element.toString().toLowerCase();
-        
-        // Add attributes observer to detect and remove badge-related attributes
-        if (element.setAttribute) {
-          const originalSetAttribute = element.setAttribute;
-          element.setAttribute = function(name, value) {
-            if ((name && name.toLowerCase().includes('lovable')) || 
-                (value && typeof value === 'string' && value.toLowerCase().includes('lovable'))) {
-              return;
-            }
-            return originalSetAttribute.apply(this, arguments);
-          };
-        }
-        
-        return element;
-      };
-    </script>
-    <!-- Keep the GPT Engineer script as required -->
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
