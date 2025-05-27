@@ -1,3 +1,4 @@
+
 export const aboutTranslations = {
   'about.title': {
     sv: 'Människor bakom maskinen',
@@ -9,7 +10,11 @@ export const aboutTranslations = {
   },
   'about.vision.title': {
     sv: 'Vår vision',
-    en: 'Our vision'
+    en: 'Our Vision'
+  },
+  'about.vision.subtitle': {
+    sv: 'Superhuman Intelligence for Hotels – Solving Communication, Seamlessly',
+    en: 'Superhuman Intelligence for Hotels – Solving Communication, Seamlessly'
   },
   'about.vision.text': {
     sv: 'Att vara den ledande AI-partnern för hotellbranschen, som skapar mätbart värde genom datadriven insikt och automatisering.',

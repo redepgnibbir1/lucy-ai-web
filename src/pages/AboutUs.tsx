@@ -33,10 +33,10 @@ const AboutUs = () => {
                 {/* Updated section with new vision content */}
                 <div className="bg-lucy-neon-yellow border border-lucy-neon-yellow rounded-lg px-6 py-8 shadow mb-6">
                   <h2 className="text-2xl md:text-3xl font-semibold text-lucy-dark-gray mb-3">
-                    Vår vision
+                    {t('about.vision.title')}
                   </h2>
                   <p className="text-lucy-dark-gray font-medium">
-                    Superhuman Intelligence for Hotels – Solving Communication, Seamlessly
+                    {t('about.vision.subtitle')}
                   </p>
                 </div>
               </div>
