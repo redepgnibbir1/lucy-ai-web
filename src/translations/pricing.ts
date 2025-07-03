@@ -80,58 +80,6 @@ export const pricingTranslations = {
     sv: 'Kontakta säljare',
     en: 'Contact sales'
   },
-  'pricing.staffSurvey.title': {
-    sv: 'Medarbetarundersökning',
-    en: 'Staff Survey'
-  },
-  'pricing.staffSurvey.subtitle': {
-    sv: 'Ett tillägg till Lucy Copilot för endast',
-    en: 'An add-on to Lucy Copilot for only'
-  },
-  'pricing.staffSurvey.price': {
-    sv: '+1€ per rum och månad',
-    en: '+1€ per room and month'
-  },
-  'pricing.staffSurvey.benefits.title': {
-    sv: 'Fördelar för dig',
-    en: 'Benefits for you'
-  },
-  'pricing.staffSurvey.benefits.items': {
-    sv: [
-      "Förbättrad personalengagemang",
-      "Minskad personalomsättning",
-      "Identifiera problem tidigt",
-      "Datadriven personalutveckling",
-      "Bättre teamsamarbete"
-    ],
-    en: [
-      "Improved staff engagement",
-      "Reduced staff turnover",
-      "Early problem identification",
-      "Data-driven staff development",
-      "Better team collaboration"
-    ]
-  },
-  'pricing.staffSurvey.features.title': {
-    sv: 'Inkluderade funktioner',
-    en: 'Included features'
-  },
-  'pricing.staffSurvey.features.items': {
-    sv: [
-      "Regelbundna anonyma undersökningar",
-      "Automatiserad rapportering",
-      "Trendanalys över tid",
-      "Insikter genom AI-analys",
-      "Anpassade frågeuppsättningar"
-    ],
-    en: [
-      "Regular anonymous surveys",
-      "Automated reporting",
-      "Trend analysis over time",
-      "AI analysis insights",
-      "Customized question sets"
-    ]
-  },
   'pricing.questions.title': {
     sv: 'Har du frågor om våra prisplaner?',
     en: 'Do you have questions about our pricing plans?'
