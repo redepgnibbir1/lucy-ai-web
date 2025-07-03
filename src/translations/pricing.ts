@@ -49,8 +49,8 @@ export const pricingTranslations = {
     en: 'Lucy Guest Communications'
   },
   'pricing.guestCommunications.price': {
-    sv: '200€',
-    en: '200€'
+    sv: '€200',
+    en: '€200'
   },
   'pricing.guestCommunications.period': {
     sv: 'månad + 15% av merförsäljning',
