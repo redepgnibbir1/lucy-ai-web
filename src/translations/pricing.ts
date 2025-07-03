@@ -13,8 +13,8 @@ export const pricingTranslations = {
     en: 'Lucy Team Communications'
   },
   'pricing.teamCommunications.price': {
-    sv: '8-12€',
-    en: '8-12€'
+    sv: 'From €9',
+    en: 'From €9'
   },
   'pricing.teamCommunications.period': {
     sv: 'rum/månad',
