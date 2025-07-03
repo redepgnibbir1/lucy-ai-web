@@ -64,6 +64,14 @@ export const teamCommunicationsTranslations = {
     sv: 'Enkla felanmälningar och uppföljning. Med realtidsnotiser i mobilen eller på klockan.',
     en: 'Simple fault reporting and follow-up. With real-time notifications on mobile or watch.'
   },
+  'teamComm.functions.survey': {
+    sv: 'Medarbetarundersökning',
+    en: 'Employee Survey'
+  },
+  'teamComm.functions.survey.desc': {
+    sv: 'Gedigen medarbetarundersökning med survey och analys/rapport för att förstå teamets behov.',
+    en: 'Comprehensive employee survey with survey and analysis/reporting to understand team needs.'
+  },
   'teamComm.cta': {
     sv: 'Läs mer om Lucy Team Communications',
     en: 'Learn more about Lucy Team Communications'

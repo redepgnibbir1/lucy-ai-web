@@ -50,7 +50,7 @@ const CopilotSection = () => {
           <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
             <h3 className="text-2xl font-medium mb-8 text-center">{t('teamComm.functions.title')}</h3>
           </Animate>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             <Animate variants={fadeInUp} transition={{ delay: 0.8 }}>
               <FunctionCard 
                 title={t('teamComm.functions.shifts')} 
@@ -73,6 +73,12 @@ const CopilotSection = () => {
               <FunctionCard 
                 title={t('teamComm.functions.workorders')} 
                 description={t('teamComm.functions.workorders.desc')}
+              />
+            </Animate>
+            <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
+              <FunctionCard 
+                title={t('teamComm.functions.survey')} 
+                description={t('teamComm.functions.survey.desc')}
               />
             </Animate>
           </div>
