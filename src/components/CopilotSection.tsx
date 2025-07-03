@@ -67,6 +67,7 @@ const CopilotSection = () => {
               <FunctionCard 
                 title={t('teamComm.functions.onboarding')} 
                 description={t('teamComm.functions.onboarding.desc')}
+                isAddOn={true}
               />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
@@ -79,6 +80,7 @@ const CopilotSection = () => {
               <FunctionCard 
                 title={t('teamComm.functions.survey')} 
                 description={t('teamComm.functions.survey.desc')}
+                isAddOn={true}
               />
             </Animate>
           </div>
@@ -100,11 +102,17 @@ const FeatureItem = ({ text }: { text: string }) => {
 interface FunctionCardProps {
   title: string;
   description: string;
+  isAddOn?: boolean;
 }
 
-const FunctionCard = ({ title, description }: FunctionCardProps) => {
+const FunctionCard = ({ title, description, isAddOn }: FunctionCardProps) => {
   return (
-    <div className="bg-lucy-black p-6 rounded-lg shadow-sm">
+    <div className="bg-lucy-black p-6 rounded-lg shadow-sm relative">
+      {isAddOn && (
+        <div className="absolute -top-2 -right-2 bg-lucy-neon-yellow text-lucy-black text-xs font-medium px-2 py-1 rounded-full">
+          Add-on
+        </div>
+      )}
       <h4 className="text-lg font-medium mb-2 text-lucy-white">{title}</h4>
       <p className="text-sm text-lucy-light-gray-new">{description}</p>
     </div>
