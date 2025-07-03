@@ -102,9 +102,6 @@ const Pricing = () => {
 
         {/* Add-ons Section */}
         <div className="mt-20">
-          <h2 className="text-3xl font-martina text-center mb-12">{t('pricing.staffSurvey.title')}</h2>
-          <p className="text-center text-lg mb-8">{t('pricing.staffSurvey.subtitle')}</p>
-          <p className="text-center text-2xl font-bold mb-12">{t('pricing.staffSurvey.price')}</p>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Benefits */}
