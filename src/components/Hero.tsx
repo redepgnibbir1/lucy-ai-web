@@ -14,6 +14,19 @@ const Hero = () => {
     setIsCalendlyOpen(true);
   };
 
+  const renderTitle = () => {
+    if (language === 'en') {
+      return (
+        <>
+          <span className="text-black">Unleashing the Potential of </span>
+          <span className="text-[#777777]">Non-Desk Teams</span>
+        </>
+      );
+    }
+    // Swedish text - keep as one piece
+    return t('hero.title');
+  };
+
 
   return (
     <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
@@ -21,7 +34,7 @@ const Hero = () => {
         <div className="w-full">
           <Animate variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight md:leading-[1.15] lg:leading-[1.15] mb-8">
-              {t('hero.title')}
+              {renderTitle()}
             </h1>
           </Animate>
 
