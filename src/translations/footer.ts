@@ -1,7 +1,7 @@
 
 export const footerTranslations = {
   'footer.tagline': {
-    sv: 'The new communication platform for Hotels.',
+    sv: 'Den nya kommunikationsplattformen för hotell.',
     en: 'The new communication platform for Hotels.'
   },
   'footer.quickLinks': {
