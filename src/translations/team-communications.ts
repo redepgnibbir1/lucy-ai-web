@@ -34,35 +34,35 @@ export const teamCommunicationsTranslations = {
   },
   'teamComm.functions.shifts': {
     sv: 'Skiftrapporter',
-    en: 'Shift Reports'
+    en: 'Secure group chats'
   },
   'teamComm.functions.shifts.desc': {
     sv: 'Medarbetare rapporterar sina skift → Lucy sammanställer automatiskt och skickar en överblick varje morgon.',
-    en: 'Staff report their shifts → Lucy automatically compiles and sends an overview every morning.'
+    en: 'Controlled access to team and department conversations, keeping sensitive information safe.'
   },
   'teamComm.functions.translation': {
     sv: 'Automatisk översättning',
-    en: 'Automatic Translation'
+    en: 'Organization-wide announcements'
   },
   'teamComm.functions.translation.desc': {
     sv: 'Alla meddelanden och rapporter översätts till medarbetarens modersmål.',
-    en: 'All messages and reports are translated into the employee\'s native language.'
+    en: 'Important updates sent to everyone, without the noise of unnecessary replies.'
   },
   'teamComm.functions.onboarding': {
     sv: 'Onboarding & utbildning',
-    en: 'Onboarding & Training'
+    en: 'Automatic translation'
   },
   'teamComm.functions.onboarding.desc': {
     sv: 'Skapa och skicka onboardingmaterial direkt via Lucy. Anpassa per roll och avdelning.',
-    en: 'Create and send onboarding materials directly via Lucy. Customize by role and department.'
+    en: 'Messages instantly translated into each user\'s preferred language.'
   },
   'teamComm.functions.workorders': {
     sv: 'Work orders',
-    en: 'Work Orders'
+    en: 'AI-powered knowledge answers'
   },
   'teamComm.functions.workorders.desc': {
     sv: 'Enkla felanmälningar och uppföljning. Med realtidsnotiser i mobilen eller på klockan.',
-    en: 'Simple fault reporting and follow-up. With real-time notifications on mobile or watch.'
+    en: 'Instant responses to questions, based on your company\'s own data.'
   },
   'teamComm.functions.survey': {
     sv: 'Medarbetarundersökning',
