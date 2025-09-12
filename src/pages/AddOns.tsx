@@ -5,24 +5,16 @@ import ContactForm from '@/components/ContactForm';
 interface AddOnCardProps {
   title: string;
   description: string;
-  onContactClick: () => void;
 }
 
 const AddOnCard: React.FC<AddOnCardProps> = ({ 
   title, 
-  description, 
-  onContactClick 
+  description
 }) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-8 border border-gray-200 hover:shadow-lg transition-shadow">
       <h3 className="text-xl font-semibold mb-4">{title}</h3>
-      <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
-      <button 
-        className="w-full py-2 px-4 bg-lucy-neon-yellow text-lucy-black hover:bg-opacity-90 transition-colors rounded font-medium"
-        onClick={onContactClick}
-      >
-        {title === 'Lucy Guest Communications' ? 'Learn More' : 'Contact Sales'}
-      </button>
+      <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
 };
@@ -85,7 +77,6 @@ const AddOns = () => {
               key={index}
               title={addon.title}
               description={addon.description}
-              onContactClick={handleContactClick}
             />
           ))}
         </div>
