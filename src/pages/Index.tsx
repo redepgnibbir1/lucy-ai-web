@@ -25,10 +25,10 @@ const Index = () => {
             <Products />
           </Animate>
           <Animate variants={fadeIn}>
-            <GuestCommunicationsSection />
+            <CopilotSection />
           </Animate>
           <Animate variants={fadeIn}>
-            <CopilotSection />
+            <GuestCommunicationsSection />
           </Animate>
         </Animate>
       </div>
