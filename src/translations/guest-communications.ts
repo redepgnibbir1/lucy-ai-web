@@ -2,15 +2,15 @@
 export const guestCommunicationsTranslations = {
   'guestComm.title': {
     sv: 'Lucy Guest Communications',
-    en: 'Lucy Guest Communications'
+    en: 'Add-ons & Industry solutions'
   },
   'guestComm.subtitle': {
     sv: 'När gästen får ett personligt meddelande – och bokar mer.',
-    en: 'When guests receive a personal message – and book more.'
+    en: 'From scattered tasks to seamless execution — every shift, every time.'
   },
   'guestComm.description': {
     sv: 'AI-baserad gästkommunikation via e-post, sms och WhatsApp som inte bara ökar servicekänslan – utan även försäljningen.',
-    en: 'AI-based guest communication via email, SMS, and WhatsApp that not only enhances the service experience – but also increases sales.'
+    en: 'AI-enhanced shift reports, task management, knowledge base, onboarding and more.'
   },
   'guestComm.benefits.title': {
     sv: 'Fördelar:',
@@ -18,15 +18,15 @@ export const guestCommunicationsTranslations = {
   },
   'guestComm.benefits.upsell': {
     sv: 'Merförsäljning – Ökat upsell med +100€/rum och månad.',
-    en: 'Upselling – Increased upsell with +100€/room per month.'
+    en: 'Save Time — Automate tasks, reviews, and reporting.'
   },
   'guestComm.benefits.experience': {
     sv: 'Bättre gästupplevelse – Gäster får snabbare, mer träffsäker service – och lämnar bättre omdömen.',
-    en: 'Better guest experience – Guests receive faster, more accurate service – and leave better reviews.'
+    en: 'Boost Revenue — Drive upsell in your Hotel operation.'
   },
   'guestComm.benefits.channels': {
     sv: 'Mångsidiga kommunikationskanaler: e-post, SMS och WhatsApp i ett enda verktyg.',
-    en: 'Versatile communication channels: email, SMS, and WhatsApp in a single tool.'
+    en: 'Improve Experience — Deliver smoother workflows for staff and customer.'
   },
   'guestComm.functions.title': {
     sv: 'Exempel på funktioner:',
@@ -34,27 +34,27 @@ export const guestCommunicationsTranslations = {
   },
   'guestComm.functions.welcome': {
     sv: 'Personaliserade välkomstmeddelanden',
-    en: 'Personalized welcome messages'
+    en: 'Guest Communications (Hospitality)'
   },
   'guestComm.functions.welcome.desc': {
     sv: 'Automatiska hälsningar som anpassas efter gästinformation och tidigare bokningar.',
-    en: 'Automatic greetings adapted to guest information and previous bookings.'
+    en: 'Manage all guest messaging via email, WhatsApp & SMS — boost upsell by 2–3x with AI-driven suggestions.'
   },
   'guestComm.functions.upsell': {
     sv: 'Pre-arrival upsell',
-    en: 'Pre-arrival upsell'
+    en: 'Housekeeping Planner'
   },
   'guestComm.functions.upsell.desc': {
     sv: 'Smarta erbjudanden som ökar RevPAR genom att sälja uppgraderingar före ankomst.',
-    en: 'Smart offers that increase RevPAR by selling upgrades before arrival.'
+    en: 'Auto-schedule cleaning tasks, track Lost & Found, and ensure compliance with work-hour rules.'
   },
   'guestComm.functions.feedback': {
     sv: 'Gästenkäter & feedback',
-    en: 'Guest surveys & feedback'
+    en: 'Automated Review Flows'
   },
   'guestComm.functions.feedback.desc': {
     sv: 'Automatiserad insamling av gästrecensioner med åtgärdbara insikter.',
-    en: 'Automated collection of guest reviews with actionable insights.'
+    en: 'Collect, translate, and respond to all online reviews instantly, in your tone of voice.'
   },
   'guestComm.functions.ai': {
     sv: 'AI-assistans',

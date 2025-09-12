@@ -53,7 +53,7 @@ const GuestCommunicationsSection = () => {
           <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
           <h3 className="text-2xl font-medium mb-8 text-center">{t('guestComm.functions.title')}</h3>
           </Animate>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Animate variants={fadeInUp} transition={{ delay: 0.8 }}>
             <FunctionCard 
               title={t('guestComm.functions.welcome')} 
@@ -70,12 +70,6 @@ const GuestCommunicationsSection = () => {
             <FunctionCard 
               title={t('guestComm.functions.feedback')} 
               description={t('guestComm.functions.feedback.desc')}
-            />
-            </Animate>
-            <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
-            <FunctionCard 
-              title={t('guestComm.functions.ai')} 
-              description={t('guestComm.functions.ai.desc')}
             />
             </Animate>
           </div>
