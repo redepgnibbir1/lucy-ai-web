@@ -14,27 +14,6 @@ const Hero = () => {
     setIsCalendlyOpen(true);
   };
 
-  const renderTitle = () => {
-    if (language === 'en') {
-      const firstPart = 'The new communications platform for hotels.';
-      const secondPart = ' Increase upsell, improve team collaboration and boost guest satisfaction.';
-      return (
-        <>
-          <span className="text-black">{firstPart}</span>
-          <span className="text-[#777777]">{secondPart}</span>
-        </>
-      );
-    }
-    // Swedish text
-    const firstPart = 'Det nya sättet för hotell att kommunicera.';
-    const secondPart = ' Ökad merförsäljning, bättre teamsamarbete och nöjdare gäster.';
-    return (
-      <>
-        <span className="text-black">{firstPart}</span>
-        <span className="text-[#777777]">{secondPart}</span>
-      </>
-    );
-  };
 
   return (
     <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
@@ -42,7 +21,7 @@ const Hero = () => {
         <div className="w-full">
           <Animate variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight md:leading-[1.15] lg:leading-[1.15] mb-8">
-              {renderTitle()}
+              {t('hero.title')}
             </h1>
           </Animate>
 
