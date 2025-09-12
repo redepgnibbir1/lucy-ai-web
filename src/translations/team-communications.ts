@@ -6,11 +6,11 @@ export const teamCommunicationsTranslations = {
   },
   'teamComm.subtitle': {
     sv: 'Få hotellet att fungera som ett team.',
-    en: 'Make the hotel work as a team.'
+    en: 'Communication that leaves no one behind!'
   },
   'teamComm.description': {
     sv: 'Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe.',
-    en: 'A communication tool built specifically for hotels – with everything you need, in one place.'
+    en: 'A communication tool built specifically for frontline work – with everything you need, in one place.'
   },
   'teamComm.benefits.title': {
     sv: 'Fördelar:',
