@@ -169,7 +169,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
   const navItems = [
     { label: t('nav.products'), href: '/#products' },
     { label: t('nav.benefits'), href: '/fördelar' },
-    { label: t('nav.pricing'), href: '/pricing' },
+    { label: t('nav.addons'), href: '/addons' },
     { label: t('nav.getStarted'), href: '/kom-igang' },
     { label: t('nav.aboutUs'), href: '/about' },
   ];

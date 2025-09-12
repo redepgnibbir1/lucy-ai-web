@@ -7,9 +7,9 @@ export const navigationTranslations = {
     sv: 'Fördelar',
     en: 'Benefits'
   },
-  'nav.pricing': {
-    sv: 'Priser',
-    en: 'Pricing'
+  'nav.addons': {
+    sv: 'Tillägg',
+    en: 'Add-ons'
   },
   'nav.getStarted': {
     sv: 'Kom igång',

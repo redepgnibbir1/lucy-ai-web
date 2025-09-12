@@ -6,7 +6,7 @@ import { benefitsTranslations } from './benefits';
 import { getStartedTranslations } from './get-started';
 import { aboutTranslations } from './about';
 import { teamCommunicationsTranslations } from './team-communications';
-import { pricingTranslations } from './pricing';
+import { addOnsTranslations } from './addons';
 import { footerTranslations } from './footer';
 import { contactTranslations } from './contact';
 
@@ -20,7 +20,7 @@ const translations = {
   ...getStartedTranslations,
   ...aboutTranslations,
   ...teamCommunicationsTranslations,
-  ...pricingTranslations,
+  ...addOnsTranslations,
   ...footerTranslations,
   ...contactTranslations,
 };

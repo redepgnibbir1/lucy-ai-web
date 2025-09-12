@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Fördelar from "./pages/Fördelar";
-import Pricing from "./pages/Pricing";
+import AddOns from "./pages/AddOns";
 import AboutUs from "./pages/AboutUs";
 import KomIgang from "./pages/KomIgang";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -51,9 +51,9 @@ const App = () => (
                 <Fördelar />
               </Layout>
             } />
-            <Route path="/pricing" element={
+            <Route path="/addons" element={
               <Layout>
-                <Pricing />
+                <AddOns />
               </Layout>
             } />
             <Route path="/about" element={
