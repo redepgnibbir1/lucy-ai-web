@@ -18,15 +18,15 @@ export const teamCommunicationsTranslations = {
   },
   'teamComm.benefits.silos': {
     sv: 'Bygger bort silos – all intern kommunikation i en kanal.',
-    en: 'Eliminates silos – all internal communication in one channel.'
+    en: 'Faster problem-solving – Issues resolved in minutes, not hours.'
   },
   'teamComm.benefits.time': {
     sv: 'Sparar tid – AI hjälper till med rapporter, översättningar och arbetsordrar.',
-    en: 'Saves time – AI helps with reports, translations, and work orders.'
+    en: 'Stronger team alignment – Same updates and priorities for everyone.'
   },
   'teamComm.benefits.daily': {
     sv: 'Gör vardagen enklare – onboarding, instruktioner och rutiner alltid nära till hands.',
-    en: 'Makes everyday life easier – onboarding, instructions, and routines always at hand.'
+    en: 'Inclusive communication – Automatic translation for every team member in +100 languages.'
   },
   'teamComm.functions.title': {
     sv: 'Exempel på funktioner:',
