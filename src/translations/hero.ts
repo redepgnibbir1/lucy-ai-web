@@ -1,7 +1,7 @@
 
 export const heroTranslations = {
   'hero.title': {
-    sv: 'Det nya sättet för hotell att kommunicera. Ökad merförsäljning, bättre teamsamarbete och nöjdare gäster.',
+    sv: 'Frigör potentialen hos icke-kontorsbaserade team',
     en: 'Unleashing the Potential of Non-Desk Teams'
   },
   'hero.button': {
