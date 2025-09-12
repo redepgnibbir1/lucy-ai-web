@@ -5,88 +5,72 @@ export const benefitsTranslations = {
     en: 'Benefits of Lucy'
   },
   'benefits.subtitle': {
-    sv: 'Genom att välja Lucy får hotell en rad fördelar som förbättrar kommunikation, ökar effektiviteten och förbättrar gästupplevelsen.',
-    en: 'By choosing Lucy, hotels gain a range of benefits that improve communication, increase efficiency, and enhance the guest experience.'
+    sv: 'Genom att välja Lucy får företag och organisationer med icke-kontorsbaserade team en rad fördelar som förbättrar kommunikation, ökar effektivitet och förbättrar kundupplevelsen. I slutändan handlar det om operativ effektivitet.',
+    en: 'By choosing Lucy, companies and organizations with non-desk teams gain a range of benefits that improve communication, increase efficiency and enhance the customer experience. Ultimately we are about Operational Efficiency.'
   },
-  'benefits.efficiency.title': {
-    sv: 'Effektivitetsfördelar',
-    en: 'Efficiency Benefits'
+  'benefits.operational.title': {
+    sv: 'Operativ effektivitet',
+    en: 'Operational efficiency'
   },
-  'benefits.efficiency.item1': {
-    sv: 'Spara upp till 30 min per person och dag av personalens tid genom automatiserade processer',
-    en: 'Save up to 30 minutes per person per day of staff time through automated processes'
+  'benefits.operational.item1': {
+    sv: 'Snabbare problemlösning med realtidsuppdateringar och AI-drivna svar.',
+    en: 'Faster problem-solving with real-time updates and AI-driven answers.'
   },
-  'benefits.efficiency.item2': {
-    sv: 'All information på ditt modersmål minskar risken för missförstånd',
-    en: 'All information in your native language reduces the risk of misunderstandings'
+  'benefits.operational.item2': {
+    sv: 'Strömlinjeformade arbetsflöden minskar förseningar och flaskhalsar.',
+    en: 'Streamlined workflows reduce delays and bottlenecks.'
   },
-  'benefits.efficiency.item3': {
-    sv: 'Centraliserad kommunikation ger överblick över informationsflödet',
-    en: 'Centralized communication provides an overview of information flow'
+  'benefits.operational.item3': {
+    sv: 'Snabbare introduktion för nyanställda.',
+    en: 'Quicker onboarding for new hires.'
   },
-  'benefits.efficiency.item4': {
-    sv: 'AI-assistans med rutinmässiga uppgifter frigör tid för personlig service',
-    en: 'AI assistance with routine tasks frees up time for personal service'
+  'benefits.consistency.title': {
+    sv: 'Enhetlighet & kvalitet',
+    en: 'Consistency & quality'
   },
-  'benefits.economic.title': {
-    sv: 'Ekonomiska fördelar',
-    en: 'Economic Benefits'
+  'benefits.consistency.item1': {
+    sv: 'Standardiserade processer säkerställer samma höga kvalitet varje skift.',
+    en: 'Standardized processes ensure the same high-quality work every shift.'
   },
-  'benefits.economic.item1': {
-    sv: 'Ökad merförsäljning genom personanpassad kommunikation',
-    en: 'Increased upselling through personalized communication'
+  'benefits.consistency.item2': {
+    sv: 'Färre misstag tack vare enkel tillgång till uppdaterade rutiner.',
+    en: 'Fewer mistakes thanks to easy access to up-to-date procedures.'
   },
-  'benefits.economic.item2': {
-    sv: 'Högre gästnöjdhet leder till fler återkommande gäster',
-    en: 'Higher guest satisfaction leads to more returning guests'
+  'benefits.consistency.item3': {
+    sv: 'Pålitlig, organisationsövergripande kommunikation.',
+    en: 'Reliable, organization-wide communication.'
   },
-  'benefits.economic.item3': {
-    sv: 'Lägre personalomsättning genom bättre arbetsmiljö',
-    en: 'Lower staff turnover through better working environment'
+  'benefits.employee.title': {
+    sv: 'Medarbetarupplevelse',
+    en: 'Employee experience'
   },
-  'benefits.economic.item4': {
-    sv: 'ROI inom 2 månader för de flesta hotell',
-    en: 'ROI within 2 months for most hotels'
+  'benefits.employee.item1': {
+    sv: 'Mindre stress genom tydliga instruktioner och omedelbart stöd.',
+    en: 'Less stress through clear instructions and instant support.'
   },
-  'benefits.guest.title': {
-    sv: 'Gästupplevelse',
-    en: 'Guest Experience'
+  'benefits.employee.item2': {
+    sv: 'Inkluderande kommunikation med automatisk översättning för varje teammedlem.',
+    en: 'Inclusive communication with automatic translation for every team member.'
   },
-  'benefits.guest.item1': {
-    sv: 'Personlig kommunikation på gästens eget språk',
-    en: 'Personal communication in the guest\'s own language'
+  'benefits.employee.item3': {
+    sv: 'Starkare engagemang via transparenta uppdateringar och återkopplingsloopar.',
+    en: 'Stronger engagement via transparent updates and feedback loops.'
   },
-  'benefits.guest.item2': {
-    sv: 'Snabbare responstid på förfrågningar och behov',
-    en: 'Faster response time to inquiries and needs'
+  'benefits.customer.title': {
+    sv: 'Kund-/gästnöjdhet',
+    en: 'Customer/guest satisfaction'
   },
-  'benefits.guest.item3': {
-    sv: 'Konsekvent servicenivå oavsett tid på dygnet',
-    en: 'Consistent service level regardless of time of day'
+  'benefits.customer.item1': {
+    sv: 'Snabbare, mer exakt service.',
+    en: 'Faster, more accurate service.'
   },
-  'benefits.guest.item4': {
-    sv: 'Sömlös digital upplevelse från bokning till utcheckning',
-    en: 'Seamless digital experience from booking to checkout'
+  'benefits.customer.item2': {
+    sv: 'Konsekvent upplevelse oavsett plats eller skift.',
+    en: 'Consistent experience regardless of location or shift.'
   },
-  'benefits.team.title': {
-    sv: 'Teamfördelar',
-    en: 'Team Benefits'
-  },
-  'benefits.team.item1': {
-    sv: 'Bättre intern kommunikation mellan avdelningar',
-    en: 'Better internal communication between departments'
-  },
-  'benefits.team.item2': {
-    sv: 'Snabb onboarding av ny personal gör nya medarbetare produktiva snabbt',
-    en: 'Quick onboarding of new staff makes new employees productive quickly'
-  },
-  'benefits.team.item3': {
-    sv: 'Tydlig uppföljning och rapportering',
-    en: 'Clear follow-up and reporting'
-  },
-  'benefits.team.item4': {
-    sv: 'Minskad stress genom tydliga rutiner och instruktioner',
-    en: 'Reduced stress through clear routines and instructions'
+  'benefits.customer.item3': {
+    sv: 'Ökat förtroende genom bättre koordination.',
+    en: 'Increased trust through better coordination.'
   },
   'benefits.bookDemo': {
     sv: 'Boka en demo',

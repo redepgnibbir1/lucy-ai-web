@@ -32,23 +32,21 @@ const Fördelar = () => {
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <Animate variants={slideInLeft}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">{t('benefits.efficiency.title')}</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.operational.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text={t('benefits.efficiency.item1')} />
-                  <FeatureItem text={t('benefits.efficiency.item2')} />
-                  <FeatureItem text={t('benefits.efficiency.item3')} />
-                  <FeatureItem text={t('benefits.efficiency.item4')} />
+                  <FeatureItem text={t('benefits.operational.item1')} />
+                  <FeatureItem text={t('benefits.operational.item2')} />
+                  <FeatureItem text={t('benefits.operational.item3')} />
                 </ul>
               </div>
             </Animate>
             <Animate variants={slideInRight}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">{t('benefits.economic.title')}</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.consistency.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text={t('benefits.economic.item1')} />
-                  <FeatureItem text={t('benefits.economic.item2')} />
-                  <FeatureItem text={t('benefits.economic.item3')} />
-                  <FeatureItem text={t('benefits.economic.item4')} />
+                  <FeatureItem text={t('benefits.consistency.item1')} />
+                  <FeatureItem text={t('benefits.consistency.item2')} />
+                  <FeatureItem text={t('benefits.consistency.item3')} />
                 </ul>
               </div>
             </Animate>
@@ -57,23 +55,21 @@ const Fördelar = () => {
           <div className="grid md:grid-cols-2 gap-16">
             <Animate variants={slideInLeft} transition={{ delay: 0.2 }}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">{t('benefits.guest.title')}</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.employee.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text={t('benefits.guest.item1')} />
-                  <FeatureItem text={t('benefits.guest.item2')} />
-                  <FeatureItem text={t('benefits.guest.item3')} />
-                  <FeatureItem text={t('benefits.guest.item4')} />
+                  <FeatureItem text={t('benefits.employee.item1')} />
+                  <FeatureItem text={t('benefits.employee.item2')} />
+                  <FeatureItem text={t('benefits.employee.item3')} />
                 </ul>
               </div>
             </Animate>
             <Animate variants={slideInRight} transition={{ delay: 0.2 }}>
               <div>
-                <h2 className="text-2xl font-medium mb-8">{t('benefits.team.title')}</h2>
+                <h2 className="text-2xl font-medium mb-8">{t('benefits.customer.title')}</h2>
                 <ul className="space-y-4">
-                  <FeatureItem text={t('benefits.team.item1')} />
-                  <FeatureItem text={t('benefits.team.item2')} />
-                  <FeatureItem text={t('benefits.team.item3')} />
-                  <FeatureItem text={t('benefits.team.item4')} />
+                  <FeatureItem text={t('benefits.customer.item1')} />
+                  <FeatureItem text={t('benefits.customer.item2')} />
+                  <FeatureItem text={t('benefits.customer.item3')} />
                 </ul>
               </div>
             </Animate>
