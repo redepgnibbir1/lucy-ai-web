@@ -67,7 +67,6 @@ const CopilotSection = () => {
               <FunctionCard 
                 title={t('teamComm.functions.onboarding')} 
                 description={t('teamComm.functions.onboarding.desc')}
-                isAddOn={true}
               />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
