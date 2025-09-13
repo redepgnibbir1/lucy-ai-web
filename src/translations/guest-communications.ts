@@ -41,7 +41,7 @@ export const guestCommunicationsTranslations = {
     en: 'Manage all guest messaging via email, WhatsApp & SMS — boost upsell by 2–3x with AI-driven suggestions.'
   },
   'guestComm.functions.upsell': {
-    sv: 'Städplanerare',
+    sv: 'Housekeeping',
     en: 'Housekeeping'
   },
   'guestComm.functions.upsell.desc': {
