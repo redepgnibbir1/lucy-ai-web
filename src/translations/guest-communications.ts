@@ -42,7 +42,7 @@ export const guestCommunicationsTranslations = {
   },
   'guestComm.functions.upsell': {
     sv: 'Städplanerare',
-    en: 'Housekeeping Planner'
+    en: 'Housekeeping'
   },
   'guestComm.functions.upsell.desc': {
     sv: 'Schemalägg städuppgifter automatiskt, spåra Lost & Found och säkerställ efterlevnad av arbetstidsregler.',
