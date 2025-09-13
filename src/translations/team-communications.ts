@@ -65,7 +65,7 @@ export const teamCommunicationsTranslations = {
     en: 'Instant responses to questions, based on your company\'s own data.'
   },
   'teamComm.functions.survey': {
-    sv: 'Medarbetarundersökning',
+    sv: 'Medarbetar-undersökning',
     en: 'Employee Survey'
   },
   'teamComm.functions.survey.desc': {
