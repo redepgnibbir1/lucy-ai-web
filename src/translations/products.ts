@@ -38,7 +38,7 @@ export const productsTranslations = {
   },
   'products.guest.description': {
     sv: 'Kommunikation som inte lämnar någon utanför!',
-    en: 'Communication that leaves no one behind!'
+    en: 'Tools to elevate your team further'
   },
   'products.guest.subtext': {
     sv: 'AI-förbättrad kommunikation för icke-kontorsbaserade team, automatiskt översatt till ditt modersmål.',
