@@ -18,8 +18,8 @@ const Hero = () => {
     if (language === 'en') {
       return (
         <>
-          <span className="text-black">Unleashing the Potential of </span>
-          <span className="text-[#777777]">Non-Desk Teams</span>
+          <span className="text-black">AI-powered Communication Tools </span>
+          <span className="text-[#777777]">for Non-Desk Teams</span>
         </>
       );
     }
