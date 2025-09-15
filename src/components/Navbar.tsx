@@ -59,23 +59,23 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-white text-lucy-black py-6'
+      isScrolled ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-transparent text-white py-6'
     }`}>
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">
           <div className="flex items-center">
             {/* Replace Link by a clickable div with navigation */}
             <a href="/" onClick={handleLogoClick} aria-label="Go to home and top of hero">
-              <LucyLogo />
+              <LucyLogo variant={isScrolled ? 'dark' : 'light'} />
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks />
+            <NavLinks isScrolled={isScrolled} />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-medium-gray">
+                <Button variant="ghost" size="icon" className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -92,7 +92,7 @@ const Navbar = () => {
               href="https://copilot.lucyanalytics.com/copilot" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-lucy-black hover:text-lucy-medium-gray transition-colors"
+              className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'} transition-colors`}
             >
               {t('nav.signIn')}
             </a>
@@ -108,7 +108,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-lucy-black hover:text-lucy-medium-gray">
+                <Button variant="ghost" size="icon" className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -126,9 +126,9 @@ const Navbar = () => {
               aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-lucy-black" />
+                <X className={`h-6 w-6 ${isScrolled ? 'text-lucy-black' : 'text-white'}`} />
               ) : (
-                <Menu className="h-6 w-6 text-lucy-black" />
+                <Menu className={`h-6 w-6 ${isScrolled ? 'text-lucy-black' : 'text-white'}`} />
               )}
             </button>
           </div>
@@ -136,9 +136,9 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden container mt-4 pb-4 bg-white">
+          <div className="md:hidden container mt-4 pb-4 bg-white rounded-lg">
             <div className="flex flex-col space-y-4">
-              <NavLinks mobile />
+              <NavLinks mobile isScrolled={true} />
               <a 
                 href="https://copilot.lucyanalytics.com/copilot" 
                 target="_blank" 
@@ -162,7 +162,7 @@ const Navbar = () => {
   );
 };
 
-const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
+const NavLinks = ({ mobile = false, isScrolled = false }: { mobile?: boolean; isScrolled?: boolean }) => {
   const location = useLocation();
   const { t } = useLanguage();
   
@@ -194,6 +194,10 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
     }
   };
 
+  const linkClass = mobile 
+    ? 'block py-2 text-lucy-black hover:text-lucy-medium-gray transition-opacity'
+    : `transition-opacity ${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`;
+
   return (
     <>
       {navItems.map((item) => (
@@ -202,9 +206,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
             key={item.label}
             href={item.href}
             onClick={(e) => handleHashLinkClick(e, item.href)}
-            className={`text-lucy-black hover:text-lucy-medium-gray transition-opacity ${
-              mobile ? 'block py-2' : ''
-            }`}
+            className={linkClass}
           >
             {item.label}
           </a>
@@ -212,9 +214,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <Link
             key={item.label}
             to={item.href}
-            className={`text-lucy-black hover:text-lucy-medium-gray transition-opacity ${
-              mobile ? 'block py-2' : ''
-            }`}
+            className={linkClass}
           >
             {item.label}
           </Link>

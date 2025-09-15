@@ -30,10 +30,10 @@ const Hero = () => {
 
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden">
-      {/* Background Image */}
+    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden -mt-16 pt-32 md:pt-40 lg:pt-44">
+      {/* Background Image - extends under navbar */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat -top-16"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
         {/* Dark overlay for better text readability */}
