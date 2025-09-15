@@ -73,10 +73,10 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
   };
 
   return (
-    <div className="bg-lucy-dark-gray-new p-4 sm:p-8 rounded-lg flex flex-col h-full text-lucy-white w-full">
-      <h3 className="text-lg font-medium text-lucy-light-gray-new mb-4">{title}</h3>
-      <h4 className="text-xl font-medium mb-4 break-words">{description}</h4>
-      <p className="text-lucy-light-gray-new mb-6 flex-grow break-words">{subtext}</p>
+    <div className="bg-white p-4 sm:p-8 rounded-lg flex flex-col h-full text-lucy-black w-full shadow-lg">
+      <h3 className="text-lg font-medium text-gray-600 mb-4">{title}</h3>
+      <h4 className="text-xl font-medium mb-4 break-words text-lucy-black">{description}</h4>
+      <p className="text-gray-600 mb-6 flex-grow break-words">{subtext}</p>
       <Button 
         variant="link" 
         className="text-lucy-neon-yellow p-0 justify-start font-medium"
