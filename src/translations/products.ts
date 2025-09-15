@@ -42,7 +42,7 @@ export const productsTranslations = {
   },
   'products.guest.subtext': {
     sv: 'AI-förbättrad kommunikation för icke-kontorsbaserade team, automatiskt översatt till ditt modersmål.',
-    en: 'guest communication, housekeeping planning, reputation management, custom AI agents, secure incident reporting and more..'
+    en: 'Guest communication, housekeeping planning, automated reviews, reputation management, custom AI agents, and secure incident reporting.'
   },
   'products.guest.cta': {
     sv: 'Utforska kommunikation & samarbete',
