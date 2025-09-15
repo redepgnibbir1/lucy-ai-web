@@ -8,7 +8,7 @@ const Products = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-16 md:py-24 bg-lucy-black text-lucy-white overflow-x-hidden" id="products">
+    <section className="py-16 md:py-24 bg-white text-lucy-black overflow-x-hidden" id="products">
       <div className="container px-3 sm:px-4">
         <div className="text-center mb-16 max-w-full">
           <Animate variants={fadeInUp}>
@@ -73,7 +73,7 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
   };
 
   return (
-    <div className="bg-white p-4 sm:p-8 rounded-lg flex flex-col h-full text-lucy-black w-full shadow-lg">
+    <div className="bg-white p-4 sm:p-8 rounded-lg flex flex-col h-full text-lucy-black w-full shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-gray-100">
       <h3 className="text-lg font-medium text-gray-600 mb-4">{title}</h3>
       <h4 className="text-xl font-medium mb-4 break-words text-lucy-black">{description}</h4>
       <p className="text-gray-600 mb-6 flex-grow break-words">{subtext}</p>
