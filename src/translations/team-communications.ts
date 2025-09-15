@@ -5,7 +5,7 @@ export const teamCommunicationsTranslations = {
     en: 'Lucy Team Communications'
   },
   'teamComm.subtitle': {
-    sv: 'Få hotellet att fungera som ett team.',
+    sv: 'Kommunikation som inte lämnar någon utanför!',
     en: 'Communication that leaves no one behind!'
   },
   'teamComm.description': {
