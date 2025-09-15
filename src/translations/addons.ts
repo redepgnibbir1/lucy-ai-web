@@ -8,7 +8,7 @@ export const addOnsTranslations = {
     en: 'Extend Lucy with powerful add-ons that fit your operation\'s specific needs.'
   },
   'addons.guestComm.title': {
-    sv: 'Guest Communications (Hospitality)',
+    sv: 'Guest Communications (Hotell)',
     en: 'Guest Communications (Hospitality)'
   },
   'addons.guestComm.description': {
