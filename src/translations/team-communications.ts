@@ -9,7 +9,7 @@ export const teamCommunicationsTranslations = {
     en: 'Communication that leaves no one behind!'
   },
   'teamComm.description': {
-    sv: 'Ett kommunikationsverktyg som är byggt specifikt för hotell – med allt ni behöver, samlat på ett ställe.',
+    sv: 'Ett kommunikationsverktyg byggt specifikt för frontlinjearbete – med allt du behöver, på ett ställe.',
     en: 'A communication tool built specifically for frontline work – with everything you need, in one place.'
   },
   'teamComm.benefits.title': {
