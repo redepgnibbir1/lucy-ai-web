@@ -30,14 +30,13 @@ const Hero = () => {
 
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden -mt-20 pt-36 md:pt-44 lg:pt-48">
-      {/* Background Image - extends to very top of page */}
+    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden">
+      {/* Background Image - covers entire viewport from top */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat top-0"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
           backgroundImage: `url(${heroBackground})`,
-          height: 'calc(100% + 5rem)',
-          top: '-5rem'
+          zIndex: -1
         }}
       >
         {/* Dark overlay for better text readability */}
@@ -45,7 +44,7 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="container relative z-10">
+      <div className="container relative z-10 pt-20">
         <div className="w-full">
           <Animate variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight md:leading-[1.15] lg:leading-[1.15] mb-8">
