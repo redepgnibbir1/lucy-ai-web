@@ -3,6 +3,7 @@ import { Check } from 'lucide-react';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import teamCommPhone from '@/assets/team-communications-phone.png';
 
 const CopilotSection = () => {
   const { t } = useLanguage();
@@ -38,7 +39,7 @@ const CopilotSection = () => {
           <div className="flex items-center justify-center">
             <Animate variants={slideInRight}>
               <img 
-                src="/lovable-uploads/77f528a6-9e53-40b6-8285-d1b1d41b5339.png"
+                src={teamCommPhone}
                 alt="Lucy Team Communications app interface showing messages and work orders"
                 className="rounded-[2rem] max-h-[600px] object-contain"
               />
