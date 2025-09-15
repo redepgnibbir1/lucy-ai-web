@@ -30,13 +30,13 @@ const Hero = () => {
 
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden">
+    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white">
       {/* Background Image - covers entire viewport from top */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
         style={{ 
           backgroundImage: `url(${heroBackground})`,
-          zIndex: -1
+          zIndex: 0
         }}
       >
         {/* Dark overlay for better text readability */}
