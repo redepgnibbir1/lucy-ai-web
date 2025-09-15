@@ -32,7 +32,7 @@ export const addOnsTranslations = {
     en: 'Collect, translate, and respond to all online reviews instantly, in your tone of voice.'
   },
   'addons.reputation.title': {
-    sv: 'Rykteshantering',
+    sv: 'Reputation Management',
     en: 'Reputation Management'
   },
   'addons.reputation.description': {
