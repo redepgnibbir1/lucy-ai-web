@@ -37,7 +37,7 @@ export const productsTranslations = {
     en: 'Add-ons & Industry solutions'
   },
   'products.guest.description': {
-    sv: 'Kommunikation som inte lämnar någon utanför!',
+    sv: 'Verktyg som lyfter er organisation ytterligare',
     en: 'Tools to elevate your team further'
   },
   'products.guest.subtext': {
