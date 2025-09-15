@@ -31,12 +31,11 @@ const Hero = () => {
 
   return (
     <section className="relative py-16 md:py-24 lg:py-28 w-full text-white">
-      {/* Background Image - covers entire viewport from top */}
+      {/* Background Image - covers hero section only */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url(${heroBackground})`,
-          zIndex: 0
+          backgroundImage: `url(${heroBackground})`
         }}
       >
         {/* Dark overlay for better text readability */}
