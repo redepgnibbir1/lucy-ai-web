@@ -12,7 +12,7 @@ export const addOnsTranslations = {
     en: 'Guest Communications (Hospitality)'
   },
   'addons.guestComm.description': {
-    sv: 'Manage all guest messaging via email, WhatsApp & SMS — boost upsell by 2–3× with AI-driven suggestions.',
+    sv: 'Hantera all gästmeddelandetrafik via e-post, WhatsApp & SMS — öka merförsäljningen med 2–3× genom AI-drivna förslag.',
     en: 'Manage all guest messaging via email, WhatsApp & SMS — boost upsell by 2–3× with AI-driven suggestions.'
   },
   'addons.housekeeping.title': {
@@ -20,23 +20,23 @@ export const addOnsTranslations = {
     en: 'Housekeeping Planner'
   },
   'addons.housekeeping.description': {
-    sv: 'Auto-schedule cleaning tasks, track Lost & Found, and ensure compliance with work-hour rules.',
+    sv: 'Schemalägg städuppgifter automatiskt, spåra Lost & Found och säkerställ efterlevnad av arbetstidsregler.',
     en: 'Auto-schedule cleaning tasks, track Lost & Found, and ensure compliance with work-hour rules.'
   },
   'addons.reviewFlow.title': {
-    sv: 'Automated Review Flows',
+    sv: 'Automatiserade recensionsflöden',
     en: 'Automated Review Flows'
   },
   'addons.reviewFlow.description': {
-    sv: 'Collect, translate, and respond to all online reviews instantly, in your tone of voice.',
+    sv: 'Samla in, översätt och svara på alla onlinerecensioner omedelbart, i din ton.',
     en: 'Collect, translate, and respond to all online reviews instantly, in your tone of voice.'
   },
   'addons.reputation.title': {
-    sv: 'Reputation Management',
+    sv: 'Rykteshantering',
     en: 'Reputation Management'
   },
   'addons.reputation.description': {
-    sv: 'Identify what drives or lowers ratings and act on insights to improve performance.',
+    sv: 'Identifiera vad som driver eller sänker betyg och agera på insikter för att förbättra prestanda.',
     en: 'Identify what drives or lowers ratings and act on insights to improve performance.'
   },
   'addons.surveys.title': {
@@ -52,7 +52,7 @@ export const addOnsTranslations = {
     en: 'Custom AI Agent'
   },
   'addons.customAI.description': {
-    sv: 'Chat with your own data for instant answers in HR, tech, or support — in any language.',
+    sv: 'Chatta med din egen data för omedelbara svar inom HR, teknik eller support — på vilket språk som helst.',
     en: 'Chat with your own data for instant answers in HR, tech, or support — in any language.'
   },
   'addons.dailyFeed.title': {
@@ -64,11 +64,11 @@ export const addOnsTranslations = {
     en: 'Deliver daily updates to selected team members — such as shift reports, work orders, sales figures, and to-dos — including external data via API.'
   },
   'addons.incident.title': {
-    sv: 'Incident Reporting',
+    sv: 'Incidentrapportering',
     en: 'Incident Reporting'
   },
   'addons.incident.description': {
-    sv: 'Quick, secure reporting with role-based visibility for sensitive cases.',
+    sv: 'Snabb, säker rapportering med rollbaserad synlighet för känsliga fall.',
     en: 'Quick, secure reporting with role-based visibility for sensitive cases.'
   },
   'addons.contactSales': {
