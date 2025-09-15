@@ -30,7 +30,7 @@ const Hero = () => {
 
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white">
+    <section className="relative -mt-20 md:-mt-24 lg:-mt-28 py-16 md:py-24 lg:py-28 w-full text-white">
       {/* Background Image - covers hero section only */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
