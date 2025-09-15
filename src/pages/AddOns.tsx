@@ -46,16 +46,8 @@ const AddOns = () => {
       description: t('addons.reputation.description')
     },
     {
-      title: t('addons.surveys.title'),
-      description: t('addons.surveys.description')
-    },
-    {
       title: t('addons.customAI.title'),
       description: t('addons.customAI.description')
-    },
-    {
-      title: t('addons.dailyFeed.title'),
-      description: t('addons.dailyFeed.description')
     },
     {
       title: t('addons.incident.title'),

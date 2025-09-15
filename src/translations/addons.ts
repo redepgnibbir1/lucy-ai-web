@@ -8,11 +8,11 @@ export const addOnsTranslations = {
     en: 'Extend Lucy with powerful add-ons that fit your operation\'s specific needs.'
   },
   'addons.guestComm.title': {
-    sv: 'Lucy Guest Communications',
-    en: 'Lucy Guest Communications'
+    sv: 'Guest Communications (Hospitality)',
+    en: 'Guest Communications (Hospitality)'
   },
   'addons.guestComm.description': {
-    sv: 'En AI-driven gästmeddelandelösning för hotell som hanterar kommunikation via e-post, WhatsApp och SMS. Engagerar proaktivt gäster vid rätt tidpunkter för att driva merförsäljningsmöjligheter.',
+    sv: 'Hantera all gästkommunikation via e-post, WhatsApp och SMS – öka merförsäljningen med 2–3× med AI-drivna förslag.',
     en: 'An AI-powered guest messaging solution for hotels that handles communication via email, WhatsApp, and SMS. Proactively engages guests at the right moments to drive upsell opportunities, such as room upgrades or early check-ins — often increasing upsell revenue by hundreds of percent compared to standard email offers.'
   },
   'addons.housekeeping.title': {
@@ -20,23 +20,23 @@ export const addOnsTranslations = {
     en: 'Housekeeping Planner'
   },
   'addons.housekeeping.description': {
-    sv: 'Planera städscheman manuellt eller automatiskt, med hänsyn till arbetstider och gästers in- och utcheckningstider. Hantera Lost & Found och upphämtningar ansvarsfullt.',
+    sv: 'Schemalägg städuppgifter automatiskt, spåra Lost & Found och säkerställ efterlevnad av arbetstidsregler.',
     en: 'Plan cleaning schedules manually or automatically, taking into account working hours and guest check-in/out times. Manage Lost & Found and Pickups responsibly — fully integrated with Lucy Team Communications.'
   },
   'addons.reviewFlow.title': {
-    sv: 'Automatic Review Flow',
+    sv: 'Automatiserade Recensionsflöden',
     en: 'Automatic Review Flow'
   },
   'addons.reviewFlow.description': {
-    sv: 'Samla in och publicera alla gästrecensioner automatiskt, översatta till ditt teams språk. Generera omedelbart svar och anpassa ton och stil för att matcha ditt varumärke.',
+    sv: 'Samla in, översätt och svara på alla onlinerecensioner omedelbart, i din röst.',
     en: 'Collect and publish all guest reviews automatically, translated into your team\'s language. Instantly generate replies and tailor tone and style to match your brand voice.'
   },
   'addons.reputation.title': {
-    sv: 'Reputation Management for Hospitality',
-    en: 'Reputation Management for Hospitality'
+    sv: 'Reputation Management',
+    en: 'Reputation Management'
   },
   'addons.reputation.description': {
-    sv: 'Analysera feedback och betyg för att identifiera vad som ökar eller skadar gästupplevelsen — och ta itu med rätt problem först.',
+    sv: 'Identifiera vad som driver eller sänker betyg och agera på insikter för att förbättra prestanda.',
     en: 'Analyze feedback and ratings to identify what\'s boosting or hurting the guest experience — and address the right issues first.'
   },
   'addons.surveys.title': {
@@ -52,7 +52,7 @@ export const addOnsTranslations = {
     en: 'Custom AI Agent — Chat with Your Data'
   },
   'addons.customAI.description': {
-    sv: 'Skapa en skräddarsydd AI-agent som endast arbetar med din egen data — perfekt för självservice inom områden som HR eller teknisk support.',
+    sv: 'Chatta med din egen data för omedelbara svar inom HR, teknik eller support – på vilket språk som helst.',
     en: 'Create a tailored AI agent that works only with your own data — perfect for self-service in areas like HR or tech support.'
   },
   'addons.dailyFeed.title': {
@@ -68,7 +68,7 @@ export const addOnsTranslations = {
     en: 'Incident Reporting'
   },
   'addons.incident.description': {
-    sv: 'Gör det möjligt för personal att snabbt och enkelt rapportera incidenter, med synlighet begränsad till auktoriserad personal.',
+    sv: 'Snabb, säker rapportering med rollbaserad synlighet för känsliga fall.',
     en: 'Enable staff to quickly and easily report incidents, with visibility restricted to authorized personnel.'
   },
   'addons.contactSales': {
