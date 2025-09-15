@@ -55,22 +55,40 @@ const GuestCommunicationsSection = () => {
           </Animate>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Animate variants={fadeInUp} transition={{ delay: 0.8 }}>
-            <FunctionCard 
-              title={t('guestComm.functions.welcome')} 
-              description={t('guestComm.functions.welcome.desc')}
-            />
+              <FunctionCard 
+                title={t('addons.guestComm.title')} 
+                description={t('addons.guestComm.description')}
+              />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.0 }}>
-            <FunctionCard 
-              title={t('guestComm.functions.upsell')} 
-              description={t('guestComm.functions.upsell.desc')}
-            />
+              <FunctionCard 
+                title={t('addons.housekeeping.title')} 
+                description={t('addons.housekeeping.description')}
+              />
             </Animate>
             <Animate variants={fadeInUp} transition={{ delay: 1.2 }}>
-            <FunctionCard 
-              title={t('guestComm.functions.feedback')} 
-              description={t('guestComm.functions.feedback.desc')}
-            />
+              <FunctionCard 
+                title={t('addons.reviewFlow.title')} 
+                description={t('addons.reviewFlow.description')}
+              />
+            </Animate>
+            <Animate variants={fadeInUp} transition={{ delay: 1.4 }}>
+              <FunctionCard 
+                title={t('addons.reputation.title')} 
+                description={t('addons.reputation.description')}
+              />
+            </Animate>
+            <Animate variants={fadeInUp} transition={{ delay: 1.6 }}>
+              <FunctionCard 
+                title={t('addons.customAI.title')} 
+                description={t('addons.customAI.description')}
+              />
+            </Animate>
+            <Animate variants={fadeInUp} transition={{ delay: 1.8 }}>
+              <FunctionCard 
+                title={t('addons.incident.title')} 
+                description={t('addons.incident.description')}
+              />
             </Animate>
           </div>
         </div>
