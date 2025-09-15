@@ -4,6 +4,7 @@ import CalendlyWidget from './CalendlyWidget';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInRight } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import heroBackground from '@/assets/hero-background.png';
 
 const Hero = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
@@ -18,8 +19,8 @@ const Hero = () => {
     if (language === 'en') {
       return (
         <>
-          <span className="text-black">AI-powered Communication Tools </span>
-          <span className="text-[#777777]">for Non-Desk Teams</span>
+          <span className="text-white">AI-powered Communication Tools </span>
+          <span className="text-white/80">for Non-Desk Teams</span>
         </>
       );
     }
@@ -29,8 +30,18 @@ const Hero = () => {
 
 
   return (
-    <section className="py-16 md:py-24 lg:py-28 w-full bg-white text-lucy-black">
-      <div className="container">
+    <section className="relative py-16 md:py-24 lg:py-28 w-full text-white overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+      
+      {/* Content */}
+      <div className="container relative z-10">
         <div className="w-full">
           <Animate variants={fadeInUp}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-tight md:leading-[1.15] lg:leading-[1.15] mb-8">
