@@ -1,7 +1,7 @@
 
 export const heroTranslations = {
   'hero.title': {
-    sv: 'Kommunikation som fungerar för team som inte sitter på kontor',
+    sv: 'AI-stödd kommunikation för team som inte sitter på kontor',
     en: 'Unleashing the Potential of Non-Desk Teams'
   },
   'hero.button': {
