@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import CalendlyWidget from '@/components/CalendlyWidget';
-import VideoPlaceholder from '@/components/VideoPlaceholder';
+import VideoPlayer from '@/components/VideoPlayer';
 import MockupPlaceholder from '@/components/MockupPlaceholder';
 import { 
   Clock, 
@@ -129,7 +129,7 @@ const ConferencePlanner = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="order-1 lg:order-2"
             >
-              <VideoPlaceholder aspectRatio="16:9" />
+              <VideoPlayer aspectRatio="16:9" videoPath="hero-video.mp4" />
             </motion.div>
           </div>
         </div>
@@ -203,7 +203,7 @@ const ConferencePlanner = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <VideoPlaceholder aspectRatio="16:9" className="bg-gradient-to-br from-gray-700 to-gray-800" />
+              <VideoPlayer aspectRatio="16:9" videoPath="turning-point-video.mp4" className="bg-gradient-to-br from-gray-700 to-gray-800" />
             </motion.div>
           </div>
         </div>
@@ -307,7 +307,7 @@ const ConferencePlanner = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <VideoPlaceholder aspectRatio="16:9" />
+              <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
             </motion.div>
           </div>
         </div>
