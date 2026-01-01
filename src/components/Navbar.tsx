@@ -22,6 +22,11 @@ const Navbar = () => {
   
   const location = useLocation();
   const navigate = useNavigate();
+  
+  // Pages with light backgrounds need dark navbar text from the start
+  const lightBackgroundPages = ['/conference-planner', '/fördelar', '/addons', '/kom-igang', '/about'];
+  const isLightBackground = lightBackgroundPages.includes(location.pathname);
+  const shouldUseDarkStyle = isScrolled || isLightBackground;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,23 +64,23 @@ const Navbar = () => {
 
   return (
     <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-transparent text-white py-6'
+      shouldUseDarkStyle ? 'bg-white text-lucy-black shadow-md py-4' : 'bg-transparent text-white py-6'
     }`}>
       <Animate variants={fadeIn}>
         <div className="container flex items-center justify-between">
           <div className="flex items-center">
             {/* Replace Link by a clickable div with navigation */}
             <a href="/" onClick={handleLogoClick} aria-label="Go to home and top of hero">
-              <LucyLogo variant={isScrolled ? 'dark' : 'light'} />
+              <LucyLogo variant={shouldUseDarkStyle ? 'dark' : 'light'} />
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks isScrolled={isScrolled} />
+            <NavLinks isScrolled={shouldUseDarkStyle} />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
+                <Button variant="ghost" size="icon" className={`${shouldUseDarkStyle ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -92,7 +97,7 @@ const Navbar = () => {
               href="https://copilot.lucyanalytics.com/copilot" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'} transition-colors`}
+              className={`${shouldUseDarkStyle ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'} transition-colors`}
             >
               {t('nav.signIn')}
             </a>
@@ -108,7 +113,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className={`${isScrolled ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
+                <Button variant="ghost" size="icon" className={`${shouldUseDarkStyle ? 'text-lucy-black hover:text-lucy-medium-gray' : 'text-white hover:text-white/80'}`}>
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -126,9 +131,9 @@ const Navbar = () => {
               aria-label={isMenuOpen ? "Stäng meny" : "Öppna meny"}
             >
               {isMenuOpen ? (
-                <X className={`h-6 w-6 ${isScrolled ? 'text-lucy-black' : 'text-white'}`} />
+                <X className={`h-6 w-6 ${shouldUseDarkStyle ? 'text-lucy-black' : 'text-white'}`} />
               ) : (
-                <Menu className={`h-6 w-6 ${isScrolled ? 'text-lucy-black' : 'text-white'}`} />
+                <Menu className={`h-6 w-6 ${shouldUseDarkStyle ? 'text-lucy-black' : 'text-white'}`} />
               )}
             </button>
           </div>
