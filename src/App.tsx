@@ -11,6 +11,7 @@ import Fördelar from "./pages/Fördelar";
 import AddOns from "./pages/AddOns";
 import AboutUs from "./pages/AboutUs";
 import KomIgang from "./pages/KomIgang";
+import ConferencePlanner from "./pages/ConferencePlanner";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -79,6 +80,11 @@ const App = () => (
             <Route path="/terms" element={
               <Layout>
                 <TermsOfService />
+              </Layout>
+            } />
+            <Route path="/conference-planner" element={
+              <Layout>
+                <ConferencePlanner />
               </Layout>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

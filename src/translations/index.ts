@@ -9,6 +9,7 @@ import { teamCommunicationsTranslations } from './team-communications';
 import { addOnsTranslations } from './addons';
 import { footerTranslations } from './footer';
 import { contactTranslations } from './contact';
+import { conferencePlannerTranslations } from './conference-planner';
 
 // Merge all translations into a single object
 const translations = {
@@ -23,6 +24,7 @@ const translations = {
   ...addOnsTranslations,
   ...footerTranslations,
   ...contactTranslations,
+  ...conferencePlannerTranslations,
 };
 
 export default translations;
