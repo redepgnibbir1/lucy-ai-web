@@ -79,15 +79,15 @@ const ConferencePlanner = () => {
   return (
     <div className="bg-white">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center py-20 lg:py-32">
+      <section className="relative min-h-screen flex items-center py-20 lg:py-28">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text content */}
+          <div className="flex flex-col gap-10">
+            {/* Text content - centered above video */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="order-2 lg:order-1"
+              className="text-center max-w-3xl mx-auto"
             >
               <motion.h1 
                 variants={fadeInUp}
@@ -100,12 +100,12 @@ const ConferencePlanner = () => {
               
               <motion.p 
                 variants={fadeInUp}
-                className="font-sans text-lg md:text-xl text-gray-600 mb-8 max-w-xl"
+                className="font-sans text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto"
               >
                 {t('cp.hero.description')}
               </motion.p>
               
-              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+              <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center">
                 <Button 
                   onClick={() => setIsCalendlyOpen(true)}
                   className="bg-lucy-neon-yellow text-lucy-black hover:bg-lucy-neon-yellow/90 font-sans text-lg px-8 py-6"
@@ -122,12 +122,12 @@ const ConferencePlanner = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right: Video placeholder */}
+            {/* Video - takes up most of the width */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="order-1 lg:order-2"
+              className="w-full max-w-6xl mx-auto"
             >
               <VideoPlayer aspectRatio="16:9" videoPath="hero-video.mp4" />
             </motion.div>
