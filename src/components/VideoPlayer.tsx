@@ -8,16 +8,18 @@ interface VideoPlayerProps {
   aspectRatio?: '16:9' | '4:3' | '1:1';
   videoPath?: string; // Path in storage bucket, e.g., "hero-video.mp4"
   posterPath?: string; // Optional poster image path
+  autoPlay?: boolean; // Start playing automatically
 }
 
 const VideoPlayer = ({ 
   className = '', 
   aspectRatio = '16:9',
   videoPath,
-  posterPath
+  posterPath,
+  autoPlay = false
 }: VideoPlayerProps) => {
   const { t } = useLanguage();
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [hasError, setHasError] = useState(false);
   
   const aspectClasses = {
@@ -109,6 +111,9 @@ const VideoPlayer = ({
           poster={getPosterUrl()}
           controls
           autoPlay
+          muted={autoPlay}
+          loop
+          playsInline
           onError={() => setHasError(true)}
         >
           Din webbläsare stöder inte videouppspelning.
