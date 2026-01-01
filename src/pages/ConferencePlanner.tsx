@@ -129,7 +129,7 @@ const ConferencePlanner = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="w-full max-w-6xl mx-auto"
             >
-              <VideoPlayer aspectRatio="16:9" videoPath="hero-video.mp4" />
+              <VideoPlayer aspectRatio="16:9" videoPath="hero-video.mp4" autoPlay />
             </motion.div>
           </div>
         </div>
