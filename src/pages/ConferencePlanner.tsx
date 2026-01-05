@@ -257,11 +257,13 @@ const ConferencePlanner = () => {
                   </div>
                 </div>
                 {feature.image ? (
-                  <img 
-                    src={feature.image} 
-                    alt={t(feature.titleKey)} 
-                    className="w-full rounded-lg border border-gray-200 shadow-sm"
-                  />
+                  <div className="aspect-[16/10] w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                    <img 
+                      src={feature.image} 
+                      alt={t(feature.titleKey)} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 ) : (
                   <MockupPlaceholder />
                 )}
