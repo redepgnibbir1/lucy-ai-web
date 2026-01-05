@@ -58,8 +58,8 @@ const ConferencePlanner = () => {
 
   const features = [
     { icon: ClipboardList, titleKey: 'cp.features.registration.title', descKey: 'cp.features.registration.description' },
-    { icon: Utensils, titleKey: 'cp.features.dietary.title', descKey: 'cp.features.dietary.description' },
-    { icon: LayoutDashboard, titleKey: 'cp.features.schedule.title', descKey: 'cp.features.schedule.description', image: conferenceParticipantsImage },
+    { icon: Utensils, titleKey: 'cp.features.dietary.title', descKey: 'cp.features.dietary.description', image: conferenceParticipantsImage },
+    { icon: LayoutDashboard, titleKey: 'cp.features.schedule.title', descKey: 'cp.features.schedule.description' },
     { icon: MessageSquare, titleKey: 'cp.features.dialogue.title', descKey: 'cp.features.dialogue.description' }
   ];
 
