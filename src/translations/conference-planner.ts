@@ -57,7 +57,7 @@ export const conferencePlannerTranslations = {
     en: 'Detailed planning is hard'
   },
   'cp.turning.quote': {
-    sv: '"Vi insåg att om vi skulle kunna växa, behövde vi ett system som samlade allt på ett ställe. Ett verktyg som gav oss kontroll – och tid att fokusera på det som verkligen skapar värde."',
+    sv: '"Vi insåg att om vi skulle bli effektivare, behövde vi ett system som samlade allt på ett ställe. Ett verktyg som gav oss kontroll och tid att fokusera på det som verkligen skapar värde."',
     en: '"We realized that if we were going to grow, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
   },
 
