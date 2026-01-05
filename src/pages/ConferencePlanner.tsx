@@ -355,29 +355,15 @@ const ConferencePlanner = () => {
                 </div>
                 <div className="p-4 space-y-2 font-mono text-sm text-gray-600">
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">Silent Disco</div>
-                    <div className="bg-gray-50 p-2 border">50€</div>
-                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                    <div className="bg-gray-50 p-2 border">Yes/No
                   </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">Escape room</div>
-                    <div className="bg-gray-50 p-2 border">42€</div>
+                    <div className="bg-gray-50 p-2 border">50€/ person</div>
                     <div className="bg-gray-50 p-2 border">Yes/No</div>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Sauna</div>
-                    <div className="bg-gray-50 p-2 border">13€</div>
+                    <div className="bg-gray-50 p-2 border">12€/ person</div>
                     <div className="bg-gray-50 p-2 border">Yes/No</div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">Welcome Drink</div>
-                    <div className="bg-gray-50 p-2 border">11€</div>
-                    <div className="bg-gray-50 p-2 border">Yes/No</div>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">Wine tasting</div>
-                    <div className="bg-gray-50 p-2 border">21€</div>
-                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
                   </div>
                 </div>
               </div>
