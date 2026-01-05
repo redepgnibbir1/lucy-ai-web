@@ -1,12 +1,12 @@
 export const conferencePlannerTranslations = {
   // Hero Section
   'cp.hero.title': {
-    sv: 'Mindre administration.',
-    en: 'Less administration.'
+    sv: 'Mindre administration. Mer kontroll.',
+    en: 'Less administration. More control.'
   },
   'cp.hero.subtitle': {
-    sv: 'Mer kontroll.',
-    en: 'More control.'
+    sv: 'En smartare väg till bättre konferensaffärer.',
+    en: 'A smarter path to better conference business.'
   },
   'cp.hero.description': {
     sv: 'Lucy Conference Planner samlar allt – registrering, kost, schema och kunddialog – i ett smart arbetsflöde. Du får tid över. Och du får koll.',
