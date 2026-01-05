@@ -71,8 +71,8 @@ export const conferencePlannerTranslations = {
     en: 'Four powerful features that transform your workflow'
   },
   'cp.features.registration.title': {
-    sv: 'Deltagarregistrering',
-    en: 'Participant Registration'
+    sv: 'Delad arbetsyta',
+    en: 'Shared Workspace'
   },
   'cp.features.registration.description': {
     sv: 'Smidigt digitalt anmälningsformulär som automatiskt samlar in all nödvändig information från deltagarna.',
