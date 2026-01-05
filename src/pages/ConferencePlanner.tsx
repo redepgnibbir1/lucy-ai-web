@@ -386,6 +386,21 @@ const ConferencePlanner = () => {
                     <div className="bg-gray-50 p-2 border">750 kr</div>
                     <div className="bg-gray-50 p-2 border">Ja/Nej</div>
                   </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Tillägg C</div>
+                    <div className="bg-gray-50 p-2 border">300 kr</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Tillägg D</div>
+                    <div className="bg-gray-50 p-2 border">1 200 kr</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Tillägg E</div>
+                    <div className="bg-gray-50 p-2 border">450 kr</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
                 </div>
               </div>
             </motion.div>
