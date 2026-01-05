@@ -355,14 +355,29 @@ const ConferencePlanner = () => {
                 </div>
                 <div className="p-4 space-y-2 font-mono text-sm text-gray-600">
                   <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Silent Disco</div>
+                    <div className="bg-gray-50 p-2 border">500 kr</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Premium Fika</div>
-                    <div className="bg-gray-50 p-2 border">50€/ person</div>
-                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                    <div className="bg-gray-50 p-2 border">50 kr/person</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Sauna</div>
-                    <div className="bg-gray-50 p-2 border">12€/ person</div>
-                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                    <div className="bg-gray-50 p-2 border">120 kr/person</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Middag</div>
+                    <div className="bg-gray-50 p-2 border">350 kr/person</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Teambuilding</div>
+                    <div className="bg-gray-50 p-2 border">200 kr/person</div>
+                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
                   </div>
                 </div>
               </div>
