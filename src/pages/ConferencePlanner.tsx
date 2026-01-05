@@ -8,6 +8,7 @@ import MockupPlaceholder from '@/components/MockupPlaceholder';
 import conferenceParticipantsImage from '@/assets/conference-planner-participants.png';
 import conferenceScheduleImage from '@/assets/conference-planner-schedule.png';
 import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
+import conferenceWorkspaceImage from '@/assets/conference-planner-workspace.png';
 import { 
   Clock, 
   TrendingDown, 
@@ -59,7 +60,7 @@ const ConferencePlanner = () => {
   ];
 
   const features = [
-    { icon: ClipboardList, titleKey: 'cp.features.registration.title', descKey: 'cp.features.registration.description' },
+    { icon: ClipboardList, titleKey: 'cp.features.registration.title', descKey: 'cp.features.registration.description', image: conferenceWorkspaceImage },
     { icon: Utensils, titleKey: 'cp.features.dietary.title', descKey: 'cp.features.dietary.description', image: conferenceParticipantsImage },
     { icon: LayoutDashboard, titleKey: 'cp.features.schedule.title', descKey: 'cp.features.schedule.description', image: conferenceScheduleImage },
     { icon: MessageSquare, titleKey: 'cp.features.dialogue.title', descKey: 'cp.features.dialogue.description', image: conferenceDialogueImage }
