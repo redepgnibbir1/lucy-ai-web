@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -9,6 +9,7 @@ interface VideoPlayerProps {
   videoPath?: string; // Path in storage bucket, e.g., "hero-video.mp4"
   posterPath?: string; // Optional poster image path
   autoPlay?: boolean; // Start playing automatically
+  autoPlayOnScroll?: boolean; // Start playing when scrolled into view
 }
 
 const VideoPlayer = ({ 
@@ -16,11 +17,33 @@ const VideoPlayer = ({
   aspectRatio = '16:9',
   videoPath,
   posterPath,
-  autoPlay = false
+  autoPlay = false,
+  autoPlayOnScroll = false
 }: VideoPlayerProps) => {
   const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [hasError, setHasError] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Auto-play when scrolled into view
+  useEffect(() => {
+    if (!autoPlayOnScroll || !containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsPlaying(true);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [autoPlayOnScroll]);
   
   const aspectClasses = {
     '16:9': 'aspect-video',
@@ -75,6 +98,7 @@ const VideoPlayer = ({
 
   return (
     <div 
+      ref={containerRef}
       className={`
         relative ${aspectClasses[aspectRatio]} w-full rounded-2xl overflow-hidden
         bg-gradient-to-br from-gray-100 to-gray-200

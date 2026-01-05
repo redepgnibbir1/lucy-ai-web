@@ -207,7 +207,7 @@ const ConferencePlanner = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <VideoPlayer aspectRatio="16:9" videoPath="turning-point-video.mp4" className="bg-gradient-to-br from-gray-700 to-gray-800" />
+              <VideoPlayer aspectRatio="16:9" videoPath="turning-point-video.mp4" autoPlayOnScroll className="bg-gradient-to-br from-gray-700 to-gray-800" />
             </motion.div>
           </div>
         </div>
