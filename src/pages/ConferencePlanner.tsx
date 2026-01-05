@@ -357,7 +357,7 @@ const ConferencePlanner = () => {
                   <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Silent Disco</div>
                     <div className="bg-gray-50 p-2 border">50€</div>
-                    <div className="bg-gray-50 p-2 border">Ja/Nej</div>
+                    <div className="bg-gray-50 p-2 border">Yes/No</div>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Escape room</div>
