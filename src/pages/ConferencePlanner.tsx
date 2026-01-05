@@ -382,11 +382,6 @@ const ConferencePlanner = () => {
                     <div className="bg-gray-50 p-2 border">85€/person</div>
                     <div className="bg-gray-50 p-2 border">Yes/No</div>
                   </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">City Tour</div>
-                    <div className="bg-gray-50 p-2 border">25€/person</div>
-                    <div className="bg-gray-50 p-2 border">Yes/No</div>
-                  </div>
                 </div>
               </div>
             </motion.div>
