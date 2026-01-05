@@ -405,13 +405,13 @@ const ConferencePlanner = () => {
               </div>
               <p className="font-sans text-gray-700 mb-6">{t('cp.upsell.after.description')}</p>
               
-              <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-gray-200">
-                <img 
-                  src={conferenceProductImage} 
-                  alt="Lucy Conference Planner produktvy" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+                      <div className="relative w-full rounded-xl overflow-hidden border border-gray-200">
+                        <img 
+                          src={conferenceProductImage} 
+                          alt="Lucy Conference Planner produktvy" 
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
             </motion.div>
           </div>
         </div>
