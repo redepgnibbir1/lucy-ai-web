@@ -75,8 +75,8 @@ export const conferencePlannerTranslations = {
     en: 'Shared Workspace'
   },
   'cp.features.registration.description': {
-    sv: 'Smidigt digitalt anmälningsformulär som automatiskt samlar in all nödvändig information från deltagarna.',
-    en: 'Smooth digital registration form that automatically collects all necessary information from participants.'
+    sv: 'Möjlighet för kunden att själv besvara alla frågor samtidigt som kunden informeras om förutsättningar och möjliga tillval.',
+    en: 'Allows the customer to answer all questions themselves while being informed about conditions and available add-ons.'
   },
   'cp.features.dietary.title': {
     sv: 'Kost & allergier',
