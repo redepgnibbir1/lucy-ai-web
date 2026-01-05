@@ -7,6 +7,7 @@ import VideoPlayer from '@/components/VideoPlayer';
 import MockupPlaceholder from '@/components/MockupPlaceholder';
 import conferenceParticipantsImage from '@/assets/conference-planner-participants.png';
 import conferenceScheduleImage from '@/assets/conference-planner-schedule.png';
+import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
 import { 
   Clock, 
   TrendingDown, 
@@ -61,7 +62,7 @@ const ConferencePlanner = () => {
     { icon: ClipboardList, titleKey: 'cp.features.registration.title', descKey: 'cp.features.registration.description' },
     { icon: Utensils, titleKey: 'cp.features.dietary.title', descKey: 'cp.features.dietary.description', image: conferenceParticipantsImage },
     { icon: LayoutDashboard, titleKey: 'cp.features.schedule.title', descKey: 'cp.features.schedule.description', image: conferenceScheduleImage },
-    { icon: MessageSquare, titleKey: 'cp.features.dialogue.title', descKey: 'cp.features.dialogue.description' }
+    { icon: MessageSquare, titleKey: 'cp.features.dialogue.title', descKey: 'cp.features.dialogue.description', image: conferenceDialogueImage }
   ];
 
   const results = [
