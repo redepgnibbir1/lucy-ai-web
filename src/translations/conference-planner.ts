@@ -75,8 +75,8 @@ export const conferencePlannerTranslations = {
     en: 'Shared Workspace'
   },
   'cp.features.registration.description': {
-    sv: 'Möjlighet för kunden att själv besvara alla frågor samtidigt som kunden informeras om förutsättningar och möjliga tillval.',
-    en: 'Allows the customer to answer all questions themselves while being informed about conditions and available add-ons.'
+    sv: 'Möjlighet för kunden att själv besvara alla frågor och göra möjliga tillval.',
+    en: 'Allows the customer to answer all questions themselves and make available add-ons.'
   },
   'cp.features.dietary.title': {
     sv: 'Kost & allergier',
