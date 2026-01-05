@@ -354,15 +354,36 @@ const ConferencePlanner = () => {
                   </div>
                 </div>
                 <div className="p-4 space-y-2 font-mono text-sm text-gray-600">
+                  {/* Header row */}
                   <div className="grid grid-cols-3 gap-2">
-                    <div className="bg-gray-50 p-2 border">Yes/No
+                    <div className="bg-gray-300 p-2 border font-semibold">Activity</div>
+                    <div className="bg-gray-300 p-2 border font-semibold">Price</div>
+                    <div className="bg-gray-300 p-2 border font-semibold">Booked</div>
                   </div>
-                    <div className="bg-gray-50 p-2 border">50€/ person</div>
+                  {/* Data rows */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Wine Tasting</div>
+                    <div className="bg-gray-50 p-2 border">50€/person</div>
                     <div className="bg-gray-50 p-2 border">Yes/No</div>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     <div className="bg-gray-50 p-2 border">Sauna</div>
-                    <div className="bg-gray-50 p-2 border">12€/ person</div>
+                    <div className="bg-gray-50 p-2 border">12€/person</div>
+                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Team Building</div>
+                    <div className="bg-gray-50 p-2 border">35€/person</div>
+                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">Dinner Cruise</div>
+                    <div className="bg-gray-50 p-2 border">85€/person</div>
+                    <div className="bg-gray-50 p-2 border">Yes/No</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-gray-50 p-2 border">City Tour</div>
+                    <div className="bg-gray-50 p-2 border">25€/person</div>
                     <div className="bg-gray-50 p-2 border">Yes/No</div>
                   </div>
                 </div>
