@@ -9,6 +9,7 @@ import conferenceParticipantsImage from '@/assets/conference-planner-participant
 import conferenceScheduleImage from '@/assets/conference-planner-schedule.png';
 import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
 import conferenceWorkspaceImage from '@/assets/conference-planner-workspace.png';
+import conferenceProductImage from '@/assets/conference-planner-product.png';
 import { Clock, TrendingDown, Handshake, TrendingUp, Building, Hotel, CalendarDays, Users, ClipboardList, Utensils, LayoutDashboard, MessageSquare, FileSpreadsheet, Sparkles } from 'lucide-react';
 const ConferencePlanner = () => {
   const {
@@ -409,7 +410,13 @@ const ConferencePlanner = () => {
               </div>
               <p className="font-sans text-gray-700 mb-6">{t('cp.upsell.after.description')}</p>
               
-              <MockupPlaceholder />
+              <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-gray-200">
+                <img 
+                  src={conferenceProductImage} 
+                  alt="Lucy Conference Planner produktvy" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
