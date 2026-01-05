@@ -53,8 +53,8 @@ export const conferencePlannerTranslations = {
 
   // Turning Point Section
   'cp.turning.title': {
-    sv: 'Vi behövde ett nytt sätt',
-    en: 'We needed a new way'
+    sv: 'Detaljplanering är svårt',
+    en: 'Detailed planning is hard'
   },
   'cp.turning.quote': {
     sv: '"Vi insåg att om vi skulle kunna växa, behövde vi ett system som samlade allt på ett ställe. Ett verktyg som gav oss kontroll – och tid att fokusera på det som verkligen skapar värde."',
