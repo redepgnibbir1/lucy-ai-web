@@ -261,7 +261,7 @@ const ConferencePlanner = () => {
                     <img 
                       src={feature.image} 
                       alt={t(feature.titleKey)} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                 ) : (
