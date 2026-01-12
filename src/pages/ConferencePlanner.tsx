@@ -10,6 +10,7 @@ import conferenceScheduleImage from '@/assets/conference-planner-schedule.png';
 import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
 import conferenceWorkspaceImage from '@/assets/conference-planner-workspace.png';
 import conferenceProductImage from '@/assets/conference-planner-product.png';
+import conferenceTeambuildingImage from '@/assets/conference-planner-teambuilding.png';
 import { Clock, TrendingDown, Handshake, TrendingUp, Building, Hotel, CalendarDays, Users, ClipboardList, Utensils, LayoutDashboard, MessageSquare, FileSpreadsheet, Sparkles } from 'lucide-react';
 const ConferencePlanner = () => {
   const {
@@ -407,7 +408,7 @@ const ConferencePlanner = () => {
               
                       <div className="relative w-full rounded-xl overflow-hidden border border-gray-200">
                         <img 
-                          src={conferenceProductImage} 
+                          src={conferenceTeambuildingImage} 
                           alt="Lucy Conference Planner produktvy" 
                           className="w-full h-auto object-contain"
                         />
