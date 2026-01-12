@@ -9,6 +9,7 @@ import conferenceParticipantsImage from '@/assets/conference-planner-participant
 import conferenceScheduleImage from '@/assets/conference-planner-schedule.png';
 import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
 import conferenceWorkspaceImage from '@/assets/conference-planner-workspace.png';
+import conferenceDietaryImage from '@/assets/conference-planner-dietary.png';
 import conferenceProductImage from '@/assets/conference-planner-product.png';
 import conferenceTeambuildingImage from '@/assets/conference-planner-teambuilding.png';
 import conferenceKickoffImage from '@/assets/conference-planner-kickoff.png';
@@ -60,12 +61,12 @@ const ConferencePlanner = () => {
     icon: ClipboardList,
     titleKey: 'cp.features.registration.title',
     descKey: 'cp.features.registration.description',
-    image: conferenceWorkspaceImage
+    image: conferenceParticipantsImage
   }, {
     icon: Utensils,
     titleKey: 'cp.features.dietary.title',
     descKey: 'cp.features.dietary.description',
-    image: conferenceParticipantsImage
+    image: conferenceDietaryImage
   }, {
     icon: LayoutDashboard,
     titleKey: 'cp.features.schedule.title',
@@ -75,7 +76,7 @@ const ConferencePlanner = () => {
     icon: MessageSquare,
     titleKey: 'cp.features.dialogue.title',
     descKey: 'cp.features.dialogue.description',
-    image: conferenceKickoffImage
+    image: conferenceDialogueImage
   }];
   const results = [{
     icon: Clock,
