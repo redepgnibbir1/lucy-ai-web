@@ -11,6 +11,7 @@ import conferenceDialogueImage from '@/assets/conference-planner-dialogue.png';
 import conferenceWorkspaceImage from '@/assets/conference-planner-workspace.png';
 import conferenceProductImage from '@/assets/conference-planner-product.png';
 import conferenceTeambuildingImage from '@/assets/conference-planner-teambuilding.png';
+import conferenceKickoffImage from '@/assets/conference-planner-kickoff.png';
 import { Clock, TrendingDown, Handshake, TrendingUp, Building, Hotel, CalendarDays, Users, ClipboardList, Utensils, LayoutDashboard, MessageSquare, FileSpreadsheet, Sparkles } from 'lucide-react';
 const ConferencePlanner = () => {
   const {
@@ -74,7 +75,7 @@ const ConferencePlanner = () => {
     icon: MessageSquare,
     titleKey: 'cp.features.dialogue.title',
     descKey: 'cp.features.dialogue.description',
-    image: conferenceDialogueImage
+    image: conferenceKickoffImage
   }];
   const results = [{
     icon: Clock,
