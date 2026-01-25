@@ -76,7 +76,7 @@ const ConferencePlanner = () => {
     icon: MessageSquare,
     titleKey: 'cp.features.dialogue.title',
     descKey: 'cp.features.dialogue.description',
-    image: conferenceDialogueImage
+    image: conferenceTeambuildingImage
   }];
   const results = [{
     icon: Clock,
