@@ -27,8 +27,8 @@ export const conferencePlannerTranslations = {
 
   // Problem Section
   'cp.problem.title': {
-    sv: 'Så såg vår vardag ut',
-    en: 'This is how our everyday looked'
+    sv: 'Så såg våra kunders vardag ut',
+    en: 'This is how our customers\' everyday looked'
   },
   'cp.problem.description': {
     sv: 'Manuella flöden, spridd information och ständig risk för misstag. Känner du igen dig?',
