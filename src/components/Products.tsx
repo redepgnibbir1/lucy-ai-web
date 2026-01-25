@@ -78,6 +78,7 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
       }
     } else if (href && href.startsWith('/')) {
       navigate(href);
+      window.scrollTo(0, 0);
     }
   };
 
