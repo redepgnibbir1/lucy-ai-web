@@ -121,12 +121,12 @@ export const conferencePlannerTranslations = {
     en: 'Drastically reduced time for administration and manual work.'
   },
   'cp.results.errors.title': {
-    sv: 'Färre fel',
-    en: 'Fewer errors'
+    sv: 'Automatiska påminnelser',
+    en: 'Automatic reminders'
   },
   'cp.results.errors.description': {
-    sv: 'Automatisering minimerar risken för mänskliga misstag.',
-    en: 'Automation minimizes the risk of human errors.'
+    sv: 'Alla deadlines. Alla påminnelser. Utan att du behöver lyfta ett finger.',
+    en: 'All deadlines. All reminders. Without lifting a finger.'
   },
   'cp.results.dialogue.title': {
     sv: 'Tydligare kunddialog',

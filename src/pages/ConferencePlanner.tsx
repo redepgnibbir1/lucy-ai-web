@@ -13,7 +13,7 @@ import conferenceDietaryImage from '@/assets/conference-planner-dietary.png';
 import conferenceProductImage from '@/assets/conference-planner-product.png';
 import conferenceTeambuildingImage from '@/assets/conference-planner-teambuilding.png';
 import conferenceKickoffImage from '@/assets/conference-planner-kickoff.png';
-import { Clock, TrendingDown, Handshake, TrendingUp, Building, Hotel, CalendarDays, Users, ClipboardList, Utensils, LayoutDashboard, MessageSquare, FileSpreadsheet, Sparkles } from 'lucide-react';
+import { Clock, Bell, Handshake, TrendingUp, Building, Hotel, CalendarDays, Users, ClipboardList, Utensils, LayoutDashboard, MessageSquare, FileSpreadsheet, Sparkles } from 'lucide-react';
 const ConferencePlanner = () => {
   const {
     t
@@ -83,7 +83,7 @@ const ConferencePlanner = () => {
     titleKey: 'cp.results.time.title',
     descKey: 'cp.results.time.description'
   }, {
-    icon: TrendingDown,
+    icon: Bell,
     titleKey: 'cp.results.errors.title',
     descKey: 'cp.results.errors.description'
   }, {
