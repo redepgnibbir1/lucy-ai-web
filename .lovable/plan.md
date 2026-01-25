@@ -1,47 +1,40 @@
 
 
-## Plan: Dölja video-placeholders tills videos finns
+## Plan: Dölja endast den tredje videon (Results-sektionen)
 
-**Mål:** Tillfälligt dölja VideoPlayer-komponenterna på Conference Planner-sidan tills du har videorna redo att ladda upp.
+**Mål:** Tillfälligt dölja endast VideoPlayer-komponenten i Results-sektionen (den längst ner på sidan), medan de andra två videorna förblir synliga.
 
-### Alternativ
+### Vad som ändras
 
-Det finns två sätt att lösa detta:
+Den video-placeholder som visas nedanför resultatlistan (med ikoner som "Ökad merförsäljning") kommer att döljas.
 
-**Alternativ A: Kommentera bort VideoPlayer-komponenterna (Rekommenderat)**
-- Snabbaste lösningen - enkelt att återställa när du har videos
+### Teknisk detalj
 
-**Alternativ B: Lägga till en prop för att dölja VideoPlayer helt**
-- Mer strukturerad lösning om du vill behålla layouten men bara dölja videon
+**Fil:** `src/pages/ConferencePlanner.tsx`
 
-### Tekniska detaljer (Alternativ A)
+**Rad 301-313** kommenteras bort:
 
-**Fil som ändras:** `src/pages/ConferencePlanner.tsx`
-
-**Ställen som påverkas:**
-
-1. **Hero-sektionen** (rad 142-155)
-   - Döljer hela video-wrappern under hero-texten
-
-2. **Turning Point-sektionen** (rad 211-225)
-   - Döljer video-delen i det svarta avsnittet
-
-3. **Results-sektionen** (rad 301-314)
-   - Döljer videon till höger om resultatlistan
-
-### Kodändringar
-
-Tre motion.div-block med VideoPlayer-komponenter kommenteras bort med `{/* ... */}`:
-
-```text
+```jsx
 {/* Video hidden until ready
-<motion.div ... >
-  <VideoPlayer ... />
+<motion.div initial={{
+  opacity: 0,
+  x: 50
+}} whileInView={{
+  opacity: 1,
+  x: 0
+}} viewport={{
+  once: true
+}} transition={{
+  duration: 0.8
+}}>
+  <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
 </motion.div>
 */}
 ```
 
-### Vad händer sen?
+### Resultat
 
-När du har videorna redo, berätta så tar jag bort kommentarerna och videorna visas igen.
+- Hero-videon: **Synlig**
+- Turning Point-videon (svarta sektionen): **Synlig**
+- Results-videon (längst ner): **Dold**
 
