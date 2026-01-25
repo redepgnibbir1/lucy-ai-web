@@ -30,14 +30,6 @@ const AddOns = () => {
 
   const addOns = [
     {
-      title: t('addons.guestComm.title'),
-      description: t('addons.guestComm.description')
-    },
-    {
-      title: t('addons.housekeeping.title'),
-      description: t('addons.housekeeping.description')
-    },
-    {
       title: t('addons.reviewFlow.title'),
       description: t('addons.reviewFlow.description')
     },
