@@ -139,7 +139,7 @@ const ConferencePlanner = () => {
               </motion.div>
             </motion.div>
 
-{/* Video - takes up most of the width */}
+          {/* Video - takes up most of the width */}
             <motion.div initial={{
             opacity: 0,
             y: 30
@@ -200,9 +200,7 @@ const ConferencePlanner = () => {
           }} transition={{
             duration: 0.8
           }}>
-              <span className="font-sans text-sm uppercase tracking-widest text-gray-400 mb-4 block">
-                {t('cp.turning.label')}
-              </span>
+              
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-8">
                 {t('cp.turning.title')}
               </h2>
@@ -211,7 +209,7 @@ const ConferencePlanner = () => {
               </blockquote>
             </motion.div>
 
-<motion.div initial={{
+          <motion.div initial={{
             opacity: 0,
             x: 50
           }} whileInView={{
@@ -266,7 +264,7 @@ const ConferencePlanner = () => {
                     <p className="font-sans text-gray-600">{t(feature.descKey)}</p>
                   </div>
                 </div>
-{feature.image ? <div className="w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+            {feature.image ? <div className="w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                     <img src={feature.image} alt={t(feature.titleKey)} className="w-full h-auto object-contain" />
                   </div> : <MockupPlaceholder />}
               </motion.div>)}
@@ -301,21 +299,21 @@ const ConferencePlanner = () => {
               </div>
             </motion.div>
 
-{/* Video hidden until ready
-            <motion.div initial={{
-              opacity: 0,
-              x: 50
-            }} whileInView={{
-              opacity: 1,
-              x: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.8
-            }}>
-              <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
-            </motion.div>
-            */}
+          {/* Video hidden until ready
+                      <motion.div initial={{
+                        opacity: 0,
+                        x: 50
+                      }} whileInView={{
+                        opacity: 1,
+                        x: 0
+                      }} viewport={{
+                        once: true
+                      }} transition={{
+                        duration: 0.8
+                      }}>
+                        <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
+                      </motion.div>
+                      */}
           </div>
         </div>
       </section>
@@ -414,11 +412,7 @@ const ConferencePlanner = () => {
               <p className="font-sans text-gray-700 mb-6">{t('cp.upsell.after.description')}</p>
               
                       <div className="relative w-full rounded-xl overflow-hidden border border-gray-200">
-                        <img 
-                          src={conferenceTeambuildingImage} 
-                          alt="Lucy Conference Planner produktvy" 
-                          className="w-full h-auto object-contain"
-                        />
+                        <img src={conferenceTeambuildingImage} alt="Lucy Conference Planner produktvy" className="w-full h-auto object-contain" />
                       </div>
             </motion.div>
           </div>
