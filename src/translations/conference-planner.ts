@@ -5,8 +5,8 @@ export const conferencePlannerTranslations = {
     en: 'Plan conferences smarter.'
   },
   'cp.hero.subtitle': {
-    sv: 'Allt samlat. Alltid uppdaterat. Full kontroll.',
-    en: 'Everything gathered. Always updated. Full control.'
+    sv: 'Allt samlat. Full kontroll.',
+    en: 'Everything gathered. Full control.'
   },
   'cp.hero.description': {
     sv: 'Lucy Conference Planner samlar allt – registrering, kost, schema och kunddialog – i ett smart arbetsflöde. Du får tid över. Och du får koll.',
