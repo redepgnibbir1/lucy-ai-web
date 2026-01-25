@@ -52,6 +52,10 @@ export const conferencePlannerTranslations = {
   },
 
   // Turning Point Section
+  'cp.turning.label': {
+    sv: 'Våra kunder',
+    en: 'Our Clients'
+  },
   'cp.turning.title': {
     sv: 'Detaljplanering är svårt',
     en: 'Detailed planning is hard'
