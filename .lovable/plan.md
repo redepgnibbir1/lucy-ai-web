@@ -1,54 +1,47 @@
 
 
-## Plan: Byta text och ikon i "Färre fel"-segmentet
+## Plan: Dölja video-placeholders tills videos finns
 
-**Mål:** Ersätta texten i "Färre fel"-kortet (Fewer errors) med ny text om deadlines och påminnelser, samt byta till en mer passande ikon.
+**Mål:** Tillfälligt dölja VideoPlayer-komponenterna på Conference Planner-sidan tills du har videorna redo att ladda upp.
 
-### Ny text
+### Alternativ
 
-| Fält | Nuvarande | Ny |
-|------|-----------|-----|
-| Titel | "Färre fel" / "Fewer errors" | "Automatiska påminnelser" / "Automatic reminders" |
-| Beskrivning | "Automatisering minimerar risken för mänskliga misstag." | "Alla deadlines. Alla påminnelser. Utan att du behöver lyfta ett finger." |
+Det finns två sätt att lösa detta:
 
-### Ny ikon
+**Alternativ A: Kommentera bort VideoPlayer-komponenterna (Rekommenderat)**
+- Snabbaste lösningen - enkelt att återställa när du har videos
 
-**Nuvarande ikon:** `TrendingDown` (pil nedåt)
+**Alternativ B: Lägga till en prop för att dölja VideoPlayer helt**
+- Mer strukturerad lösning om du vill behålla layouten men bara dölja videon
 
-**Ny ikon:** `Bell` (klocka) - passar bättre för påminnelser och notifikationer
+### Tekniska detaljer (Alternativ A)
 
-### Tekniska detaljer
+**Fil som ändras:** `src/pages/ConferencePlanner.tsx`
 
-**Filer som ändras:**
+**Ställen som påverkas:**
 
-1. **src/translations/conference-planner.ts** (rad 123-129)
-   - Uppdatera `cp.results.errors.title` till ny titel
-   - Uppdatera `cp.results.errors.description` till ny beskrivning
+1. **Hero-sektionen** (rad 142-155)
+   - Döljer hela video-wrappern under hero-texten
 
-2. **src/pages/ConferencePlanner.tsx** (rad 86-88)
-   - Byta ikon från `TrendingDown` till `Bell`
-   - Lägga till `Bell` i importraden
+2. **Turning Point-sektionen** (rad 211-225)
+   - Döljer video-delen i det svarta avsnittet
+
+3. **Results-sektionen** (rad 301-314)
+   - Döljer videon till höger om resultatlistan
 
 ### Kodändringar
 
-**Translations (conference-planner.ts):**
+Tre motion.div-block med VideoPlayer-komponenter kommenteras bort med `{/* ... */}`:
+
 ```text
-'cp.results.errors.title': {
-  sv: 'Automatiska påminnelser',
-  en: 'Automatic reminders'
-},
-'cp.results.errors.description': {
-  sv: 'Alla deadlines. Alla påminnelser. Utan att du behöver lyfta ett finger.',
-  en: 'All deadlines. All reminders. Without lifting a finger.'
-},
+{/* Video hidden until ready
+<motion.div ... >
+  <VideoPlayer ... />
+</motion.div>
+*/}
 ```
 
-**Component (ConferencePlanner.tsx):**
-```text
-{
-  icon: Bell,
-  titleKey: 'cp.results.errors.title',
-  descKey: 'cp.results.errors.description'
-},
-```
+### Vad händer sen?
+
+När du har videorna redo, berätta så tar jag bort kommentarerna och videorna visas igen.
 
