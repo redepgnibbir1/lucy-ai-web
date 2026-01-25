@@ -88,8 +88,7 @@ const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCard
       <h4 className="text-xl font-medium mb-4 break-words text-lucy-black">{description}</h4>
       <p className="text-gray-600 mb-6 flex-grow break-words">{subtext}</p>
       <Button 
-        variant="link" 
-        className="text-lucy-neon-yellow p-0 justify-start font-medium"
+        className="bg-lucy-neon-yellow text-lucy-black hover:bg-lucy-neon-yellow/90 px-6 py-2 rounded-md font-medium justify-start w-fit"
         onClick={handleClick}
       >
         {ctaText} →
