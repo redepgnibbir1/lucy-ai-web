@@ -28,7 +28,7 @@ export const conferencePlannerTranslations = {
   // Problem Section
   'cp.problem.title': {
     sv: 'Så såg våra kunders vardag ut',
-    en: 'This is how our customers\' everyday looked'
+    en: 'This was the daily reality for our customers'
   },
   'cp.problem.description': {
     sv: 'Manuella flöden, spridd information och ständig risk för misstag. Känner du igen dig?',
@@ -62,7 +62,7 @@ export const conferencePlannerTranslations = {
   },
   'cp.turning.quote': {
     sv: '"Vi insåg att om våra kunder skulle bli effektivare, behövde vi ett system som samlade allt på ett ställe. Ett verktyg som gav oss kontroll och tid att fokusera på det som verkligen skapar värde."',
-    en: '"We realized that if we were going to grow, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
+    en: '"We realized that if our customers were to become more efficient, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
   },
 
   // Features Section
@@ -80,7 +80,7 @@ export const conferencePlannerTranslations = {
   },
   'cp.features.registration.description': {
     sv: 'Möjlighet för kunden att själv besvara alla frågor och göra möjliga tillval.',
-    en: 'Allows the customer to answer all questions themselves and make available add-ons.'
+    en: 'Allows the customer to answer all questions themselves and select optional add-ons.'
   },
   'cp.features.dietary.title': {
     sv: 'Kost & allergier',
