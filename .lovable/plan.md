@@ -1,21 +1,54 @@
 
 
-## Plan: Byta bild i "Schema & cockpit"-kortet
+## Plan: Byta text och ikon i "Färre fel"-segmentet
 
-**Mål:** Ersätta den nuvarande bilden i "Schema & cockpit"-kortet med den nya bifogade bilden som visar Day 1/Day 2-schemat.
+**Mål:** Ersätta texten i "Färre fel"-kortet (Fewer errors) med ny text om deadlines och påminnelser, samt byta till en mer passande ikon.
 
-### Vad som ändras
+### Ny text
 
-Kortet "Schema & cockpit" i features-sektionen visar för närvarande `conference-planner-schedule.png`. Denna bild kommer att ersättas med den nya skärmdumpen som visar "Day 1" och "Day 2" med aktiviteter som "Attendees arrive", "Fika" och "Attendees depart".
+| Fält | Nuvarande | Ny |
+|------|-----------|-----|
+| Titel | "Färre fel" / "Fewer errors" | "Automatiska påminnelser" / "Automatic reminders" |
+| Beskrivning | "Automatisering minimerar risken för mänskliga misstag." | "Alla deadlines. Alla påminnelser. Utan att du behöver lyfta ett finger." |
+
+### Ny ikon
+
+**Nuvarande ikon:** `TrendingDown` (pil nedåt)
+
+**Ny ikon:** `Bell` (klocka) - passar bättre för påminnelser och notifikationer
 
 ### Tekniska detaljer
 
-**Steg 1:** Kopiera den uppladdade bilden till projektets assets-mapp
+**Filer som ändras:**
 
-Filen `user-uploads://Skärmavbild_2026-01-25_kl._13.24.37.png` kopieras till `src/assets/conference-planner-schedule.png` och ersätter den befintliga filen.
+1. **src/translations/conference-planner.ts** (rad 123-129)
+   - Uppdatera `cp.results.errors.title` till ny titel
+   - Uppdatera `cp.results.errors.description` till ny beskrivning
 
-**Fil som påverkas:**
-- `src/assets/conference-planner-schedule.png` – ersätts med ny bild
+2. **src/pages/ConferencePlanner.tsx** (rad 86-88)
+   - Byta ikon från `TrendingDown` till `Bell`
+   - Lägga till `Bell` i importraden
 
-**Ingen kodändring krävs** eftersom komponenten redan refererar till `conferenceScheduleImage` (rad 9 i ConferencePlanner.tsx), och den nya bilden kommer att använda samma filnamn.
+### Kodändringar
+
+**Translations (conference-planner.ts):**
+```text
+'cp.results.errors.title': {
+  sv: 'Automatiska påminnelser',
+  en: 'Automatic reminders'
+},
+'cp.results.errors.description': {
+  sv: 'Alla deadlines. Alla påminnelser. Utan att du behöver lyfta ett finger.',
+  en: 'All deadlines. All reminders. Without lifting a finger.'
+},
+```
+
+**Component (ConferencePlanner.tsx):**
+```text
+{
+  icon: Bell,
+  titleKey: 'cp.results.errors.title',
+  descKey: 'cp.results.errors.description'
+},
+```
 
