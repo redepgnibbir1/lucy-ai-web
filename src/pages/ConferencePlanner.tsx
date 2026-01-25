@@ -139,7 +139,7 @@ const ConferencePlanner = () => {
               </motion.div>
             </motion.div>
 
-            {/* Video - takes up most of the width */}
+            {/* Video hidden until ready
             <motion.div initial={{
             opacity: 0,
             y: 30
@@ -152,6 +152,7 @@ const ConferencePlanner = () => {
           }} className="w-full max-w-6xl mx-auto">
               <VideoPlayer aspectRatio="16:9" videoPath="hero-video.mp4" autoPlay />
             </motion.div>
+            */}
           </div>
         </div>
       </section>
@@ -208,6 +209,7 @@ const ConferencePlanner = () => {
               </blockquote>
             </motion.div>
 
+            {/* Video hidden until ready
             <motion.div initial={{
             opacity: 0,
             x: 50
@@ -222,6 +224,7 @@ const ConferencePlanner = () => {
           }}>
               <VideoPlayer aspectRatio="16:9" videoPath="turning-point-video.mp4" autoPlayOnScroll className="bg-gradient-to-br from-gray-700 to-gray-800" />
             </motion.div>
+            */}
           </div>
         </div>
       </section>
@@ -298,6 +301,7 @@ const ConferencePlanner = () => {
               </div>
             </motion.div>
 
+            {/* Video hidden until ready
             <motion.div initial={{
             opacity: 0,
             x: 50
@@ -311,6 +315,7 @@ const ConferencePlanner = () => {
           }}>
               <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
             </motion.div>
+            */}
           </div>
         </div>
       </section>
