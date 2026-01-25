@@ -298,19 +298,21 @@ const ConferencePlanner = () => {
               </div>
             </motion.div>
 
-<motion.div initial={{
-            opacity: 0,
-            x: 50
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.8
-          }}>
+{/* Video hidden until ready
+            <motion.div initial={{
+              opacity: 0,
+              x: 50
+            }} whileInView={{
+              opacity: 1,
+              x: 0
+            }} viewport={{
+              once: true
+            }} transition={{
+              duration: 0.8
+            }}>
               <VideoPlayer aspectRatio="16:9" videoPath="results-video.mp4" />
             </motion.div>
+            */}
           </div>
         </div>
       </section>
