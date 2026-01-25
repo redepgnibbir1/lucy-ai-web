@@ -1,54 +1,21 @@
 
 
-## Plan: Fix Feature Image Display to Prevent Cropping
+## Plan: Byta bild i "Efter"-kortet
 
-**Goal:** Update the image styling in the Features section so images are displayed in full without being cut off at the margins.
+**Mål:** Ersätta den nuvarande bilden i "Efter"-kortet i jämförelsesektionen med den nya bifogade bilden som visar teambuildingbokning.
 
-### The Problem
+### Vad som ändras
 
-Currently, the feature images (including the schedule image) are displayed using:
-- A fixed aspect ratio container: `aspect-[16/10]`
-- `object-cover object-top` styling
+Kortet "Efter" (After) i upsell-sektionen visar för närvarande `conference-planner-teambuilding.png`. Denna bild kommer att ersättas med den nya skärmdumpen som visar "Do you wish to book a teambuilding?"-formuläret.
 
-This causes images that don't match the 16:10 aspect ratio to be zoomed in and cropped, cutting off content at the edges.
+### Tekniska detaljer
 
-### The Solution
+**Steg 1:** Kopiera den uppladdade bilden till projektets assets-mapp
 
-Remove the fixed aspect ratio and change the object-fit behavior to show the complete image:
+Filen `user-uploads://Skärmavbild_2026-01-25_kl._10.26.23.png` kopieras till `src/assets/conference-planner-teambuilding.png` och ersätter den befintliga filen.
 
-**Before:**
-```text
-<div className="aspect-[16/10] w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-  <img ... className="w-full h-full object-cover object-top" />
-</div>
-```
+**Fil som påverkas:**
+- `src/assets/conference-planner-teambuilding.png` – ersätts med ny bild
 
-**After:**
-```text
-<div className="w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-  <img ... className="w-full h-auto object-contain" />
-</div>
-```
-
-### What Changes
-
-| Property | Before | After | Effect |
-|----------|--------|-------|--------|
-| Container | Fixed `aspect-[16/10]` | No fixed aspect | Container adapts to image height |
-| Object fit | `object-cover` | `object-contain` | Shows full image, no cropping |
-| Height | `h-full` | `h-auto` | Image maintains natural proportions |
-
-### Technical Details
-
-**File to modify:** `src/pages/ConferencePlanner.tsx`
-
-**Lines to change:** 266-268
-
-This change affects all four feature images:
-- Deltagarlistan (participants)
-- Kostpreferenser (dietary)
-- Schema & agenda (schedule)
-- Dialog & kommentarer (dialogue)
-
-All images will now display their full content without cropping, adapting the card height to fit each image naturally.
+**Ingen kodändring krävs** eftersom komponenten redan refererar till `conferenceTeambuildingImage` (rad 413 i ConferencePlanner.tsx), och den nya bilden kommer att använda samma filnamn.
 
