@@ -263,8 +263,8 @@ const ConferencePlanner = () => {
                     <p className="font-sans text-gray-600">{t(feature.descKey)}</p>
                   </div>
                 </div>
-                {feature.image ? <div className="aspect-[16/10] w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-                    <img src={feature.image} alt={t(feature.titleKey)} className="w-full h-full object-cover object-top" />
+{feature.image ? <div className="w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                    <img src={feature.image} alt={t(feature.titleKey)} className="w-full h-auto object-contain" />
                   </div> : <MockupPlaceholder />}
               </motion.div>)}
           </div>
