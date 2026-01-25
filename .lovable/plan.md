@@ -1,55 +1,46 @@
 
 
-## Plan: Korrigera engelska översättningar på Conference Planner
+## Plan: Förbättra synligheten på produktkortens knappar
 
-### Sammanfattning
-Tre översättningar behöver korrigeras för att bättre matcha det svenska originalet.
+### Problemet
+De nuvarande knapparna på produktkorten använder gul text (`text-lucy-neon-yellow`) mot en vit bakgrund, vilket gör dem svåra att se.
 
-### Ändringar i `src/translations/conference-planner.ts`
+### Lösning
+Ändra knapparna till att ha en synlig bakgrundsfärg (lime/neon-gul) med svart text, liknande referensbilden "Boka en demo".
 
-#### 1. Korrigera citatet i Turning Point-sektionen (rad 65)
+### Ändringar
 
-**Nuvarande:**
-```
-en: '"We realized that if we were going to grow, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
-```
+**Fil: `src/components/Products.tsx`**
 
-**Ny version:**
-```
-en: '"We realized that if our customers were to become more efficient, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
-```
-
-#### 2. Förbättra feature-beskrivningen (rad 83)
-
-**Nuvarande:**
-```
-en: 'Allows the customer to answer all questions themselves and make available add-ons.'
+Rad 90-96 - Ändra Button-komponenten från:
+```tsx
+<Button 
+  variant="link" 
+  className="text-lucy-neon-yellow p-0 justify-start font-medium"
+  onClick={handleClick}
+>
+  {ctaText} →
+</Button>
 ```
 
-**Ny version:**
-```
-en: 'Allows the customer to answer all questions themselves and select optional add-ons.'
-```
-
-#### 3. Förbättra problem-rubriken (rad 31)
-
-**Nuvarande:**
-```
-en: 'This is how our customers\' everyday looked'
+Till:
+```tsx
+<Button 
+  className="bg-lucy-neon-yellow text-lucy-black hover:bg-lucy-neon-yellow/90 px-6 py-2 rounded-md font-medium justify-start w-fit"
+  onClick={handleClick}
+>
+  {ctaText} →
+</Button>
 ```
 
-**Ny version:**
-```
-en: 'This was the daily reality for our customers'
-```
+### Tekniska detaljer
+- **`bg-lucy-neon-yellow`**: Använder den befintliga neon-gula färgen (#C9FD59) som bakgrund
+- **`text-lucy-black`**: Svart text för god kontrast och läsbarhet
+- **`hover:bg-lucy-neon-yellow/90`**: Subtil hover-effekt som gör knappen lite mörkare
+- **`px-6 py-2`**: Ger knappen bra padding som i referensbilden
+- **`rounded-md`**: Mjukt avrundade hörn
+- **`w-fit`**: Knappen anpassar sig till textens bredd
 
-### Teknisk implementation
-
-Fil: `src/translations/conference-planner.ts`
-
-- **Rad 31:** Uppdatera `cp.problem.title` engelska text
-- **Rad 65:** Uppdatera `cp.turning.quote` engelska text  
-- **Rad 83:** Uppdatera `cp.features.registration.description` engelska text
-
-Inga andra filer behöver ändras eftersom översättningarna redan används korrekt i komponenten.
+### Resultat
+Knapparna kommer att se ut som den gröna "Boka en demo"-knappen i referensbilden - med tydlig bakgrundsfärg och svart text som är lätt att se mot den vita kortbakgrunden.
 
