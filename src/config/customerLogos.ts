@@ -47,5 +47,15 @@ export const customerLogos: CustomerLogo[] = [
     src: "/lovable-uploads/260e1d44-6dbe-4878-b03e-e9ea90bf85e1.png", 
     alt: "New Hotel Logo",
     scale: 1.3 
+  },
+  { 
+    src: "/lovable-uploads/sanga-logo.jpg", 
+    alt: "Sånga",
+    scale: 1.4 
+  },
+  { 
+    src: "/lovable-uploads/tvaskyttlar-logo.jpg", 
+    alt: "Två Skyttlar",
+    scale: 1.4 
   }
 ];
