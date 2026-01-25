@@ -1,37 +1,34 @@
 
-## Plan: Scrolla till toppen vid navigering till Conference Planner
 
-### Problem
-När man klickar på "Lucy Conference Planner"-kortet på förstasidan hamnar man mitt på Conference Planner-sidan istället för högst upp.
+## Plan: Byt ut hero-bakgrundsbilden
 
-### Orsak
-`react-router-dom`s `navigate()`-funktion behåller scroll-positionen som standard.
+### Nuvarande implementation
 
-### Lösning
-Lägg till `window.scrollTo(0, 0)` direkt efter `navigate(href)` i `ProductCard`-komponenten.
+Bakgrundsbilden i hero-sektionen är:
+- **Fil:** `src/assets/hero-background.png`
+- **Används i:** `src/components/Hero.tsx`
+
+### Steg för att genomföra bytet
+
+1. **Kopiera den nya bilden** till `src/assets/hero-background.png` (ersätter den befintliga filen)
+
+Det är allt! Eftersom filnamnet och importen förblir samma kommer den nya bilden automatiskt att visas på förstasidan.
 
 ---
 
 ## Teknisk implementation
 
-**Fil:** `src/components/Products.tsx`
+**Åtgärd:** Kopiera den uppladdade bilden till `src/assets/hero-background.png`
 
-**Nuvarande kod (rad 73-77):**
-```javascript
-} else if (href && href.startsWith('/')) {
-  navigate(href);
-}
+```
+lov-copy user-uploads://Skärmavbild_2026-01-25_kl._20.23.19.png src/assets/hero-background.png
 ```
 
-**Ny kod:**
-```javascript
-} else if (href && href.startsWith('/')) {
-  navigate(href);
-  window.scrollTo(0, 0);
-}
-```
+Ingen kodändring krävs i `Hero.tsx` eftersom importen redan pekar på rätt fil.
 
 ---
 
 ## Resultat
-När besökaren klickar på Conference Planner-kortet kommer de till toppen av sidan och får en bättre överblick över hela innehållet.
+
+Hero-sektionen på förstasidan kommer att visa den nya bakgrundsbilden med telefonen i hotellmiljö istället för den nuvarande bilden.
+
