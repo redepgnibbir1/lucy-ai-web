@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Animate } from '@/components/ui/animate';
 import { fadeInUp, slideInLeft, slideInRight } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
   const { t } = useLanguage();
@@ -22,7 +23,7 @@ const Products = () => {
           </Animate>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <Animate variants={fadeInUp} transition={{ delay: 0.2 }}>
             <ProductCard 
               title={t('products.team.title')} 
@@ -34,6 +35,16 @@ const Products = () => {
           </Animate>
           
           <Animate variants={fadeInUp} transition={{ delay: 0.4 }}>
+            <ProductCard 
+              title={t('products.conference.title')} 
+              description={t('products.conference.description')}
+              subtext={t('products.conference.subtext')}
+              ctaText={t('products.conference.cta')}
+              href="/conference-planner"
+            />
+          </Animate>
+          
+          <Animate variants={fadeInUp} transition={{ delay: 0.6 }}>
             <ProductCard 
               title={t('products.guest.title')} 
               description={t('products.guest.description')}
@@ -57,18 +68,16 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ title, description, subtext, ctaText, href }: ProductCardProps) => {
+  const navigate = useNavigate();
+  
   const handleClick = () => {
-    console.log(`Product card clicked: ${title}`);
     if (href && href.startsWith('#')) {
       const targetElement = document.getElementById(href.substring(1));
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        // Fallback if element not found
-        window.location.href = href;
       }
-    } else if (href) {
-      window.location.href = href;
+    } else if (href && href.startsWith('/')) {
+      navigate(href);
     }
   };
 

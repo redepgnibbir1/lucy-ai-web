@@ -47,5 +47,21 @@ export const productsTranslations = {
   'products.guest.cta': {
     sv: 'Utforska kommunikation & samarbete',
     en: 'Explore Communication & Collaboration'
+  },
+  'products.conference.title': {
+    sv: 'Lucy Conference Planner',
+    en: 'Lucy Conference Planner'
+  },
+  'products.conference.description': {
+    sv: 'Planera konferenser smartare.',
+    en: 'Plan conferences smarter.'
+  },
+  'products.conference.subtext': {
+    sv: 'Lucy Conference Planner samlar allt – registrering, kost, schema och kunddialog – i ett smart arbetsflöde. Du får tid över. Och du får koll.',
+    en: 'Lucy Conference Planner brings everything together – registration, dietary needs, schedules, and customer dialogue – in one smart workflow.'
+  },
+  'products.conference.cta': {
+    sv: 'Utforska Lucy Conference Planner',
+    en: 'Explore Lucy Conference Planner'
   }
 };
