@@ -45,8 +45,8 @@ export const productsTranslations = {
     en: 'Guest communication, housekeeping planning, automated reviews, reputation management, custom AI agents, and secure incident reporting.'
   },
   'products.guest.cta': {
-    sv: 'Utforska kommunikation & samarbete',
-    en: 'Explore Communication & Collaboration'
+    sv: 'Utforska tillägg & branschlösningar',
+    en: 'Explore Add-ons & Industry Solutions'
   },
   'products.conference.title': {
     sv: 'Lucy Conference Planner',
