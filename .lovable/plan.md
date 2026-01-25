@@ -1,34 +1,55 @@
 
 
-## Plan: Byt ut hero-bakgrundsbilden
+## Plan: Korrigera engelska översättningar på Conference Planner
 
-### Nuvarande implementation
+### Sammanfattning
+Tre översättningar behöver korrigeras för att bättre matcha det svenska originalet.
 
-Bakgrundsbilden i hero-sektionen är:
-- **Fil:** `src/assets/hero-background.png`
-- **Används i:** `src/components/Hero.tsx`
+### Ändringar i `src/translations/conference-planner.ts`
 
-### Steg för att genomföra bytet
+#### 1. Korrigera citatet i Turning Point-sektionen (rad 65)
 
-1. **Kopiera den nya bilden** till `src/assets/hero-background.png` (ersätter den befintliga filen)
-
-Det är allt! Eftersom filnamnet och importen förblir samma kommer den nya bilden automatiskt att visas på förstasidan.
-
----
-
-## Teknisk implementation
-
-**Åtgärd:** Kopiera den uppladdade bilden till `src/assets/hero-background.png`
-
+**Nuvarande:**
 ```
-lov-copy user-uploads://Skärmavbild_2026-01-25_kl._20.23.19.png src/assets/hero-background.png
+en: '"We realized that if we were going to grow, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
 ```
 
-Ingen kodändring krävs i `Hero.tsx` eftersom importen redan pekar på rätt fil.
+**Ny version:**
+```
+en: '"We realized that if our customers were to become more efficient, we needed a system that brought everything together in one place. A tool that gave us control – and time to focus on what truly creates value."'
+```
 
----
+#### 2. Förbättra feature-beskrivningen (rad 83)
 
-## Resultat
+**Nuvarande:**
+```
+en: 'Allows the customer to answer all questions themselves and make available add-ons.'
+```
 
-Hero-sektionen på förstasidan kommer att visa den nya bakgrundsbilden med telefonen i hotellmiljö istället för den nuvarande bilden.
+**Ny version:**
+```
+en: 'Allows the customer to answer all questions themselves and select optional add-ons.'
+```
+
+#### 3. Förbättra problem-rubriken (rad 31)
+
+**Nuvarande:**
+```
+en: 'This is how our customers\' everyday looked'
+```
+
+**Ny version:**
+```
+en: 'This was the daily reality for our customers'
+```
+
+### Teknisk implementation
+
+Fil: `src/translations/conference-planner.ts`
+
+- **Rad 31:** Uppdatera `cp.problem.title` engelska text
+- **Rad 65:** Uppdatera `cp.turning.quote` engelska text  
+- **Rad 83:** Uppdatera `cp.features.registration.description` engelska text
+
+Inga andra filer behöver ändras eftersom översättningarna redan används korrekt i komponenten.
 
