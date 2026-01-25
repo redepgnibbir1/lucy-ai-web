@@ -200,6 +200,9 @@ const ConferencePlanner = () => {
           }} transition={{
             duration: 0.8
           }}>
+              <span className="font-sans text-sm uppercase tracking-widest text-gray-400 mb-4 block">
+                {t('cp.turning.label')}
+              </span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mb-8">
                 {t('cp.turning.title')}
               </h2>
