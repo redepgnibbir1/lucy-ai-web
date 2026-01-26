@@ -57,5 +57,10 @@ export const customerLogos: CustomerLogo[] = [
     src: "/lovable-uploads/tvaskyttlar-logo.jpg", 
     alt: "Två Skyttlar",
     scale: 1.4 
+  },
+  { 
+    src: "/lovable-uploads/ronneberga-logo.png", 
+    alt: "Rönneberga Lidingö",
+    scale: 1.3 
   }
 ];
