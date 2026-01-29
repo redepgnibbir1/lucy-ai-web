@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import GDPR from "./pages/GDPR";
+import PrivacyPolicyConferencePlanner from "./pages/PrivacyPolicyConferencePlanner";
 
 // Create a global window object property to disable the Lovable badge
 if (typeof window !== 'undefined') {
@@ -85,6 +86,11 @@ const App = () => (
             <Route path="/conference-planner" element={
               <Layout>
                 <ConferencePlanner />
+              </Layout>
+            } />
+            <Route path="/privacy-policy-conferenceplanner" element={
+              <Layout>
+                <PrivacyPolicyConferencePlanner />
               </Layout>
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
