@@ -1,46 +1,48 @@
 
+## Plan: Skapa Privacy Policy för Conference Planner
 
-## Plan: Förbättra synligheten på produktkortens knappar
-
-### Problemet
-De nuvarande knapparna på produktkorten använder gul text (`text-lucy-neon-yellow`) mot en vit bakgrund, vilket gör dem svåra att se.
-
-### Lösning
-Ändra knapparna till att ha en synlig bakgrundsfärg (lime/neon-gul) med svart text, liknande referensbilden "Boka en demo".
+### Översikt
+Skapa en ny undersida på `/privacy-policy-conferenceplanner` som visar privacy policy specifik för Lucy Conference Planner-produkten. Sidan kommer inte att synas i navigationen eller footern, men är tillgänglig via direktlänk.
 
 ### Ändringar
 
-**Fil: `src/components/Products.tsx`**
+**1. Skapa ny sida: `src/pages/PrivacyPolicyConferencePlanner.tsx`**
 
-Rad 90-96 - Ändra Button-komponenten från:
-```tsx
-<Button 
-  variant="link" 
-  className="text-lucy-neon-yellow p-0 justify-start font-medium"
-  onClick={handleClick}
->
-  {ctaText} →
-</Button>
-```
+En ny React-komponent som visar den engelska privacy policyn för Conference Planner med samma styling som den befintliga PrivacyPolicy-sidan:
 
-Till:
+- Samma layout och typografi som befintlig privacy policy
+- Innehåller alla 7 sektioner du angav:
+  1. Data Controller
+  2. What Data Is Collected?
+  3. Purpose of Data Collection
+  4. Legal Basis
+  5. Data Retention
+  6. Who Has Access to Your Data?
+  7. Your Rights
+
+**2. Lägg till route i `src/App.tsx`**
+
 ```tsx
-<Button 
-  className="bg-lucy-neon-yellow text-lucy-black hover:bg-lucy-neon-yellow/90 px-6 py-2 rounded-md font-medium justify-start w-fit"
-  onClick={handleClick}
->
-  {ctaText} →
-</Button>
+// Importera den nya sidan
+import PrivacyPolicyConferencePlanner from "./pages/PrivacyPolicyConferencePlanner";
+
+// Lägg till route (före catch-all "*" routen)
+<Route path="/privacy-policy-conferenceplanner" element={
+  <Layout>
+    <PrivacyPolicyConferencePlanner />
+  </Layout>
+} />
 ```
 
 ### Tekniska detaljer
-- **`bg-lucy-neon-yellow`**: Använder den befintliga neon-gula färgen (#C9FD59) som bakgrund
-- **`text-lucy-black`**: Svart text för god kontrast och läsbarhet
-- **`hover:bg-lucy-neon-yellow/90`**: Subtil hover-effekt som gör knappen lite mörkare
-- **`px-6 py-2`**: Ger knappen bra padding som i referensbilden
-- **`rounded-md`**: Mjukt avrundade hörn
-- **`w-fit`**: Knappen anpassar sig till textens bredd
+
+| Aspekt | Detalj |
+|--------|--------|
+| URL | `/privacy-policy-conferenceplanner` |
+| Synlig i nav/footer | Nej |
+| Layout | Använder samma Layout-wrapper med Navbar och Footer |
+| Styling | Samma som befintlig PrivacyPolicy.tsx (`prose`, `container`, etc.) |
+| Språk | Endast engelska (enligt den text du angav) |
 
 ### Resultat
-Knapparna kommer att se ut som den gröna "Boka en demo"-knappen i referensbilden - med tydlig bakgrundsfärg och svart text som är lätt att se mot den vita kortbakgrunden.
-
+Sidan blir tillgänglig på `lucyanalytics.com/privacy-policy-conferenceplanner` men syns inte i någon meny. Perfekt för att dela med konferensdeltagare som behöver läsa privacy policyn.
