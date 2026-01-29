@@ -19,6 +19,8 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import GDPR from "./pages/GDPR";
 import PrivacyPolicyConferencePlanner from "./pages/PrivacyPolicyConferencePlanner";
+import Articles from "./pages/Articles";
+import IntroducingLucyAnalytics from "./pages/articles/IntroducingLucyAnalytics";
 
 // Create a global window object property to disable the Lovable badge
 if (typeof window !== 'undefined') {
@@ -92,6 +94,14 @@ const App = () => (
               <Layout>
                 <PrivacyPolicyConferencePlanner />
               </Layout>
+            } />
+            <Route path="/articles" element={
+              <Layout>
+                <Articles />
+              </Layout>
+            } />
+            <Route path="/articles/introducing-lucy-analytics" element={
+              <IntroducingLucyAnalytics />
             } />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={
