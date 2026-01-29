@@ -24,8 +24,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   
   // Pages with light backgrounds need dark navbar text from the start
-  const lightBackgroundPages = ['/conference-planner', '/fördelar', '/addons', '/kom-igang', '/about'];
-  const isLightBackground = lightBackgroundPages.includes(location.pathname);
+  const lightBackgroundPages = ['/conference-planner', '/fördelar', '/addons', '/kom-igang', '/about', '/articles'];
+  const isLightBackground = lightBackgroundPages.includes(location.pathname) || location.pathname.startsWith('/articles/');
   const shouldUseDarkStyle = isScrolled || isLightBackground;
 
   useEffect(() => {
