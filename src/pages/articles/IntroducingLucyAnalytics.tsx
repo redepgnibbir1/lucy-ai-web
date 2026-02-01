@@ -1,6 +1,7 @@
 import { ArticleLayout, ArticleHero, ArticleSection, KeyTakeaways, TocItem } from "@/components/article";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import CalendlyWidget from "@/components/CalendlyWidget";
 
 const tocItems: TocItem[] = [
   { id: "introduction", label: "Introduction" },
@@ -65,7 +66,7 @@ const quizQuestions: QuizQuestion[] = [
   },
 ];
 
-const FitQuiz = () => {
+const FitQuiz = ({ onDemoClick }: { onDemoClick: () => void }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResult, setShowResult] = useState(false);
@@ -194,12 +195,12 @@ const FitQuiz = () => {
                 <p className="text-lucy-dark-gray mb-4 font-medium">
                   Ready to see Lucy in action?
                 </p>
-                <Link
-                  to="/kom-igang"
+                <button
+                  onClick={onDemoClick}
                   className="block w-full bg-lucy-neon-yellow text-lucy-black px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors text-center"
                 >
                   Book a demo
-                </Link>
+                </button>
               </div>
 
               <button
@@ -217,7 +218,14 @@ const FitQuiz = () => {
 };
 
 const IntroducingLucyAnalytics = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
+  const handleDemoClick = () => {
+    setIsCalendlyOpen(true);
+  };
+
   return (
+    <>
     <ArticleLayout tocItems={tocItems}>
       <ArticleHero
         title="Introducing Lucy: AI-Powered Communication for Hotels"
@@ -369,7 +377,7 @@ const IntroducingLucyAnalytics = () => {
         </div>
       </ArticleSection>
 
-      <FitQuiz />
+      <FitQuiz onDemoClick={handleDemoClick} />
 
       <ArticleSection id="getting-started" title="Getting Started">
         <p className="text-lucy-dark-gray">
@@ -388,15 +396,18 @@ const IntroducingLucyAnalytics = () => {
           <p className="text-lucy-light-gray-new mb-4">
             Book a personalized demo and discover how Lucy can transform your hotel's communication.
           </p>
-          <Link
-            to="/kom-igang"
+          <button
+            onClick={handleDemoClick}
             className="inline-block bg-lucy-neon-yellow text-lucy-black px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors"
           >
             Get Started
-          </Link>
+          </button>
         </div>
       </ArticleSection>
     </ArticleLayout>
+
+    <CalendlyWidget isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
+    </>
   );
 };
 
