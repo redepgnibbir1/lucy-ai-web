@@ -376,7 +376,12 @@ const structuredData = {
 
 const HowToChooseHotelManagementSoftware = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const handleDemoClick = () => { setIsCalendlyOpen(true); };
+
+  const toggleCheckItem = (key: string) => {
+    setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
+  };
 
   return (
     <><ArticleLayout tocItems={tocItems}>
@@ -823,8 +828,22 @@ const HowToChooseHotelManagementSoftware = () => {
                     "GDPR and PCI compliance certified",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-lucy-dark-gray">
-                      <div className="w-5 h-5 border-2 border-gray-300 rounded flex-shrink-0" />
-                      {item}
+                      <button
+                        type="button"
+                        onClick={() => toggleCheckItem(`tech-${index}`)}
+                        className={`w-5 h-5 border-2 rounded flex-shrink-0 flex items-center justify-center transition-colors cursor-pointer ${
+                          checkedItems[`tech-${index}`]
+                            ? "bg-green-500 border-green-500"
+                            : "border-gray-300 hover:border-gray-400"
+                        }`}
+                      >
+                        {checkedItems[`tech-${index}`] && (
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </button>
+                      <span className={checkedItems[`tech-${index}`] ? "line-through text-lucy-medium-gray" : ""}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -850,8 +869,22 @@ const HowToChooseHotelManagementSoftware = () => {
                     "Scales with multi-property if needed",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-lucy-dark-gray">
-                      <div className="w-5 h-5 border-2 border-gray-300 rounded flex-shrink-0" />
-                      {item}
+                      <button
+                        type="button"
+                        onClick={() => toggleCheckItem(`ops-${index}`)}
+                        className={`w-5 h-5 border-2 rounded flex-shrink-0 flex items-center justify-center transition-colors cursor-pointer ${
+                          checkedItems[`ops-${index}`]
+                            ? "bg-green-500 border-green-500"
+                            : "border-gray-300 hover:border-gray-400"
+                        }`}
+                      >
+                        {checkedItems[`ops-${index}`] && (
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </button>
+                      <span className={checkedItems[`ops-${index}`] ? "line-through text-lucy-medium-gray" : ""}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -877,8 +910,22 @@ const HowToChooseHotelManagementSoftware = () => {
                     "Positive reviews from similar properties",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-lucy-dark-gray">
-                      <div className="w-5 h-5 border-2 border-gray-300 rounded flex-shrink-0" />
-                      {item}
+                      <button
+                        type="button"
+                        onClick={() => toggleCheckItem(`biz-${index}`)}
+                        className={`w-5 h-5 border-2 rounded flex-shrink-0 flex items-center justify-center transition-colors cursor-pointer ${
+                          checkedItems[`biz-${index}`]
+                            ? "bg-green-500 border-green-500"
+                            : "border-gray-300 hover:border-gray-400"
+                        }`}
+                      >
+                        {checkedItems[`biz-${index}`] && (
+                          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </button>
+                      <span className={checkedItems[`biz-${index}`] ? "line-through text-lucy-medium-gray" : ""}>{item}</span>
                     </li>
                   ))}
                 </ul>

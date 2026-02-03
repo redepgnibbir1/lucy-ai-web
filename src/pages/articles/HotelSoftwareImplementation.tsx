@@ -276,7 +276,12 @@ const ReadinessCalculator = ({ onDemoClick }: { onDemoClick: () => void }) => {
 
 const HotelSoftwareImplementation = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const handleDemoClick = () => { setIsCalendlyOpen(true); };
+
+  const toggleCheckItem = (key: string) => {
+    setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
+  };
 
   // JSON-LD Structured Data
   const articleSchema = {
@@ -883,6 +888,7 @@ const HotelSoftwareImplementation = () => {
               {[
                 {
                   phase: "Pre-Implementation (2 weeks before)",
+                  id: "pre",
                   items: [
                     "Assemble cross-functional implementation team",
                     "Document current workflows and pain points",
@@ -895,6 +901,7 @@ const HotelSoftwareImplementation = () => {
                 },
                 {
                   phase: "Configuration & Testing (Week 1)",
+                  id: "config",
                   items: [
                     "Complete system configuration with vendor",
                     "Set up integrations with critical systems (PMS, etc.)",
@@ -906,6 +913,7 @@ const HotelSoftwareImplementation = () => {
                 },
                 {
                   phase: "Pilot Launch (Week 2-3)",
+                  id: "pilot",
                   items: [
                     "Train pilot department with hands-on sessions",
                     "Launch pilot with parallel system running as backup",
@@ -917,6 +925,7 @@ const HotelSoftwareImplementation = () => {
                 },
                 {
                   phase: "Full Rollout (Week 4-6)",
+                  id: "rollout",
                   items: [
                     "Train remaining departments in sequence",
                     "Deploy super-users to provide peer support",
@@ -928,6 +937,7 @@ const HotelSoftwareImplementation = () => {
                 },
                 {
                   phase: "Optimization (Week 7+)",
+                  id: "optimize",
                   items: [
                     "Complete legacy system decommission",
                     "Review success metrics against baselines",
@@ -946,12 +956,29 @@ const HotelSoftwareImplementation = () => {
                     {section.phase}
                   </h4>
                   <ul className="space-y-2 ml-8">
-                    {section.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start gap-3 text-sm text-lucy-dark-gray">
-                        <span className="w-4 h-4 border border-gray-300 rounded flex-shrink-0 mt-0.5" />
-                        {item}
-                      </li>
-                    ))}
+                    {section.items.map((item, itemIndex) => {
+                      const key = `${section.id}-${itemIndex}`;
+                      return (
+                        <li key={itemIndex} className="flex items-start gap-3 text-sm text-lucy-dark-gray">
+                          <button
+                            type="button"
+                            onClick={() => toggleCheckItem(key)}
+                            className={`w-4 h-4 border rounded flex-shrink-0 mt-0.5 flex items-center justify-center transition-colors cursor-pointer ${
+                              checkedItems[key]
+                                ? "bg-green-500 border-green-500"
+                                : "border-gray-300 hover:border-gray-400"
+                            }`}
+                          >
+                            {checkedItems[key] && (
+                              <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                              </svg>
+                            )}
+                          </button>
+                          <span className={checkedItems[key] ? "line-through text-lucy-medium-gray" : ""}>{item}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
