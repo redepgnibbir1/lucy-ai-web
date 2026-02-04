@@ -19,6 +19,7 @@ import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import GDPR from "./pages/GDPR";
 import PrivacyPolicyConferencePlanner from "./pages/PrivacyPolicyConferencePlanner";
+import CookieConsent from "./components/CookieConsent";
 
 // Create a global window object property to disable the Lovable badge
 if (typeof window !== 'undefined') {
@@ -100,6 +101,7 @@ const App = () => (
               </Layout>
             } />
           </Routes>
+          <CookieConsent />
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>

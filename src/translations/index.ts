@@ -10,6 +10,7 @@ import { addOnsTranslations } from './addons';
 import { footerTranslations } from './footer';
 import { contactTranslations } from './contact';
 import { conferencePlannerTranslations } from './conference-planner';
+import { cookiesTranslations } from './cookies';
 
 // Merge all translations into a single object
 const translations = {
@@ -25,6 +26,7 @@ const translations = {
   ...footerTranslations,
   ...contactTranslations,
   ...conferencePlannerTranslations,
+  ...cookiesTranslations,
 };
 
 export default translations;
