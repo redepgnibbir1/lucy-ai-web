@@ -12,6 +12,7 @@ import AddOns from "./pages/AddOns";
 import AboutUs from "./pages/AboutUs";
 import KomIgang from "./pages/KomIgang";
 import ConferencePlanner from "./pages/ConferencePlanner";
+import CookiePolicy from "./pages/CookiePolicy";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -87,6 +88,11 @@ const App = () => (
             <Route path="/conference-planner" element={
               <Layout>
                 <ConferencePlanner />
+              </Layout>
+            } />
+            <Route path="/cookies" element={
+              <Layout>
+                <CookiePolicy />
               </Layout>
             } />
             <Route path="/privacy-policy-conferenceplanner" element={
