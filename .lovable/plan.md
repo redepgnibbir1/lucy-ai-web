@@ -1,61 +1,38 @@
 
 
-## Plan: Skapa Cookie Policy-sida och uppdatera cookie-bannern
+## Plan: Lägg till NOFO Hotel & Wine Bar-logga i kundlogotyp-karusellen
 
 ### Översikt
-Skapa en dedikerad Cookie Policy-sida med den text du angav och uppdatera cookie consent-bannern så att "Läs mer"-länken pekar till denna nya sida istället för den allmänna privacy policyn.
+Lägga till den uppladdade NOFO Hotel & Wine Bar-loggan till den befintliga kundlogotyp-animationen på startsidan.
 
 ### Ändringar
 
-**1. Skapa ny sida: `src/pages/CookiePolicy.tsx`**
+**1. Kopiera bilden till projektet**
 
-En ny React-komponent med samma styling som PrivacyPolicy.tsx, innehållande:
+Bilden kopieras till `public/lovable-uploads/nofo-hotel-logo.png`
 
-- What are cookies?
-- What types of cookies do we use? (Strictly necessary, Analytics, Functional)
-- Third-party cookies
-- How can you manage cookies?
-- Changes to this Cookie Policy
-- Contact
+**2. Uppdatera `src/config/customerLogos.ts`**
 
-**2. Lägg till route i `src/App.tsx`**
+Lägg till en ny post i `customerLogos`-arrayen:
 
-```tsx
-import CookiePolicy from "./pages/CookiePolicy";
-
-// Lägg till route
-<Route path="/cookies" element={
-  <Layout>
-    <CookiePolicy />
-  </Layout>
-} />
-```
-
-**3. Uppdatera `src/components/CookieConsent.tsx`**
-
-Ändra länken från `/privacy` till `/cookies`:
-
-```tsx
-// Rad 52-53: Ändra to="/privacy" till to="/cookies"
-<Link
-  to="/cookies"
-  ...
->
+```typescript
+{ 
+  src: "/lovable-uploads/nofo-hotel-logo.png", 
+  alt: "NOFO Hotel & Wine Bar",
+  scale: 1.3 
+}
 ```
 
 ### Tekniska detaljer
 
-| Aspekt | Detalj |
-|--------|--------|
-| URL | `/cookies` |
-| Synlig i nav/footer | Nej (dold sida) |
-| Styling | Samma som PrivacyPolicy.tsx (`prose`, `container`, etc.) |
-| Språk | Endast engelska (enligt texten du angav) |
-| Cookie banner-länk | Uppdateras från `/privacy` till `/cookies` |
+| Aspekt | Värde |
+|--------|-------|
+| Filnamn | `nofo-hotel-logo.png` |
+| Alt-text | "NOFO Hotel & Wine Bar" |
+| Skala | 1.3 (standard för de flesta loggor) |
+| Placering | Sist i listan med övriga loggor |
 
 ### Resultat
 
-- Cookie consent-bannern kommer att länka till den korrekta cookie policyn
-- Användare kan läsa den specifika cookie policyn för Lucy Analytics
-- Sidan följer samma designmönster som övriga policy-sidor
+NOFO Hotel & Wine Bar-loggan kommer att visas tillsammans med de andra kundloggorna i den animerade karusellen på startsidan, både på mobil och desktop.
 
