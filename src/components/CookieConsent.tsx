@@ -50,7 +50,7 @@ const CookieConsent = () => {
               {/* Buttons */}
               <div className="flex items-center gap-3 w-full md:w-auto">
                 <Link
-                  to="/privacy"
+                  to="/cookies"
                   className="text-lucy-light-gray-new hover:text-lucy-white text-sm underline underline-offset-2 transition-colors"
                 >
                   {t('cookies.readMore')}
