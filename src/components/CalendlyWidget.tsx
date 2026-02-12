@@ -65,9 +65,18 @@ const CalendlyWidget = ({ isOpen, onClose }: CalendlyWidgetProps) => {
 };
 
 // Add a global type declaration for the Calendly object
+interface CalendlyWidget {
+  initInlineWidget: (options: {
+    url: string;
+    parentElement: HTMLElement;
+    prefill: Record<string, unknown>;
+    utm: Record<string, unknown>;
+  }) => void;
+}
+
 declare global {
   interface Window {
-    Calendly?: any;
+    Calendly?: CalendlyWidget;
   }
 }
 

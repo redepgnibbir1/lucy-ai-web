@@ -139,9 +139,14 @@
     width: 100%;
     position: relative;
   }
-  
+
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+/* Article layout - override overflow for sticky TOC to work */
+#root:has(.article-layout) {
+  overflow: visible !important;
 }
