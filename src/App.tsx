@@ -12,6 +12,7 @@ import AddOns from "./pages/AddOns";
 import AboutUs from "./pages/AboutUs";
 import KomIgang from "./pages/KomIgang";
 import ConferencePlanner from "./pages/ConferencePlanner";
+import CookiePolicy from "./pages/CookiePolicy";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -41,6 +42,7 @@ import HotelShiftHandovers from "./pages/articles/HotelShiftHandovers";
 import AIGuestExperience from "./pages/articles/AIGuestExperience";
 import HotelSoftwareTrends2026 from "./pages/articles/HotelSoftwareTrends2026";
 import ConferencePlanningAI from "./pages/articles/ConferencePlanningAI";
+import CookieConsent from "./components/CookieConsent";
 
 // Create a global window object property to disable the Lovable badge
 if (typeof window !== 'undefined') {
@@ -108,6 +110,11 @@ const App = () => (
             <Route path="/conference-planner" element={
               <Layout>
                 <ConferencePlanner />
+              </Layout>
+            } />
+            <Route path="/cookies" element={
+              <Layout>
+                <CookiePolicy />
               </Layout>
             } />
             <Route path="/privacy-policy-conferenceplanner" element={
@@ -190,6 +197,7 @@ const App = () => (
               </Layout>
             } />
           </Routes>
+          <CookieConsent />
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>

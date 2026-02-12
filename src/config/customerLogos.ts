@@ -62,5 +62,10 @@ export const customerLogos: CustomerLogo[] = [
     src: "/lovable-uploads/ronneberga-logo.png", 
     alt: "Rönneberga Lidingö",
     scale: 1.3 
+  },
+  { 
+    src: "/lovable-uploads/nofo-hotel-logo.png", 
+    alt: "NOFO Hotel & Wine Bar",
+    scale: 1.3 
   }
 ];
