@@ -87,11 +87,12 @@ const VideoUploader = ({
 
       onUploadComplete?.(data.path, urlData.publicUrl);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Upload error:', error);
+      const errorMessage = error instanceof Error ? error.message : "Ett fel uppstod vid uppladdning.";
       toast({
         title: "Uppladdning misslyckades",
-        description: error.message || "Ett fel uppstod vid uppladdning.",
+        description: errorMessage,
         variant: "destructive"
       });
       setUploadProgress(0);

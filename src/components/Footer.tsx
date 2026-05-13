@@ -57,6 +57,11 @@ const Footer = () => {
                   {t('nav.aboutUs')}
                 </Link>
               </li>
+              <li>
+                <Link to="/articles" className="text-gray-300 hover:text-lucy-neon-yellow transition-colors">
+                  Articles
+                </Link>
+              </li>
             </ul>
           </div>
           
